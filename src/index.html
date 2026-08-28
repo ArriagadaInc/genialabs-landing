@@ -531,9 +531,9 @@
           <button role="tab" aria-selected="false" aria-controls="tab-ops" tabindex="-1" class="tab-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all bg-white border border-slate-200 text-slate-600 hover:bg-slate-50" data-target="tab-ops">Operaciones</button>
         </div>
 
-        <div class="max-w-5xl mx-auto relative min-h-[300px]">
+        <div class="max-w-5xl mx-auto">
           
-          <div id="tab-ventas" role="tabpanel" tabindex="0" class="tab-content active grid grid-cols-1 md:grid-cols-2 gap-6 absolute inset-0">
+          <div id="tab-ventas" role="tabpanel" tabindex="0" class="tab-content active grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
               <h4 class="font-semibold text-slate-900 mb-2">Seguimiento de cotizaciones</h4>
               <ul class="text-sm text-slate-600 space-y-1.5 mb-4 list-disc pl-4">
@@ -561,7 +561,7 @@
             <!-- Otros casos simplificados para no recargar visualmente... -->
           </div>
 
-          <div id="tab-admin" role="tabpanel" tabindex="0" class="tab-content grid grid-cols-1 md:grid-cols-2 gap-6 absolute inset-0 hidden">
+          <div id="tab-admin" role="tabpanel" tabindex="0" class="tab-content grid grid-cols-1 md:grid-cols-2 gap-6 hidden">
             <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
               <h4 class="font-semibold text-slate-900 mb-2">Digitación automática de documentos</h4>
               <ul class="text-sm text-slate-600 space-y-1.5 mb-4 list-disc pl-4">
@@ -588,7 +588,7 @@
             </div>
           </div>
 
-          <div id="tab-atencion" role="tabpanel" tabindex="0" class="tab-content grid grid-cols-1 md:grid-cols-2 gap-6 absolute inset-0 hidden">
+          <div id="tab-atencion" role="tabpanel" tabindex="0" class="tab-content grid grid-cols-1 md:grid-cols-2 gap-6 hidden">
             <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
               <h4 class="font-semibold text-slate-900 mb-2">Respuestas a preguntas frecuentes</h4>
               <ul class="text-sm text-slate-600 space-y-1.5 mb-4 list-disc pl-4">
@@ -600,9 +600,21 @@
                 <p class="text-xs font-medium text-slate-700">Respuestas más rápidas sin perder supervisión humana.</p>
               </div>
             </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+              <h4 class="font-semibold text-slate-900 mb-2">Seguimiento de solicitudes</h4>
+              <ul class="text-sm text-slate-600 space-y-1.5 mb-4 list-disc pl-4">
+                <li>Registrar cada solicitud en un solo lugar.</li>
+                <li>Clasificar por urgencia y responsable.</li>
+                <li>Informar avances al cliente automáticamente.</li>
+              </ul>
+              <div class="pt-3 border-t border-slate-100 flex items-start gap-2">
+                <i data-lucide="trending-up" class="w-4 h-4 text-emerald-500 mt-0.5" aria-hidden="true"></i>
+                <p class="text-xs font-medium text-slate-700">Ningún caso se pierde y el cliente sabe en qué va.</p>
+              </div>
+            </div>
           </div>
 
-          <div id="tab-ops" role="tabpanel" tabindex="0" class="tab-content grid grid-cols-1 md:grid-cols-2 gap-6 absolute inset-0 hidden">
+          <div id="tab-ops" role="tabpanel" tabindex="0" class="tab-content grid grid-cols-1 md:grid-cols-2 gap-6 hidden">
             <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
               <h4 class="font-semibold text-slate-900 mb-2">Gestión de pedidos</h4>
               <ul class="text-sm text-slate-600 space-y-1.5 mb-4 list-disc pl-4">
@@ -613,6 +625,18 @@
               <div class="pt-3 border-t border-slate-100 flex items-start gap-2">
                 <i data-lucide="trending-up" class="w-4 h-4 text-emerald-500 mt-0.5" aria-hidden="true"></i>
                 <p class="text-xs font-medium text-slate-700">Pedidos procesados con mayor velocidad y control.</p>
+              </div>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+              <h4 class="font-semibold text-slate-900 mb-2">Control de documentos y vencimientos</h4>
+              <ul class="text-sm text-slate-600 space-y-1.5 mb-4 list-disc pl-4">
+                <li>Centralizar certificados, contratos y pólizas.</li>
+                <li>Detectar documentos incompletos o vencidos.</li>
+                <li>Avisar antes de la fecha crítica.</li>
+              </ul>
+              <div class="pt-3 border-t border-slate-100 flex items-start gap-2">
+                <i data-lucide="trending-up" class="w-4 h-4 text-emerald-500 mt-0.5" aria-hidden="true"></i>
+                <p class="text-xs font-medium text-slate-700">Menos urgencias por vencimientos no detectados.</p>
               </div>
             </div>
           </div>
