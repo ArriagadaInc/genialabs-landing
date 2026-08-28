@@ -127,24 +127,14 @@ el Gmail personal.
 
 ## Pendientes
 
-Ordenados por impacto. El detalle y la evidencia están en [`docs/BITACORA.md`](docs/BITACORA.md).
+La lista viva, priorizada y con lo que hace falta para ejecutar cada punto, está en
+**[`docs/PROXIMOS-PASOS.md`](docs/PROXIMOS-PASOS.md)**. En resumen:
 
-**Conversión** — es donde más se puede ganar, y es contenido, no código:
+- **Conversión** (mayor impacto, y es contenido más que código): falta prueba social
+  verificable, no hay una sola cifra en la página, «Inversión accesible» no da ningún precio,
+  y hay seis textos de CTA distintos para la misma acción.
+- **Credibilidad y correo:** el LinkedIn del pie devuelve 404, y falta un registro DMARC.
+- **Operación:** conviene activar la notificación de *Deploy failed* en Netlify.
 
-- **No hay prueba social verificable.** El caso destacado es anónimo («una empresa chilena de
-  asesoría previsional») y la cita de cierre no tiene autor, así que parece autoescrita.
-- **No hay un solo número en la página.** Todo es cualitativo («reduce significativamente»).
-- **La sección «Inversión accesible» no da ningún precio ni plazo**, que es justo el miedo que
-  busca desactivar.
-- **Seis textos de CTA distintos** para la misma acción, ninguno dice qué pasa después ni que
-  no tiene costo.
-- **No se ve quién está detrás**: sin nombres, fotos ni trayectoria.
-- El único caso de éxito admite que la IA es la «próxima evolución» y aún no está implementada.
-
-**Técnico:**
-
-- 4 saltos de jerarquía de encabezados (h2 → h4) que conviene corregir por SEO y accesibilidad.
-- Falta un registro **DMARC**. Hay SPF, pero DMARC es lo que impide que suplanten el dominio.
-- Verificar que el LinkedIn del pie exista (`linkedin.com/company/genialabs`): responde 200,
-  pero LinkedIn devuelve 200 también para páginas inexistentes.
-- `og-image.png` se regenera con `npm run build:og` (solo si cambia el diseño de la tarjeta social).
+Nota suelta: `og-image.png` se regenera con `npm run build:og`, solo si cambia el diseño de la
+tarjeta social.

@@ -152,6 +152,31 @@ Correo de prueba recibido correctamente.
 
 ---
 
+## 2026-08-28 — Jerarquía de encabezados
+
+**Problema.** La página saltaba de `h2` a `h4` en cuatro secciones (Casos de uso, Inversión,
+Proyecto real y Experiencia), y había un `h5` suelto tras un `h3` en la maqueta del panel de
+oportunidades. Los lectores de pantalla usan esa jerarquía para navegar el documento y los
+buscadores para entender su estructura; un salto de nivel rompe ambas cosas.
+
+**Cambio.** 19 `h4` y 1 `h5` pasan a `h3`. Puramente semántico: cada encabezado ya llevaba sus
+clases de Tailwind explícitas y el preflight neutraliza los tamaños por defecto.
+
+**Verificación.** Comparando el HTML compilado contra el publicado: 43 encabezados en ambos,
+**0 diferencias de clases, 0 de texto, 20 niveles cambiados**. Las 3 páginas quedan con un único
+`h1` y sin saltos.
+
+**Falsa alarma descartada.** Se investigaron unos encabezados repetidos en «Cómo implementamos»:
+resultaron ser un patrón responsive intencional (una copia `hidden md:block` para escritorio y otra
+`md:hidden`, más corta, para móvil). Solo una es visible a la vez, así que no afecta a lectores de
+pantalla. No se tocó.
+
+**Hallazgo colateral.** El enlace de LinkedIn del pie **está roto**: `www.linkedin.com/company/genialabs`
+devuelve 404 (control con una empresa real: 200). Sin resolver todavía — requiere decidir entre crear
+la página o quitar el enlace. Anotado en [`PROXIMOS-PASOS.md`](PROXIMOS-PASOS.md).
+
+---
+
 ## Estado actual
 
 | Área | Estado |
@@ -162,8 +187,11 @@ Correo de prueba recibido correctamente.
 | Reenvío `contacto@genialabs.cl` | ✅ verificado |
 | Cabeceras de seguridad y caché | ✅ |
 | Invalidación de caché del CSS | ✅ por hash de contenido |
+| Jerarquía de encabezados | ✅ sin saltos |
+| LinkedIn del pie | ⬜ roto (404) |
 | Notificación de deploy fallido | ⬜ recomendada |
 | DMARC | ⬜ pendiente |
 | Prueba social y precios en la página | ⬜ pendiente (mayor impacto comercial) |
 
-Los pendientes con su justificación están en el [README](../README.md#pendientes).
+Los pendientes, priorizados y con lo que hace falta para cada uno, están en
+[`PROXIMOS-PASOS.md`](PROXIMOS-PASOS.md).
