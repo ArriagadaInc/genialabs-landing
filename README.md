@@ -25,7 +25,7 @@ src/            <- FUENTE DE VERDAD. Edita aquí.
   404.html        página de error
   styles.css      Tailwind + estilos propios
 public/         copiado tal cual a dist/ (robots, sitemap, _headers, imágenes)
-scripts/        build: inlinea iconos, copia fuentes, corrige rutas del CSS
+scripts/        build: inlinea iconos, copia fuentes, hashea el CSS
 dist/           SALIDA DEL BUILD. No editar, no versionar.
 archive/        originales históricos (no se publican)
 ```
@@ -39,6 +39,10 @@ archive/        originales históricos (no se publican)
   `@layer base` cambiaría el diseño.
 - Los iconos se escriben como `<i data-lucide="nombre">` y el build los convierte a SVG estático.
   No se carga JavaScript de iconos en producción.
+- El CSS se publica como `styles.<hash>.css`. El hash sale del contenido, así que al
+  cambiar los estilos cambia la URL y el caché de un año es seguro. **No le pongas un
+  nombre fijo con caché largo**: los visitantes que ya tuvieran el archivo se quedarían
+  con la versión vieja hasta que expirara.
 
 ## Despliegue
 
