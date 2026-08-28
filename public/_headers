@@ -5,12 +5,18 @@
   Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; form-action 'self'; frame-ancestors 'self'; base-uri 'self'; object-src 'none'
 
-# Los assets llevan hash de contenido implicito por despliegue: cache largo
+# El CSS lleva hash de contenido en el nombre (styles.<hash>.css, generado por
+# scripts/postbuild.mjs), asi que cachearlo un año es seguro: si cambia, cambia
+# la URL. NO cachear con nombre fijo, o los visitantes que ya tienen el archivo
+# se quedan con la version vieja hasta que expire.
+/assets/css/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Las fuentes son inmutables por definicion: un .woff2 dado nunca cambia.
 /assets/fonts/*
   Cache-Control: public, max-age=31536000, immutable
 
+# Las imagenes NO llevan hash. Cache corto para poder reemplazar og-image.png
+# sin que quede congelada en los navegadores.
 /assets/img/*
-  Cache-Control: public, max-age=31536000, immutable
-
-/assets/css/*
-  Cache-Control: public, max-age=604800
+  Cache-Control: public, max-age=86400
