@@ -1,0 +1,101 @@
+/* Genia Labs - hoja de estilos de produccion
+ * Generada desde el bloque <style> original de la landing v6.
+ * Compilar con: npm run build:css
+ */
+
+/* Tipografia Inter autoalojada (sin depender de Google Fonts) */
+@import '@fontsource/inter/latin-300.css';
+@import '@fontsource/inter/latin-400.css';
+@import '@fontsource/inter/latin-500.css';
+@import '@fontsource/inter/latin-600.css';
+@import '@fontsource/inter/latin-700.css';
+@import '@fontsource/inter/latin-800.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos propios.
+ * Van DESPUES de las utilidades a proposito: en el HTML original este bloque
+ * <style> se cargaba despues del CDN de Tailwind, por lo que ganaba la cascada
+ * a igual especificidad (p.ej. .tab-content vence a .grid). Moverlos a
+ * @layer base cambiaria el diseno. No reordenar. */
+html { scroll-behavior: smooth; }
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Accesibilidad: Respeta preferencia de reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #F8FAFC; border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+.bg-mesh {
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(200,100%,97%,1) 0, transparent 50%), 
+    radial-gradient(at 100% 0%, hsla(250,50%,98%,1) 0, transparent 50%);
+}
+.glass-panel {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.gradient-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(90deg, #0c2a4d, #0284c7);
+}
+.timeline-line {
+  position: absolute;
+  left: 1.5rem;
+  top: 2rem;
+  bottom: 2rem;
+  width: 2px;
+  background: #E2E8F0;
+  z-index: 0;
+}
+@media (min-width: 768px) {
+  .timeline-line {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Tabs generales */
+.tab-content { display: none; }
+.tab-content.active { display: block; animation: fadeIn 0.3s ease-in-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Foco accesible */
+.demo-tab-btn:focus-visible, .tab-btn:focus-visible, a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid #0284c7;
+  outline-offset: 2px;
+}
+
+/* Animaciones y Estados para Microdemo compacta */
+.demo-case-container { display: none; }
+.demo-case-container.active { display: block; }
+
+.demo-step { display: none; opacity: 0; transform: translateY(5px); transition: all 0.4s ease-out; }
+.demo-step.is-active, .demo-step.is-completed { display: flex; opacity: 1; transform: translateY(0); }
+
+.step-expanded { display: none; }
+.step-collapsed { display: none; }
+
+.demo-step.is-active .step-expanded { display: flex; }
+.demo-step.is-completed .step-collapsed { display: flex; }

@@ -1,0 +1,24 @@
+{
+  "name": "genialabs-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page de Genia Labs (genialabs.cl)",
+  "scripts": {
+    "clean": "node scripts/build.mjs --clean",
+    "build:css": "tailwindcss -i ./src/styles.css -o ./dist/assets/css/styles.css --minify",
+    "build:html": "node scripts/build.mjs",
+    "build": "npm run build:html && npm run build:css && npm run build:fix",
+    "dev": "node scripts/build.mjs && tailwindcss -i ./src/styles.css -o ./dist/assets/css/styles.css --watch",
+    "serve": "npx -y serve -l 4173 dist",
+    "build:fix": "node scripts/postbuild.mjs",
+    "build:og": "node scripts/og-image.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.4",
+    "tailwindcss": "^3.4.17"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.1.0",
+    "lucide": "1.35.0"
+  }
+}

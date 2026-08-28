@@ -1,0 +1,22 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# El sitio es 100% estatico; el formulario lo procesa Netlify Forms
+# (ver el atributo data-netlify en el formulario "contacto" de index.html).
+
+[[redirects]]
+  from = "/www.genialabs.cl/*"
+  to = "https://genialabs.cl/:splat"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

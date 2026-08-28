@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Genia Labs - Inteligencia Artificial que genera valor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Genia Labs ayuda a empresas chilenas a implementar Inteligencia Artificial Generativa para automatizar procesos, reducir costos y acelerar el crecimiento." />
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-alt: #0b1020;
+      --primary: #4f46e5;
+      --accent: #f97316;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --card: #111827;
+      --border: #1f2933;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 55%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 16px 64px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      gap: 16px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #ffffff, #4f46e5 40%, #020617 100%);
+      box-shadow: 0 0 20px rgba(79, 70, 229, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-text span:first-child {
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .logo-text span:last-child {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .tagline-pill {
+      border-radius: 100px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 6px 12px;
+      font-size: 11px;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .tag-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 8px rgba(34, 197, 94, 0.9);
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 56px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 3vw + 1rem, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 16px;
+    }
+
+    .hero-title span.highlight {
+      background: linear-gradient(120deg, #4f46e5, #f97316, #22c55e);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .hero-subtitle strong {
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #4f46e5, #6366f1);
+      border-radius: 999px;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 10px 25px rgba(79, 70, 229, 0.5);
+      transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 15px 30px rgba(79, 70, 229, 0.6);
+      filter: brightness(1.05);
+    }
+
+    .btn-secondary {
+      border-radius: 999px;
+      padding: 9px 16px;
+      font-size: 13px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      cursor: pointer;
+      background: rgba(15, 23, 42, 0.8);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(15, 23, 42, 1);
+      border-color: rgba(148, 163, 184, 1);
+      color: #e5e7eb;
+    }
+
+    .hero-note {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top left, #1f2937, #020617);
+      border-radius: 24px;
+      padding: 20px 18px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.9);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(79, 70, 229, 0.32), transparent 65%);
+      top: -30px;
+      right: -60px;
+      opacity: 0.9;
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .chip {
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 11px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      color: #e5e7eb;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .chip-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 8px rgba(34, 197, 94, 0.9);
+    }
+
+    .hero-metric {
+      text-align: right;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .hero-metric strong {
+      display: block;
+      font-size: 16px;
+      color: #e5e7eb;
+    }
+
+    .hero-list {
+      list-style: none;
+      margin: 10px 0 14px;
+      padding: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 12px;
+      color: #e5e7eb;
+      margin-bottom: 8px;
+    }
+
+    .hero-list-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+    }
+
+    .hero-footnote {
+      font-size: 11px;
+      color: var(--muted);
+      position: relative;
+      z-index: 1;
+    }
+
+    section {
+      background: rgba(15, 23, 42, 0.92);
+      border-radius: 24px;
+      padding: 24px 20px;
+      border: 1px solid rgba(31, 41, 55, 0.95);
+      box-shadow: 0 18px 32px rgba(15, 23, 42, 0.85);
+    }
+
+    section + section {
+      margin-top: 22px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 4px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-subtitle {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .bullet-list {
+      list-style: none;
+      font-size: 14px;
+      color: #e5e7eb;
+    }
+
+    .bullet-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .bullet-icon {
+      font-size: 14px;
+      margin-top: 2px;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      font-size: 13px;
+    }
+
+    .benefit-card {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 14px;
+      padding: 10px 12px;
+      border: 1px solid rgba(31, 41, 55, 0.95);
+    }
+
+    .benefit-card strong {
+      display: block;
+      margin-bottom: 2px;
+      font-size: 13px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    th, td {
+      padding: 8px 6px;
+      text-align: left;
+      border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+    }
+
+    th {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .price-tag {
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      padding: 4px 8px;
+      font-size: 11px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 32px;
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    footer a {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-card {
+        order: -1;
+      }
+
+      .benefits-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .page {
+        padding-inline: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">
+        <div class="logo-mark">G</div>
+        <div class="logo-text">
+          <span>GENIA LABS</span>
+          <span>Inteligencia Artificial para negocios reales</span>
+        </div>
+      </div>
+      <div class="tagline-pill">
+        <span class="tag-dot"></span>
+        <span>IA generativa aterrizada al negocio, no a la moda</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1 class="hero-title">
+            Inteligencia Artificial que
+            <span class="highlight">genera valor real</span>
+            en tu empresa.
+          </h1>
+          <p class="hero-subtitle">
+            En <strong>Genia Labs</strong> ayudamos a empresas chilenas a implementar IA generativa para
+            <strong>automatizar procesos</strong>, <strong>reducir costos</strong> y
+            <strong>acelerar el trabajo de sus equipos</strong>, sin humo ni tecnicismos.
+          </p>
+          <div class="hero-actions">
+            <a href="mailto:contacto@genialabs.cl" class="btn-primary">
+              📩 Agenda diagnóstico GenIA Check (gratis)
+            </a>
+            <button class="btn-secondary" type="button" onclick="window.location.href='mailto:contacto@genialabs.cl?subject=Quiero%20saber%20c%C3%B3mo%20usar%20IA%20en%20mi%20empresa'">
+              👀 No sé por dónde partir
+            </button>
+          </div>
+          <p class="hero-note">
+            Diagnóstico express de 30 minutos para descubrir dónde la IA puede ahorrar más horas y lucas en tu negocio.
+          </p>
+        </div>
+
+        <aside class="hero-card">
+          <div class="hero-card-header">
+            <div class="chip">
+              <span class="chip-dot"></span>
+              <span>Implementaciones reales en empresas chilenas</span>
+            </div>
+            <div class="hero-metric">
+              <span>Potencial de ahorro</span>
+              <strong>50–120 horas/mes</strong>
+            </div>
+          </div>
+          <ul class="hero-list">
+            <li>
+              <div class="hero-list-icon">🧾</div>
+              <span>Automatización de tareas repetitivas en backoffice (copia/pega, planillas, correos, etc.).</span>
+            </li>
+            <li>
+              <div class="hero-list-icon">🤖</div>
+              <span>Asistentes internos con IA para equipos de atención, ventas u operaciones.</span>
+            </li>
+            <li>
+              <div class="hero-list-icon">📊</div>
+              <span>Reportes y análisis generados automáticamente a partir de tus datos.</span>
+            </li>
+          </ul>
+          <p class="hero-footnote">
+            Partimos con un caso de uso concreto, medible y de bajo riesgo. Nada de proyectos eternos que nunca llegan a producción.
+          </p>
+        </aside>
+      </section>
+
+      <section>
+        <h2>¿Qué hacemos en Genia Labs?</h2>
+        <p class="section-subtitle">
+          Aterrizamos la IA generativa al mundo real de tu negocio, en chileno y con foco en resultados.
+        </p>
+        <div class="grid-2">
+          <ul class="bullet-list">
+            <li>
+              <span class="bullet-icon">⚙️</span>
+              <span><strong>Automatización de tareas manuales</strong><br />Flujos donde hoy tu equipo copia información entre sistemas, revisa datos a mano o genera documentos uno por uno.</span>
+            </li>
+            <li>
+              <span class="bullet-icon">🤖</span>
+              <span><strong>Asistentes internos con IA</strong><br />Bots inteligentes que responden preguntas frecuentes, ayudan a buscar información o guían procesos internos.</span>
+            </li>
+            <li>
+              <span class="bullet-icon">📈</span>
+              <span><strong>Reportes y análisis automáticos</strong><br />Resúmenes, comparaciones y hallazgos generados a partir de tus datos, sin depender de horas de Excel.</span>
+            </li>
+          </ul>
+          <ul class="bullet-list">
+            <li>
+              <span class="bullet-icon">📣</span>
+              <span><strong>Marketing generativo</strong><br />Ideas de campañas, copys, posts, emails y piezas creativas apoyadas por IA.</span>
+            </li>
+            <li>
+              <span class="bullet-icon">📄</span>
+              <span><strong>Extracción de datos desde documentos</strong><br />Lectura automatizada de PDFs, correos o formularios para evitar digitación manual.</span>
+            </li>
+            <li>
+              <span class="bullet-icon">🔐</span>
+              <span><strong>Uso seguro y privado de IA</strong><br />Diseñamos soluciones respetando la seguridad, privacidad y contexto regulatorio de tu negocio.</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Beneficios para tu empresa</h2>
+        <p class="section-subtitle">
+          Más allá del hype: beneficios concretos en tiempo, costos y calidad.
+        </p>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <strong>Menos trabajo repetitivo</strong>
+            <span>Libera a tu equipo de las tareas lateras para que se enfoquen en lo que realmente aporta valor.</span>
+          </div>
+          <div class="benefit-card">
+            <strong>Ahorro en costos operacionales</strong>
+            <span>Procesos más rápidos y con menos errores se traducen en lucas ahorradas todos los meses.</span>
+          </div>
+          <div class="benefit-card">
+            <strong>Mejor experiencia de clientes</strong>
+            <span>Respuestas más rápidas, información más clara y procesos más ordenados.</span>
+          </div>
+          <div class="benefit-card">
+            <strong>Decisiones con mejores datos</strong>
+            <span>Reportes y resúmenes que llegan solos, sin pedir “otra vez el informe” al equipo.</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Servicios y planes</h2>
+        <p class="section-subtitle">
+          Partimos simple: un caso de uso concreto, medible y de bajo riesgo. Valores referenciales, ajustables según tamaño y complejidad.
+        </p>
+        <div class="pill" style="margin-bottom: 8px;">
+          💡 Todos los proyectos parten con el diagnóstico <strong>GenIA Check</strong>.
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Servicio</th>
+              <th>Ideal para</th>
+              <th>Desde</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>GenIA Check</strong></td>
+              <td>Empresas curiosas que quieren entender dónde aplicar IA.</td>
+              <td class="price-tag">GRATIS</td>
+            </tr>
+            <tr>
+              <td><strong>Automatización IA</strong></td>
+              <td>Procesos de backoffice, operaciones y tareas repetitivas.</td>
+              <td class="price-tag">$450.000 CLP</td>
+            </tr>
+            <tr>
+              <td><strong>Asistente IA interno</strong></td>
+              <td>Equipos de atención, ventas o soporte que reciben muchas preguntas.</td>
+              <td class="price-tag">$600.000 CLP</td>
+            </tr>
+            <tr>
+              <td><strong>Marketing generativo</strong></td>
+              <td>Equipos de marketing y contenido que quieren producir más y mejor.</td>
+              <td class="price-tag">$350.000 CLP</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-size: 12px; color: var(--muted); margin-top: 8px;">
+          Los valores son referenciales y pueden ajustarse según el alcance, plazos y nivel de integración requerido.
+        </p>
+      </section>
+
+      <section>
+        <h2>Cómo trabajamos</h2>
+        <p class="section-subtitle">
+          Un proceso simple, pensado para probar rápido, medir y escalar si tiene sentido.
+        </p>
+        <ol class="bullet-list" style="list-style: none; counter-reset: steps;">
+          <li>
+            <span class="bullet-icon">1️⃣</span>
+            <span><strong>Diagnóstico (30 minutos, sin costo)</strong><br />Conversamos sobre tu negocio, procesos y principales dolores.</span>
+          </li>
+          <li>
+            <span class="bullet-icon">2️⃣</span>
+            <span><strong>Oportunidades de IA</strong><br />Identificamos dónde la IA puede aportar más valor con menor esfuerzo.</span>
+          </li>
+          <li>
+            <span class="bullet-icon">3️⃣</span>
+            <span><strong>Propuesta concreta</strong><br />Presentamos un mini roadmap con qué haríamos, en cuánto tiempo y qué podrías esperar.</span>
+          </li>
+          <li>
+            <span class="bullet-icon">4️⃣</span>
+            <span><strong>Implementación</strong><br />Desarrollamos, probamos y ajustamos la solución en conjunto con tu equipo.</span>
+          </li>
+          <li>
+            <span class="bullet-icon">5️⃣</span>
+            <span><strong>Acompañamiento</strong><br />Apoyamos la adopción interna, entrenamiento básico y mejoras continuas.</span>
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Contacto</h2>
+        <p class="section-subtitle">
+          Si quieres explorar cómo la IA puede ayudar a tu empresa, conversemos.
+        </p>
+        <p style="font-size: 14px; margin-bottom: 8px;">
+          📧 <a href="mailto:contacto@genialabs.cl">contacto@genialabs.cl</a><br />
+          📍 Santiago, Chile
+        </p>
+        <p style="font-size: 13px; color: var(--muted);">
+          “La IA no viene a reemplazar a las personas, viene a reemplazar tareas. La diferencia está en quién se atreve a usarla primero.”
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Genia Labs. IA que genera valor real para tu negocio.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
