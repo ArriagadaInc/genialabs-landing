@@ -7,3 +7,8 @@ Thumbs.db
 npm-debug.log*
 .env
 .env.*
+
+# Skills de agentes: contenido instalado, no se versiona (equivale a node_modules).
+# El manifiesto skills-lock.json SI se versiona, para poder reinstalarlos.
+.agents/
+.claude/skills/
