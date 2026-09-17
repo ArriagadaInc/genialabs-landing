@@ -5,7 +5,23 @@ Pendientes ordenados por impacto, con lo que hace falta para ejecutar cada uno.
 Cada ficha indica **quién** puede hacerlo: 🧑 requiere una decisión o un dato del negocio,
 🤖 se puede implementar sin insumos externos. Los 🧑 están bloqueados hasta tener esa información.
 
-Última revisión: **2026-08-28**.
+Última revisión: **2026-09-16**, tras enfocar la landing en un nicho y en la Ley 21.719 (ver [`BITACORA.md`](BITACORA.md)).
+
+---
+
+## Antes de publicar la landing nueva 🧑
+
+La landing enfocada está lista en local, pero hay cuatro cosas que no son código:
+
+1. **Política de privacidad:** completar razón social y RUT, confirmar el plazo de conservación
+   (24 meses) **y aplicarlo** borrando los envíos viejos en Netlify → Forms, y pasarla por un abogado.
+2. **Confirmar las promesas publicadas:** diagnóstico en 1–2 semanas, primer proceso en 4–6,
+   **primera reunión y asesoría gratis**, y el ancla «cuesta menos que contratar a una persona
+   más». Los montos ya no se publican (2026-09-17), pero esa frase depende de ellos.
+3. **DMARC** (punto 8 más abajo): con la ley en el discurso, es lo mínimo en casa.
+4. **Caso real con métrica y nombre:** permiso escrito del cliente y **una cifra medida** (por
+   ejemplo, tiempo de asignación de un lead antes y después). El hueco está marcado en
+   `#proyecto`. Es la mejor palanca de conversión que queda.
 
 ---
 
@@ -13,6 +29,11 @@ Cada ficha indica **quién** puede hacerlo: 🧑 requiere una decisión o un dat
 
 Es donde más se puede ganar y **es contenido, no código**. La landing está técnicamente sana;
 lo que la frena es que no da razones para confiar ni para actuar.
+
+> **Ahora pesan más que antes.** La página pasó a ser abiertamente comercial: promete menos
+> horas, menos costos y un plazo de 6 semanas. Una promesa fuerte sin un cliente que la
+> respalde ni una sola cifra real es justo donde un prospecto desconfía. Los puntos 1 y 2 son
+> el siguiente salto de conversión, y son insumos tuyos, no diseño.
 
 ### 1. Prueba social verificable 🧑
 
@@ -37,14 +58,15 @@ porcentaje de reducción de errores, plazo de implementación, volumen procesado
 
 > «Pasamos de 3 horas a 20 minutos al día digitando facturas» convence más que diez adjetivos.
 
-### 3. Precio o plazo de referencia 🧑
+### 3. Precio de referencia 🧑 — decidido: sin montos
 
-**Problema.** La sección se titula **«Inversión accesible»**, promete que «puede ser más accesible
-de lo que imaginas»… y nunca aterriza una cifra. El miedo de toda pyme es *«esto debe costar
-millones»*, y la sección que existe para desactivarlo no lo hace.
+**2026-09-17.** Se decidió **no publicar montos**. Lo accesible se transmite con hechos (primera
+reunión y asesoría gratis, precio cerrado por escrito, diagnóstico descontable) y con el ancla
+«cuesta menos que contratar a una persona más». Si algún día se vuelve a publicar un «desde $X»,
+va en `<section id="planes">`, en la línea `cifra` de cada ficha.
 
-**Qué hace falta.** Un rango publicable («proyectos desde $X») o un plazo («primer proceso andando
-en N semanas»). Filtra prospectos fuera de rango y convierte a los que sí calzan.
+> **Recordatorio:** los plazos y la asesoría gratis son promesas públicas. Si dejan de ser
+> realistas, se cambia la página.
 
 ### 4. Quiénes están detrás 🧑
 
@@ -54,36 +76,33 @@ a Genia Labs.
 **Qué hace falta.** Nombre, rol y trayectoria breve de quien lidera. Con foto es mejor, sin foto
 igual sirve.
 
-### 5. Unificar los CTA 🤖 (necesita visto bueno)
+### 5. ~~Unificar los CTA~~ ✅ hecho
 
-**Problema.** Hay **seis textos distintos** para la misma acción de ir al formulario: «Descubrir
-dónde aplicar IA», «Ver soluciones con IA», «Quiero automatizar algo así», «Cuéntanos qué quieres
-automatizar», «Evaluar una solución accesible», «Explorar una oportunidad con IA». Eso diluye, y
-ninguno dice qué pasa después ni que no tiene costo.
+Los seis textos pasaron a uno: **«Agenda 30 minutos sin costo»**, con la expectativa explícita
+al lado: *«Te decimos si hay caso, aunque no trabajemos juntos.»* La oferta quedó aprobada el
+2026-08-30.
 
-**Propuesta.** Reducir a uno o dos, con la expectativa explícita. Por ejemplo:
-*«Agenda 30 min sin costo — te decimos si hay caso, aunque no trabajemos juntos»*.
+### 6. ~~Reencuadrar el caso destacado~~ ✅ hecho en el rediseño
 
-### 6. Reencuadrar el caso destacado 🧑
-
-**Problema.** El único caso admite que la IA es la «próxima evolución» y que lo hecho es «base
-operacional». Una empresa que vende IA muestra un caso donde la IA todavía no está.
-
-**Propuesta.** Presentarlo como *«así preparamos el terreno»* en vez de como caso de IA. Es honesto
-y deja de competir consigo mismo.
+La sección se llama ahora **«Así preparamos el terreno»** y separa lo que ya funciona
+(«Entregado») de lo que viene («En diseño»). También se quitó la cita sin autor del cierre:
+decía lo mismo pero se leía como autoescrita, porque lo era.
 
 ---
 
 ## Prioridad media — credibilidad y correo
 
-### 7. LinkedIn del pie está roto 🧑
+### 7. LinkedIn y política de privacidad 🧑
 
-**Verificado el 2026-08-28:** `www.linkedin.com/company/genialabs` devuelve **404** (control con una
-empresa real: 200). El enlace del pie lleva a un error de LinkedIn.
+**El rediseño quitó los dos enlaces del pie, porque los dos daban 404.** Era la salida
+reversible: un enlace muerto resta más de lo que suma un enlace de más.
 
-Dos salidas: **crear la página de empresa** (~10 min) y el enlace queda válido, o **quitar el
-enlace** hasta que exista. Un enlace social muerto resta credibilidad justo donde la página ya
-es débil.
+- **LinkedIn.** `www.linkedin.com/company/genialabs` no existe (verificado el 2026-08-28;
+  control con una empresa real: 200). Crear la página de empresa toma ~10 min; hecho eso, el
+  enlace vuelve al pie.
+- **Política de privacidad.** El pie apuntaba a `/privacidad`, que nunca existió. El
+  formulario recoge nombre, empresa, correo y teléfono, así que la página **corresponde**
+  tenerla. Es contenido legal, no diseño: hace falta el texto para publicarla.
 
 ### 8. Registro DMARC 🧑
 

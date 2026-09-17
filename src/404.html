@@ -5,22 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Página no encontrada | Genia Labs</title>
   <meta name="robots" content="noindex, follow" />
-  <meta name="theme-color" content="#0c2a4d" />
+  <meta name="theme-color" content="#14202A" />
   <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
-<body class="font-sans bg-surface-50 text-slate-800 antialiased">
-  <main class="min-h-screen flex items-center justify-center px-4 py-16">
-    <div class="w-full max-w-md bg-white rounded-2xl shadow-float border border-slate-100 p-8 md:p-10 text-center">
-      <p class="text-5xl font-extrabold gradient-text">404</p>
-      <h1 class="text-2xl font-bold text-slate-900 mt-4">No encontramos esta página</h1>
-      <p class="text-slate-600 mt-3 leading-relaxed">
-        Es posible que el enlace haya cambiado o que la dirección esté mal escrita.
-      </p>
-      <a href="/" class="mt-8 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand-900 hover:bg-brand-800 text-white font-medium text-sm transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-900">
-        <i data-lucide="arrow-left" class="w-4 h-4" aria-hidden="true"></i>
-        Volver al inicio
+<body class="bg-papel-100 text-tinta font-sans">
+  <header class="en-tinta bg-tinta border-b border-white/10">
+    <div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8 h-[84px] flex items-center justify-between">
+      <a href="/" class="marca rounded p-1 -ml-1" aria-label="Genia Labs, inicio">
+        <img src="/assets/img/logo-genialabs.svg" alt="" width="44" height="53" class="marca-simbolo" />
+        <span class="marca-texto" aria-hidden="true">
+          <span class="marca-genia">GENIA</span>
+          <span class="marca-labs">LABS</span>
+        </span>
       </a>
+      <a href="/" class="rotulo rotulo-claro hover:text-papel inline-flex items-center gap-1.5">
+        <i data-lucide="arrow-left" class="w-3.5 h-3.5" aria-hidden="true"></i> Volver al inicio
+      </a>
+    </div>
+  </header>
+  <main class="min-h-[calc(100vh-85px)] flex items-center justify-center px-5 py-16">
+    <div class="ficha w-full max-w-lg">
+      <div class="ficha-cab">
+        <p class="rotulo">Dirección solicitada</p>
+        <span class="estado estado-espera">No existe</span>
+      </div>
+      <div class="ficha-cuerpo sm:!p-9">
+        <p class="display-ancho text-tinta-500 text-[1.3rem] mb-1">Error 404</p>
+        <h1 class="display text-[2.2rem] sm:text-[2.6rem] mb-4">Aquí no hay nada.</h1>
+        <p class="text-tinta-700 leading-relaxed">
+          El enlace puede haber cambiado o la dirección puede estar mal escrita. Desde el inicio llegas a todo el
+          sitio.
+        </p>
+        <a href="/" class="boton mt-8">
+          <i data-lucide="arrow-left" class="w-4 h-4" aria-hidden="true"></i>
+          Volver al inicio
+        </a>
+      </div>
     </div>
   </main>
 </body>

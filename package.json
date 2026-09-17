@@ -11,14 +11,17 @@
     "dev": "node scripts/build.mjs && tailwindcss -i ./src/styles.css -o ./dist/assets/css/styles.css --watch",
     "serve": "npx -y serve -l 4173 dist",
     "build:fix": "node scripts/postbuild.mjs",
-    "build:og": "node scripts/og-image.mjs"
+    "build:og": "node scripts/og-image.mjs",
+    "build:iconos": "node scripts/iconos.mjs"
   },
   "devDependencies": {
     "sharp": "^0.35.4",
     "tailwindcss": "^3.4.17"
   },
   "dependencies": {
-    "@fontsource/inter": "^5.1.0",
+    "@fontsource-variable/archivo": "^5.3.0",
+    "@fontsource/chivo": "^5.3.0",
+    "@fontsource/chivo-mono": "^5.3.0",
     "lucide": "1.35.0"
   }
 }

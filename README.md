@@ -43,8 +43,39 @@ Todo lo que el proyecto necesita para funcionar, y quién es dueño de qué.
 |---|---|---|
 | `tailwindcss` | 3.4.x | Compila el CSS. **v3, no v4**: la config usa la API de v3. |
 | `lucide` | 1.35.0 (fija) | Fuente de los iconos. Se inlinean en el build; no llega al navegador. |
-| `@fontsource/inter` | 5.x | Tipografía Inter autoalojada (pesos 300–800, latin). |
+| `@fontsource-variable/archivo` | 5.x | Display. Se usa el archivo del eje **wdth**: el ancho es parte del diseño. |
+| `@fontsource/chivo` | 5.x | Texto corrido (400 y 500). |
+| `@fontsource/chivo-mono` | 5.x | Rótulos y datos (400). |
 | `sharp` | 0.35.x | Solo para regenerar `og-image.png` con `npm run build:og`. |
+
+### Sistema de diseño
+
+La identidad está en `tailwind.config.js` (paleta y familias) y en `src/styles.css`
+(componentes). Dos ideas mandan sobre el resto:
+
+- **El color significa.** `kraft` es el material manual —lo que llega—, `verde` es el
+  estado sistematizado —lo que queda— y también el color de acción; `ambar` es lo
+  pendiente o por vencer, y se usa poco a propósito. No elijas un color por cómo se ve:
+  elige el que diga la verdad sobre ese elemento.
+- **El ancho significa.** Archivo es variable en el eje `wdth`. `.display-ancho` (125 %)
+  es lo disperso; `.display` (78 %) es lo resuelto. Por eso el h1 dice *«Llega
+  desordenado.»* ancho y *«Queda registrado.»* estrecho. No cambies esos anchos sin
+  cambiar también lo que la frase afirma.
+
+Las tres familias son de **Omnibus-Type**, fundición de Buenos Aires. Pesan 133 KB en
+total, 12 KB menos que las seis de Inter que había antes.
+
+**Logo.** La fuente es `public/assets/img/logo-genialabs.svg` (vectorizado del logo original).
+De ahí salen:
+
+- el **logo animado** de la franja antes del formulario: `scripts/build.mjs` lo genera inline
+  donde el HTML dice `<!-- LOGO_ANIMADO -->`, con los electrones girando por sus órbitas (SMIL);
+- el **logo tenue de fondo** (`.logo-fondo`), fijo a la pantalla;
+- favicon e íconos: `npm run build:iconos`;
+- la tarjeta social: `npm run build:og`.
+
+Si cambia el logo, se reemplaza ese SVG y se corren los dos scripts. El letrero de neón que había
+antes quedó en `archive/img/`.
 
 ## Estructura
 
@@ -67,6 +98,14 @@ archive/        originales históricos (no se publican)
 - En `src/styles.css`, los estilos propios van **después** de `@tailwind utilities` a propósito.
   En el HTML original ese bloque `<style>` se cargaba después del CDN de Tailwind y ganaba la
   cascada a igual especificidad. Moverlos a `@layer base` cambiaría el diseño.
+- **Cuidado al mezclar clases propias con utilidades de Tailwind.** Como los estilos
+  propios van después de las utilidades, una clase de componente que declare `display`
+  o `color` **le gana** a la utilidad equivalente. Ya pasó tres veces: `.tab-content`
+  contra `.grid`, `.display` contra `text-kraft-600`, y `.boton` contra `hidden`.
+  Por eso las clases `.display*` no declaran `color`. Y **la visibilidad responsive
+  (`hidden md:block`) va siempre en un contenedor, nunca sobre `.boton` u otra clase
+  propia**: una primera corrección con `.boton.hidden { display: none }` le ganó también
+  a `md:inline-flex` y dejó el botón de la cabecera invisible en escritorio.
 - Los iconos se escriben como `<i data-lucide="nombre">` y el build los convierte a SVG estático.
   No se carga JavaScript de iconos en producción.
 - El CSS se publica como `styles.<hash>.css`. El hash sale del contenido, así que al
