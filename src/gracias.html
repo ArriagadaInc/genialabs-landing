@@ -3,27 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mensaje recibido | Genia Labs</title>
-  <meta name="description" content="Recibimos tu mensaje. Te responderemos a la brevedad." />
+  <title>Reunión solicitada | Genia Labs</title>
+  <meta name="description" content="Recibimos tu solicitud. Te respondemos dentro de las próximas 24 horas hábiles." />
   <meta name="robots" content="noindex, follow" />
-  <meta name="theme-color" content="#0c2a4d" />
+  <meta name="theme-color" content="#14202A" />
   <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
-<body class="font-sans bg-surface-50 text-slate-800 antialiased">
-  <main class="min-h-screen flex items-center justify-center px-4 py-16">
-    <div class="w-full max-w-md bg-white rounded-2xl shadow-float border border-slate-100 p-8 md:p-10 text-center">
-      <div class="w-16 h-16 rounded-full bg-brand-50 border border-brand-200 flex items-center justify-center mx-auto mb-6">
-        <i data-lucide="check" class="w-8 h-8 text-brand-600" aria-hidden="true"></i>
-      </div>
-      <h1 class="text-2xl md:text-3xl font-bold text-slate-900">Mensaje recibido</h1>
-      <p class="text-slate-600 mt-3 leading-relaxed">
-        Gracias por escribirnos. Revisaremos tu caso y te responderemos dentro de las próximas 24&nbsp;horas hábiles.
-      </p>
-      <a href="/" class="mt-8 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand-900 hover:bg-brand-800 text-white font-medium text-sm transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-900">
-        <i data-lucide="arrow-left" class="w-4 h-4" aria-hidden="true"></i>
-        Volver al inicio
+<body class="bg-papel-100 text-tinta font-sans">
+  <header class="en-tinta bg-tinta border-b border-white/10">
+    <div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8 h-[84px] flex items-center justify-between">
+      <a href="/" class="marca rounded p-1 -ml-1" aria-label="Genia Labs, inicio">
+        <img src="/assets/img/logo-genialabs.svg" alt="" width="44" height="53" class="marca-simbolo" />
+        <span class="marca-texto" aria-hidden="true">
+          <span class="marca-genia">GENIA</span>
+          <span class="marca-labs">LABS</span>
+        </span>
       </a>
+      <a href="/" class="rotulo rotulo-claro hover:text-papel inline-flex items-center gap-1.5">
+        <i data-lucide="arrow-left" class="w-3.5 h-3.5" aria-hidden="true"></i> Volver al inicio
+      </a>
+    </div>
+  </header>
+  <main class="min-h-[calc(100vh-85px)] flex items-center justify-center px-5 py-16">
+    <div class="ficha w-full max-w-lg">
+      <div class="ficha-cab">
+        <p class="rotulo rotulo-verde">Reunión y asesoría gratis</p>
+        <span class="estado">Recibida</span>
+      </div>
+      <div class="ficha-cuerpo sm:!p-9">
+        <h1 class="display text-[2.2rem] sm:text-[2.6rem] mb-4">Listo. Te contactamos.</h1>
+        <p class="text-tinta-700 leading-relaxed">
+          Revisamos lo que nos contaste y te escribimos dentro de las próximas 24&nbsp;horas hábiles para
+          coordinar tu reunión. Gratis y sin compromiso.
+        </p>
+        <p class="text-[0.9375rem] text-tinta-500 leading-relaxed mt-4">
+          Si prefieres adelantar algo, escríbenos a
+          <a href="mailto:contacto@genialabs.cl" class="text-verde underline underline-offset-4">contacto@genialabs.cl</a>.
+        </p>
+        <a href="/" class="boton-sec mt-8">
+          <i data-lucide="arrow-left" class="w-4 h-4" aria-hidden="true"></i>
+          Volver al inicio
+        </a>
+      </div>
     </div>
   </main>
 </body>

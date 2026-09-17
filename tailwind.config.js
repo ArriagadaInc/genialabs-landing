@@ -3,38 +3,30 @@ module.exports = {
   content: ['./src/**/*.html'],
   theme: {
     extend: {
-      fontFamily: { sans: ['Inter', 'sans-serif'] },
+      fontFamily: {
+        // Archivo, Chivo y Chivo Mono son de Omnibus-Type (Buenos Aires).
+        // Se autoalojan; ver los @font-face al inicio de src/styles.css.
+        display: ['"Archivo Variable"', 'Archivo', 'system-ui', 'sans-serif'],
+        sans: ['Chivo', 'system-ui', 'sans-serif'],
+        mono: ['"Chivo Mono"', 'ui-monospace', 'monospace'],
+      },
       colors: {
-        brand: {
-          50: '#f0f7ff',
-          100: '#e0effe',
-          200: '#bae0fd',
-          500: '#0284c7',
-          600: '#0369a1',
-          700: '#075985',
-          800: '#082f49',
-          900: '#0c2a4d',
-        },
-        ia: {
-          50: '#f5f3ff',
-          100: '#ede9fe',
-          200: '#ddd6fe',
-          500: '#8b5cf6',
-          600: '#7c3aed',
-        },
-        surface: {
-          50: '#F8FAFC',
-          100: '#F1F5F9',
-          200: '#E2E8F0',
-          800: '#1E293B',
-          900: '#0F172A',
-        },
+        // La paleta es semantica, no decorativa:
+        //   kraft = material manual (lo que llega)
+        //   verde = estado sistematizado (lo que queda). Tambien es el color de accion.
+        //   ambar = pendiente o por vencer. Uso escaso, a proposito.
+        tinta:  { DEFAULT: '#14202A', 700: '#2C3D4A', 500: '#546471', 300: '#8B99A3' },
+        papel:  { DEFAULT: '#FBF9F4', 100: '#F4F0E7', 200: '#E9E3D6' },
+        kraft:  { DEFAULT: '#E3D5BC', 600: '#C9B490', 800: '#9C855C' },
+        verde:  { DEFAULT: '#0C6B4F', 600: '#0A5741', 300: '#5FA98D', 100: '#DCEBE2' },
+        ambar:  { DEFAULT: '#B4560F', 100: '#F6E7D6', 300: '#E8A66B' },
       },
-      boxShadow: {
-        subtle: '0 4px 20px -2px rgba(0,0,0,0.03)',
-        float: '0 20px 40px -10px rgba(12, 42, 77, 0.08)',
-        'ia-glow': '0 0 20px rgba(139, 92, 246, 0.15)',
+      borderRadius: {
+        // Fichas y registros, no pastillas: casi recto en todo el sitio.
+        DEFAULT: '3px',
+        ficha: '3px',
       },
+      maxWidth: { pagina: '1180px' },
     },
   },
   plugins: [],

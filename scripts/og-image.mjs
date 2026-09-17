@@ -1,61 +1,61 @@
 import fs from 'node:fs';
 import sharp from 'sharp';
 
-// Tarjeta Open Graph 1200x630 con la identidad de la marca.
-// Se rasteriza a PNG porque WhatsApp/LinkedIn/Facebook no renderizan SVG.
+// Tarjeta Open Graph 1200x630. Se rasteriza a PNG porque WhatsApp, LinkedIn y
+// Facebook no renderizan SVG.
+//
+// La tarjeta NO usa Archivo ni Chivo: sharp rasteriza con las fuentes
+// instaladas en el sistema, y estas se sirven desde /assets/fonts, no estan
+// instaladas. Por eso la identidad la cargan aqui el color y la
+// composicion, no la tipografia.
+// El contraste de ancho del titular se aproxima con letter-spacing.
+
+// Simbolo del logo, escalado a un alto dado. Los ids se prefijan para poder
+// incluirlo mas de una vez en el mismo SVG.
+const logo = fs.readFileSync('public/assets/img/logo-genialabs.svg', 'utf8');
+const [, , alto] = logo.match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/).map(Number);
+const interior = logo.replace(/^[\s\S]*?<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '');
+const simbolo = (pre, h) =>
+  `<g transform="scale(${(h / alto).toFixed(5)})">${interior.replace(/gl-/g, `gl${pre}-`)}</g>`;
+
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0c2a4d"/>
-      <stop offset="55%" stop-color="#0b2545"/>
-      <stop offset="100%" stop-color="#082f49"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#38bdf8"/>
-      <stop offset="100%" stop-color="#8b5cf6"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="glow2" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#0284c7" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
+  <rect width="1200" height="630" fill="#14202A"/>
 
-  <rect width="1200" height="630" fill="url(#bg)"/>
-  <circle cx="1010" cy="140" r="330" fill="url(#glow)"/>
-  <circle cx="150" cy="600" r="300" fill="url(#glow2)"/>
+  <!-- Marca: simbolo vectorial + logotipo. El simbolo va dos veces (chico
+       arriba, grande a la derecha), cada copia con sus ids renombrados. -->
+  <g transform="translate(80,52)">
+    ${simbolo('a', 64)}
+    <text x="68" y="36" font-family="Segoe UI, Arial, Helvetica, sans-serif"
+          font-size="34" font-weight="800" fill="#FFFFFF" letter-spacing="1.5">GENIA</text>
+    <text x="189" y="58" text-anchor="end" font-family="Segoe UI, Arial, Helvetica, sans-serif"
+          font-size="15" font-weight="700" fill="#4FDFC5" letter-spacing="1.5">LABS</text>
+  </g>
+  <g transform="translate(905,392)">${simbolo('b', 200)}</g>
 
-  <!-- Marca -->
-  <g transform="translate(90,88)">
-    <g stroke="#38bdf8" stroke-width="2.6" stroke-linecap="round" fill="none" transform="scale(1.9)">
-      <circle cx="12" cy="12" r="3"/>
-      <path d="M12 3v3"/><path d="M12 18v3"/>
-      <path d="M3 12h3"/><path d="M18 12h3"/>
-      <path d="M5.6 5.6l2.2 2.2"/><path d="M16.2 16.2l2.2 2.2"/>
-    </g>
-    <text x="70" y="34" font-family="Segoe UI, Arial, Helvetica, sans-serif"
-          font-size="34" font-weight="700" fill="#ffffff" letter-spacing="0.5">Genia Labs</text>
+  <!-- Gancho: la frase de la marca y los beneficios -->
+  <rect x="80" y="176" width="560" height="40" rx="2" fill="#F6E7D6" stroke="#C98A4B"/>
+  <text x="100" y="202" font-family="Consolas, Courier New, monospace"
+        font-size="17" fill="#98490C" letter-spacing="1.6">MENOS HORAS HOMBRE · MENOS COSTOS · MENOS PAPELEO</text>
+  <text x="80" y="310" font-family="Segoe UI, Arial, Helvetica, sans-serif"
+        font-size="64" font-weight="700" fill="#FBF9F4" letter-spacing="-2">Lleva la inteligencia artificial</text>
+  <text x="80" y="392" font-family="Segoe UI, Arial, Helvetica, sans-serif"
+        font-size="64" font-weight="700" fill="#5FA98D" letter-spacing="-2">a tu pyme.</text>
+
+  <!-- Anclas comerciales -->
+  <g font-family="Consolas, Courier New, monospace">
+    <rect x="80" y="436" width="380" height="104" rx="3" fill="#FFFFFF"/>
+    <rect x="80" y="436" width="5" height="104" fill="#0C6B4F"/>
+    <text x="108" y="472" font-size="15" fill="#546471" letter-spacing="1.5">LEY 21.719 · RIGE EL</text>
+    <text x="108" y="518" font-size="36" font-weight="700" fill="#B4560F">1 dic 2026</text>
+
+    <rect x="488" y="436" width="340" height="104" rx="3" fill="#FFFFFF"/>
+    <rect x="488" y="436" width="5" height="104" fill="#0C6B4F"/>
+    <text x="516" y="472" font-size="15" fill="#546471" letter-spacing="1.5">PRIMERA REUNIÓN Y ASESORÍA</text>
+    <text x="516" y="518" font-size="36" font-weight="700" fill="#0C6B4F">Gratis</text>
   </g>
 
-  <!-- Titular -->
-  <text x="90" y="285" font-family="Segoe UI, Arial, Helvetica, sans-serif"
-        font-size="72" font-weight="700" fill="#ffffff">Lleva la inteligencia</text>
-  <text x="90" y="371" font-family="Segoe UI, Arial, Helvetica, sans-serif"
-        font-size="72" font-weight="700" fill="#ffffff">artificial a tu pyme</text>
-
-  <rect x="90" y="404" width="132" height="6" rx="3" fill="url(#accent)"/>
-
-  <!-- Bajada -->
-  <text x="90" y="470" font-family="Segoe UI, Arial, Helvetica, sans-serif"
-        font-size="31" font-weight="400" fill="#bae0fd">Automatiza tareas manuales, ordena tus datos</text>
-  <text x="90" y="512" font-family="Segoe UI, Arial, Helvetica, sans-serif"
-        font-size="31" font-weight="400" fill="#bae0fd">y toma mejores decisiones.</text>
-
-  <text x="90" y="580" font-family="Segoe UI, Arial, Helvetica, sans-serif"
-        font-size="26" font-weight="600" fill="#7dd3fc" letter-spacing="1">genialabs.cl</text>
+  <text x="80" y="588" font-family="Consolas, Courier New, monospace"
+        font-size="22" fill="#5FA98D" letter-spacing="1.5">genialabs.cl</text>
 </svg>`;
 
 fs.writeFileSync('public/assets/img/og-image.svg', svg);

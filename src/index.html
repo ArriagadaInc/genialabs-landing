@@ -4,919 +4,1018 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Genia Labs | Lleva la inteligencia artificial a tu pyme</title>
-  <meta name="description" content="Genia Labs ayuda a las pymes a incorporar inteligencia artificial de forma accesible y responsable, resolviendo problemas concretos y preparando su operación para crecer." />
+  <meta name="description" content="Inteligencia artificial para pymes chilenas: menos horas hombre, menos costos, menos papeleo y menos riesgo operacional, con tus datos preparados para la Ley 21.719. No necesitas estar preparado: primera reunión y asesoría gratis." />
   <link rel="canonical" href="https://genialabs.cl/" />
-  
-  <!-- Ícono y Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDM2OWExIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIzIj48L2NpcmNsZT48cGF0aCBkPSJNMTIgM3YzIj48L3BhdGg+PHBhdGggZD0iTTEyIDE4djMiPjwvcGF0aD48cGF0aCBkPSJNMyAxMmgzIj48L3BhdGg+PHBhdGggZD0iTTE4IDEyaDMiPjwvcGF0aD48cGF0aCBkPSJNNS42IDUuNmwyLjIgMi4yIj48L3BhdGg+PHBhdGggZD0iTTE2LjIgMTYuMmwyLjIgMi4yIj48L3BhdGg+PC9zdmc+" />
-  
+
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+
   <!-- Open Graph / Meta -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Genia Labs | Lleva la inteligencia artificial a tu pyme" />
-  <meta property="og:description" content="Transformamos tareas manuales y datos dispersos en procesos inteligentes. Adopción de IA accesible y práctica para empresas chilenas." />
+  <meta property="og:title" content="Lleva la inteligencia artificial a tu pyme | Genia Labs" />
+  <meta property="og:description" content="Menos horas hombre, menos costos, menos papeleo y menos riesgo operacional. Con tus datos preparados para la Ley 21.719. Primera reunión y asesoría gratis." />
   <meta property="og:url" content="https://genialabs.cl/" />
   <meta property="og:locale" content="es_CL" />
   <meta property="og:image" content="https://genialabs.cl/assets/img/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Genia Labs - Inteligencia artificial aplicada a pymes" />
+  <meta property="og:image:alt" content="Genia Labs - Lleva la inteligencia artificial a tu pyme" />
   <meta property="og:site_name" content="Genia Labs" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Genia Labs | Lleva la inteligencia artificial a tu pyme" />
-  <meta name="twitter:description" content="Transformamos tareas manuales y datos dispersos en procesos inteligentes. Adopcion de IA accesible y practica para empresas chilenas." />
+  <meta name="twitter:title" content="Lleva la inteligencia artificial a tu pyme | Genia Labs" />
+  <meta name="twitter:description" content="Menos horas hombre, menos costos, menos papeleo y menos riesgo operacional. Con tus datos preparados para la Ley 21.719. Primera reunión y asesoría gratis." />
   <meta name="twitter:image" content="https://genialabs.cl/assets/img/og-image.png" />
-  <meta name="theme-color" content="#0c2a4d" />
+  <meta name="theme-color" content="#14202A" />
   <meta name="robots" content="index, follow" />
 
-  <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Genia Labs",
-    "description": "Socio tecnológico especializado en implementación de Inteligencia Artificial y automatización para pymes chilenas.",
+    "description": "Inteligencia artificial y automatización para pymes chilenas: menos horas hombre, papeleo y riesgo operacional, con datos preparados para la Ley 21.719.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Santiago",
       "addressCountry": "CL"
     },
     "email": "contacto@genialabs.cl",
-    "url": "https://genialabs.cl"
+    "url": "https://genialabs.cl",
+    "logo": "https://genialabs.cl/assets/img/icon-512.png",
+    "image": "https://genialabs.cl/assets/img/og-image.png"
   }
   </script>
 
-  <!-- CSS compilado (Tailwind + estilos propios) y tipografia autoalojada -->
-  <link rel="preload" href="/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/assets/fonts/inter-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/chivo-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/assets/css/styles.css" />
 
-
+  <!-- Marca que hay JavaScript ANTES del primer pintado. Las animaciones solo
+       ocultan contenido si esta clase existe; sin JS la pagina se ve completa. -->
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 
-<body class="bg-white text-slate-800 font-sans selection:bg-brand-100 selection:text-brand-900">
+<!--
+  NUMEROS DE ESTA PAGINA. Todos tienen fuente; si cambian, se cambian aqui.
+    - Plazos: oferta de Genia Labs (diagnostico, primer proceso, operacion).
+    - SIN MONTOS (decision 2026-09-17). Lo accesible se transmite con hechos
+      (primera reunion y asesoria gratis, precio cerrado por escrito, diagnostico
+      descontable) y con un ancla: "cuesta menos que contratar a una persona mas",
+      que se sostiene con los precios internos (primer proceso + 12 meses de
+      operacion ~ la mitad del costo anual de un administrativo). Si los precios
+      suben, revisar esa frase antes que nada.
+    - 1 dic 2026, 30 dias, 20.000 UTM: Ley 21.719.
+    - Calculadora: los numeros son del visitante; los valores iniciales son
+      solo un punto de partida editable.
+    - Demo, matriz y panel del caso: maquetas ilustrativas, no resultados.
+  NO agregar resultados de clientes ("X% menos costos", "N horas ahorradas")
+  mientras no esten medidos. El hueco para la metrica real del caso esta
+  marcado en la seccion #proyecto.
+-->
 
-  <header class="sticky top-0 z-50 glass-panel border-b border-slate-100 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
-        
-        <a href="/" class="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-lg p-1" aria-label="Genia Labs Inicio">
-          <div class="w-9 h-9 rounded-xl bg-brand-900 flex items-center justify-center text-white shadow-sm transition-transform duration-300 group-hover:-translate-y-0.5">
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="3"></circle>
-              <path d="M12 3v3"></path>
-              <path d="M12 18v3"></path>
-              <path d="M3 12h3"></path>
-              <path d="M18 12h3"></path>
-              <path d="M5.6 5.6l2.2 2.2"></path>
-              <path d="M16.2 16.2l2.2 2.2"></path>
-            </svg>
-          </div>
-          <span class="text-xl font-bold tracking-tight text-brand-900">
-            Genia<span class="text-brand-600 font-medium">Labs</span>
+<body class="bg-papel text-tinta font-sans selection:bg-verde-100 selection:text-verde-600">
+
+  <!-- Logo de fondo: fijo y muy tenue, persiste al hacer scroll. Va por encima
+       del contenido (las secciones tienen fondo opaco) pero sin recibir clics. -->
+  <div class="logo-fondo" aria-hidden="true"></div>
+
+  <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:bg-tinta focus:text-papel focus:px-4 focus:py-2 focus:rounded">
+    Saltar al contenido
+  </a>
+
+  <!-- Cabecera oscura: continua la portada y es el fondo para el que se diseno
+       el logo (degradado magenta-cian sobre azul noche). -->
+  <header class="en-tinta sticky top-0 z-50 bg-tinta border-b border-white/10">
+    <div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-[84px]">
+
+        <a href="/" class="marca rounded p-1 -ml-1" aria-label="Genia Labs, inicio">
+          <img src="/assets/img/logo-genialabs.svg" alt="" width="44" height="53" class="marca-simbolo" fetchpriority="high" />
+          <span class="marca-texto" aria-hidden="true">
+            <span class="marca-genia">GENIA</span>
+            <span class="marca-labs">LABS</span>
           </span>
         </a>
 
-        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-600" aria-label="Navegación principal">
-          <a href="#soluciones" class="hover:text-brand-600 transition-colors py-1 rounded-sm focus:outline-none">Soluciones con IA</a>
-          <a href="#casos-pymes" class="hover:text-brand-600 transition-colors py-1 rounded-sm focus:outline-none">Casos de uso</a>
-          <a href="#inversion" class="hover:text-brand-600 transition-colors py-1 rounded-sm focus:outline-none">Inversión accesible</a>
-          <a href="#metodo" class="hover:text-brand-600 transition-colors py-1 rounded-sm focus:outline-none">Cómo funciona</a>
-          <a href="#proyecto" class="hover:text-brand-600 transition-colors py-1 rounded-sm focus:outline-none">Proyecto real</a>
+        <nav class="hidden lg:flex items-center gap-7" aria-label="Navegación principal">
+          <a href="#beneficios" class="rotulo rotulo-claro hover:text-papel transition-colors">Beneficios</a>
+          <a href="#ley" class="rotulo rotulo-claro hover:text-papel transition-colors">Ley de datos</a>
+          <a href="#calculadora" class="rotulo rotulo-claro hover:text-papel transition-colors">Calculadora</a>
+          <a href="#planes" class="rotulo rotulo-claro hover:text-papel transition-colors">Cómo partimos</a>
+          <a href="#proyecto" class="rotulo rotulo-claro hover:text-papel transition-colors">Caso real</a>
         </nav>
 
-        <div class="hidden md:flex items-center gap-4">
-          <a href="#contacto" class="px-5 py-2.5 rounded-xl bg-brand-900 hover:bg-brand-800 text-white font-medium text-sm transition-all shadow-sm">
-            Descubrir dónde aplicar IA
-          </a>
-        </div>
-
-        <div class="flex lg:hidden">
-          <button id="mobileMenuBtn" type="button" class="p-2 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menú">
+        <!-- La visibilidad va en un contenedor y no en el boton: .boton declara
+             display, y ponerle hidden/md:inline-flex encima termina en una
+             pelea de especificidad que se pierde en algun tamano. -->
+        <div class="flex items-center gap-1">
+          <div class="hidden md:block">
+            <a href="#contacto" class="boton-vivo !py-2.5 !px-4 !text-sm">Asesoría gratis</a>
+          </div>
+          <button id="mobileMenuBtn" type="button" class="lg:hidden p-2 -mr-2 text-papel rounded" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menú">
             <i data-lucide="menu" class="w-6 h-6" aria-hidden="true"></i>
           </button>
         </div>
       </div>
     </div>
 
-    <!-- Menú Móvil -->
-    <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-100 bg-white px-4 py-6 shadow-xl absolute w-full" aria-hidden="true">
-      <div class="flex flex-col gap-4 text-base font-medium text-slate-700">
-        <a href="#soluciones" class="mobile-nav-link hover:text-brand-600 p-2 rounded-md">Soluciones con IA</a>
-        <a href="#casos-pymes" class="mobile-nav-link hover:text-brand-600 p-2 rounded-md">Casos de uso</a>
-        <a href="#inversion" class="mobile-nav-link hover:text-brand-600 p-2 rounded-md">Inversión accesible</a>
-        <a href="#metodo" class="mobile-nav-link hover:text-brand-600 p-2 rounded-md">Cómo funciona</a>
-        <a href="#proyecto" class="mobile-nav-link hover:text-brand-600 p-2 rounded-md">Proyecto real</a>
-        <div class="pt-4 mt-2 border-t border-slate-100">
-          <a href="#contacto" class="mobile-nav-link w-full block text-center py-3 rounded-xl bg-brand-900 text-white font-medium">
-            Descubrir dónde aplicar IA
-          </a>
-        </div>
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-white/10 bg-tinta px-5 py-5 absolute w-full shadow-lg" aria-hidden="true">
+      <div class="flex flex-col divide-y divide-white/10">
+        <a href="#beneficios" class="mobile-nav-link rotulo rotulo-claro hover:text-papel py-3">Beneficios</a>
+        <a href="#ley" class="mobile-nav-link rotulo rotulo-claro hover:text-papel py-3">Ley de datos</a>
+        <a href="#calculadora" class="mobile-nav-link rotulo rotulo-claro hover:text-papel py-3">Calculadora</a>
+        <a href="#planes" class="mobile-nav-link rotulo rotulo-claro hover:text-papel py-3">Cómo partimos</a>
+        <a href="#proyecto" class="mobile-nav-link rotulo rotulo-claro hover:text-papel py-3">Caso real</a>
       </div>
+      <a href="#contacto" class="mobile-nav-link boton-vivo w-full mt-5">Agenda tu asesoría gratis</a>
     </div>
   </header>
 
-  <main>
-    <section class="relative pt-16 pb-20 md:pt-28 md:pb-28 overflow-hidden bg-mesh border-b border-slate-100">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          
-          <!-- Copy Hero -->
-          <div class="text-center md:text-left space-y-8">
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-ia-50 text-ia-600 text-sm font-medium border border-ia-100" role="text">
-              <i data-lucide="sparkles" class="w-3.5 h-3.5" aria-hidden="true"></i>
-              <span>Inteligencia artificial accesible para pymes</span>
-            </div>
+  <main id="contenido">
 
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.15]">
-              Lleva la <span class="gradient-text">inteligencia artificial</span> a tu pyme.
+    <!-- =====================================================================
+         Portada.
+         Titular fijo (la frase de la marca) + una frase rotativa que recorre
+         los cinco dolores: papeleo, horas hombre, costos, riesgo operacional y
+         la ley. A la derecha, la demo: tareas reales de una pyme resueltas por
+         la IA, sumando minutos de trabajo manual evitados.
+         Sin JS o con movimiento reducido queda el estado estatico del HTML.
+         ===================================================================== -->
+    <section class="en-tinta hero-vivo text-papel border-b border-tinta-700 overflow-hidden">
+      <div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8 pt-12 pb-16 md:pt-16 md:pb-20 lg:pt-20 lg:pb-24">
+        <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-14 items-center">
+
+          <div>
+            <p class="distintivo mb-5">
+              <span class="w-1.5 h-1.5 rounded-full bg-ambar-300 shrink-0" aria-hidden="true"></span>
+              Tu competencia ya está usando IA
+            </p>
+            <h1 class="display text-papel text-[2.7rem] sm:text-[3.7rem] md:text-[4.3rem] lg:text-[3.1rem] xl:text-[3.7rem]">
+              Lleva la <span class="text-verde-300">inteligencia artificial</span> a tu pyme.
             </h1>
 
-            <p class="text-lg text-slate-600 leading-relaxed max-w-xl font-light mx-auto md:mx-0">
-              Transformamos tareas manuales, documentos, datos y oportunidades comerciales en procesos inteligentes que ayudan a tu empresa a ahorrar tiempo, reducir costos y crecer.
+            <p class="display-ancho text-papel-200/80 text-[1.2rem] sm:text-[1.55rem] lg:text-[1.3rem] xl:text-[1.5rem] mt-4 mb-6 min-h-[2.6em] sm:min-h-[1.3em]" aria-hidden="true">
+              Y olvídate <span class="text-verde-300" data-rotador>del papeleo.</span>
+            </p>
+            <p class="sr-only">
+              Y olvídate del papeleo, de las horas hombre perdidas, de los costos que no ves, del riesgo operacional
+              y de improvisar con la nueva ley de datos.
             </p>
 
-            <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center md:justify-start gap-4 pt-2">
-              <a href="#contacto" class="px-8 py-4 rounded-xl bg-brand-900 hover:bg-brand-800 text-white font-medium text-base transition-all shadow-sm flex items-center justify-center gap-2 group">
-                <span>Descubrir dónde aplicar IA</span>
-                <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true"></i>
+            <p class="text-papel-200/85 text-[1.0625rem] sm:text-[1.125rem] leading-relaxed max-w-[35rem]">
+              Automatizamos lo que hoy se hace a mano —facturas, pedidos, cotizaciones, correos y planillas— con
+              inteligencia artificial que trabaja todo el día.
+              <strong class="font-medium text-papel">Tu equipo recupera horas, bajas costos y tus datos quedan preparados para la nueva ley.</strong>
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-3 mt-8">
+              <a href="#contacto" class="boton-vivo">
+                Agenda tu asesoría gratis
+                <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
               </a>
-              <a href="#soluciones" class="px-8 py-4 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-medium text-base transition-all flex items-center justify-center gap-2">
-                Ver soluciones con IA
+              <a href="#calculadora" class="boton-fantasma">Calcula cuántas horas pierdes</a>
+            </div>
+
+            <p class="mt-5 text-[0.9375rem] text-papel-200/80">
+              <strong class="font-medium text-papel">Primera reunión y asesoría gratis</strong> · No necesitas saber de IA ni llegar preparado
+            </p>
+            <!-- El texto del HTML es el que ven buscadores y quien no tiene JS;
+                 el script lo cambia por la cuenta regresiva en dias. -->
+            <p class="mt-2 rotulo rotulo-claro flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-ambar-300 shrink-0" aria-hidden="true"></span>
+              <span>Ley 21.719 · <span data-cuenta-regresiva>rige desde el 1 de diciembre de 2026</span></span>
+            </p>
+          </div>
+
+          <!-- ---------------- Demo: tu pyme con IA ---------------- -->
+          <div data-demo class="relative">
+            <div class="rounded border border-white/10 bg-[#0F1A22]/85 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] overflow-hidden">
+
+              <div class="flex items-center justify-between gap-3 px-4 py-3 border-b border-white/10">
+                <p class="rotulo text-papel">Tu pyme con IA</p>
+                <div class="flex items-center gap-4">
+                  <span class="rotulo text-verde-300 inline-flex items-center gap-2"><span class="punto-vivo" aria-hidden="true"></span>Demo en vivo</span>
+                  <button type="button" data-demo-pausa class="rotulo rotulo-claro hover:text-papel" aria-pressed="false">Pausar</button>
+                </div>
+              </div>
+
+              <p class="sr-only">
+                Demostración animada: facturas, pedidos, consultas de clientes, alertas de vencimiento y solicitudes
+                de la Ley 21.719 llegan por correo, WhatsApp y formularios; la inteligencia artificial las clasifica,
+                las resuelve o las deriva a la persona correcta, y suma los minutos de trabajo manual evitados.
+              </p>
+
+              <div aria-hidden="true">
+                <div class="grid grid-cols-2 border-b border-white/10">
+                  <div class="px-4 py-3">
+                    <p class="rotulo rotulo-claro mb-1">Tareas resueltas</p>
+                    <p class="cifra text-[1.9rem] text-papel" data-demo-contador>3</p>
+                  </div>
+                  <div class="px-4 py-3 border-l border-white/10">
+                    <p class="rotulo rotulo-claro mb-1">Trabajo manual evitado</p>
+                    <p class="cifra text-[1.9rem] text-verde-300" data-demo-minutos>30 min</p>
+                  </div>
+                </div>
+
+                <div class="p-4">
+                  <p class="rotulo rotulo-claro mb-2">Entrando</p>
+                  <div class="artefacto entrante min-h-[124px]" data-demo-entrante>
+                    <p class="rotulo rotulo-kraft mb-1.5" data-demo-canal>Correo · recién llegado</p>
+                    <p class="text-sm text-[#4A3E28] leading-snug italic" data-demo-mensaje>«Adjunto factura N° 1043 por $1.248.900.»</p>
+                    <div class="mt-2.5 flex flex-wrap items-center gap-1.5 min-h-[22px]" data-demo-tags>
+                      <span class="marca-ia">IA</span>
+                      <span class="estado">Factura</span>
+                      <span class="estado estado-neutro">Datos extraídos</span>
+                    </div>
+                  </div>
+
+                  <p class="rotulo rotulo-claro mt-5 mb-2">Resuelto</p>
+                  <ul class="space-y-2 h-[258px] overflow-hidden" data-demo-lista>
+                    <li class="flex items-center gap-3 rounded bg-white/[0.04] border border-white/10 px-3 py-2.5">
+                      <span class="w-6 h-6 rounded-full bg-verde-300/15 text-verde-300 grid place-items-center shrink-0"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                      <div class="min-w-0 flex-1">
+                        <p class="text-[0.8125rem] text-papel truncate">Consulta respondida</p>
+                        <p class="rotulo rotulo-claro truncate">Chat interno → Asistente IA</p>
+                      </div>
+                      <span class="dato text-[0.8125rem] text-verde-300 shrink-0">−12 min</span>
+                    </li>
+                    <li class="flex items-center gap-3 rounded bg-white/[0.04] border border-white/10 px-3 py-2.5">
+                      <span class="w-6 h-6 rounded-full bg-verde-300/15 text-verde-300 grid place-items-center shrink-0"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                      <div class="min-w-0 flex-1">
+                        <p class="text-[0.8125rem] text-papel truncate">Orden OC-2291 validada</p>
+                        <p class="rotulo rotulo-claro truncate">Formulario web → Bodega</p>
+                      </div>
+                      <span class="dato text-[0.8125rem] text-verde-300 shrink-0">−8 min</span>
+                    </li>
+                    <li class="flex items-center gap-3 rounded bg-white/[0.04] border border-white/10 px-3 py-2.5">
+                      <span class="w-6 h-6 rounded-full bg-ambar-300/15 text-ambar-300 grid place-items-center shrink-0"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></span>
+                      <div class="min-w-0 flex-1">
+                        <p class="text-[0.8125rem] text-papel truncate">Póliza por vencer</p>
+                        <p class="rotulo rotulo-claro truncate">Alerta → Operaciones</p>
+                      </div>
+                      <span class="dato text-[0.8125rem] text-ambar-300 shrink-0">−10 min</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         Ley 21.719, bien destacada: franja ambar con la cuenta regresiva en
+         grande. La urgencia es la FECHA; la multa va en el texto, no de titular.
+         Sin JS se lee "Rige desde el 1 dic de 2026".
+         ===================================================================== -->
+    <section id="ley" class="bg-ambar-100 border-b border-[#E7C9A6]">
+      <div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8 py-14 md:py-20">
+        <div class="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-8 lg:gap-16 items-center">
+
+          <div class="lg:pr-14 lg:border-r lg:border-[#E7C9A6]">
+            <p class="rotulo text-[#98490C] mb-1" data-dias-rotulo>Rige desde el</p>
+            <p class="cifra text-ambar text-[6.5rem] sm:text-[8rem] lg:text-[10rem] leading-[0.85]" data-dias-numero>1 dic</p>
+            <p class="rotulo text-[#98490C] mt-3" data-dias-pie>de 2026</p>
+          </div>
+
+          <div>
+            <p class="rotulo text-[#98490C] mb-3">Ley 21.719 · Protección de datos personales</p>
+            <h2 class="display text-[2rem] sm:text-[2.7rem] lg:text-[3rem] mb-5">
+              Si un cliente te pide borrar sus datos, ¿tu pyme puede encontrar todas las copias?
+            </h2>
+            <p class="text-tinta-700 text-[1.0625rem] leading-relaxed max-w-[44rem]">
+              Desde el 1 de diciembre, cualquier persona puede pedirle a tu empresa ver, corregir o eliminar sus
+              datos, y tienes <strong class="font-medium text-tinta">30 días para responder</strong>. Aplica a todas las
+              pymes que guardan nombres, RUT, correos o teléfonos de clientes, y las multas llegan hasta
+              <strong class="font-medium text-tinta">20.000 UTM</strong>. Con los datos repartidos en planillas y
+              correos, responder a tiempo es casi imposible.
+            </p>
+            <div class="mt-7 flex flex-col sm:flex-row sm:items-center gap-4">
+              <a href="#contacto" data-goal="ley_21719" class="ir-al-form boton self-start">
+                Agenda tu asesoría gratis
+                <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
               </a>
+              <p class="text-[0.9375rem] text-tinta-700">Ordenamos tus datos y dejamos el proceso andando.</p>
             </div>
-
-            <div class="flex items-start md:items-center justify-center md:justify-start gap-3 text-sm text-slate-500 pt-2 bg-slate-50 md:bg-transparent p-4 md:p-0 rounded-xl">
-              <i data-lucide="shield-check" class="w-5 h-5 text-brand-600 shrink-0 mt-0.5 md:mt-0" aria-hidden="true"></i>
-              <span class="text-left">No necesitas tener un equipo tecnológico ni saber por dónde comenzar. Nosotros diseñamos el camino y construimos la solución.</span>
-            </div>
-          </div>
-
-          <!-- Microdemostración Interactiva Compacta -->
-          <div class="relative w-full max-w-[500px] mx-auto lg:mx-0" aria-label="Demostración interactiva de procesos">
-            <div class="bg-white rounded-2xl border border-slate-200 shadow-xl flex flex-col overflow-hidden relative z-10">
-              
-              <!-- Cabecera y Tabs Demo (Accesibles) -->
-              <div class="px-5 pt-5 pb-3 border-b border-slate-100 bg-white relative z-20">
-                <div class="flex items-center justify-between mb-3">
-                  <h2 class="text-sm font-semibold text-slate-800 flex items-center gap-2">
-                    <i data-lucide="play-circle" class="w-4 h-4 text-brand-500" aria-hidden="true"></i>
-                    Mira cómo aplicamos IA a un proceso real
-                  </h2>
-                  <button id="demoReplayBtn" class="text-slate-400 hover:text-brand-600 transition-colors p-1.5 rounded-md focus:outline-none" aria-label="Repetir animación actual" title="Repetir">
-                    <i data-lucide="rotate-ccw" class="w-4 h-4" aria-hidden="true"></i>
-                  </button>
-                </div>
-                
-                <div class="flex gap-2 overflow-x-auto hide-scrollbar snap-x" role="tablist" aria-label="Casos de uso para demostración">
-                  <button role="tab" aria-selected="true" aria-controls="demo-case-doc" id="tab-doc" tabindex="0" class="demo-tab-btn active shrink-0 snap-start px-3 py-1.5 rounded-lg text-xs font-medium transition-all bg-brand-50 text-brand-700 border border-brand-200" data-democase="doc" data-goal="procesar_documentos">Procesar documento</button>
-                  <button role="tab" aria-selected="false" aria-controls="demo-case-opp" id="tab-opp" tabindex="-1" class="demo-tab-btn shrink-0 snap-start px-3 py-1.5 rounded-lg text-xs font-medium transition-all bg-white text-slate-600 border border-slate-200 hover:bg-slate-50" data-democase="opp" data-goal="ordenar_oportunidades">Gestionar oportunidad</button>
-                  <button role="tab" aria-selected="false" aria-controls="demo-case-query" id="tab-query" tabindex="-1" class="demo-tab-btn shrink-0 snap-start px-3 py-1.5 rounded-lg text-xs font-medium transition-all bg-white text-slate-600 border border-slate-200 hover:bg-slate-50" data-democase="query" data-goal="crear_asistente">Responder consulta</button>
-                </div>
-              </div>
-
-              <!-- Contenedor del Flujo (Fondo gris claro, Altura Fija sin Scroll) -->
-              <div class="bg-slate-50 p-5 h-[320px] relative overflow-hidden" aria-live="polite">
-                
-                <!-- CASO 1: Procesar Documento -->
-                <div id="demo-case-doc" role="tabpanel" aria-labelledby="tab-doc" class="demo-case-container active h-full flex flex-col gap-3 relative z-10">
-                  
-                  <!-- Paso 1: Entrada -->
-                  <div class="demo-step flex flex-col w-full" data-step="1">
-                    <div class="step-collapsed flex items-center gap-2 text-sm text-slate-600 font-medium">
-                      <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0"></i> <span>Recibido: orden_de_compra.pdf</span>
-                    </div>
-                    <div class="step-expanded flex gap-4 w-full">
-                      <div class="w-8 h-8 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center shrink-0"><i data-lucide="mail" class="w-4 h-4 text-slate-500"></i></div>
-                      <div class="bg-white border border-slate-200 p-3 rounded-xl shadow-sm w-full">
-                        <p class="text-[10px] font-semibold text-slate-400 uppercase mb-1">Entrada: Recibido por correo</p>
-                        <div class="flex items-center gap-2 text-sm text-slate-700 font-medium">
-                          <i data-lucide="file-text" class="w-4 h-4 text-red-500"></i> orden_de_compra.pdf
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Paso 2: IA -->
-                  <div class="demo-step flex flex-col w-full" data-step="2">
-                    <div class="step-collapsed flex items-center gap-2 text-sm text-slate-600 font-medium">
-                      <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0"></i> <span>IA extrajo proveedor, fecha y monto</span>
-                    </div>
-                    <div class="step-expanded flex gap-4 w-full">
-                      <div class="w-8 h-8 rounded-full bg-ia-50 border border-ia-200 shadow-sm flex items-center justify-center shrink-0"><i data-lucide="sparkles" class="w-4 h-4 text-ia-600"></i></div>
-                      <div class="bg-white border border-ia-200 p-3 rounded-xl shadow-sm w-full">
-                        <p class="text-[10px] font-semibold text-ia-600 uppercase mb-1">Interpretación con IA</p>
-                        <div class="grid grid-cols-2 gap-x-2 gap-y-1 text-xs text-slate-600 mt-2">
-                          <span class="text-slate-400">Proveedor:</span> <span class="font-medium text-slate-800">Distribuidora Sur</span>
-                          <span class="text-slate-400">Fecha:</span> <span class="font-medium text-slate-800">28-08-2026</span>
-                          <span class="text-slate-400">Total:</span> <span class="font-medium text-slate-800">$1.248.900</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Paso 3: Reglas y Acción -->
-                  <div class="demo-step flex flex-col w-full" data-step="3">
-                    <div class="step-collapsed flex items-center gap-2 text-sm text-slate-600 font-medium">
-                      <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0"></i> <span>Datos validados y registro creado</span>
-                    </div>
-                    <div class="step-expanded flex gap-4 w-full">
-                      <div class="w-8 h-8 rounded-full bg-brand-50 border border-brand-200 shadow-sm flex items-center justify-center shrink-0"><i data-lucide="check-square" class="w-4 h-4 text-brand-600"></i></div>
-                      <div class="bg-white border border-brand-200 p-3 rounded-xl shadow-sm w-full">
-                        <p class="text-[10px] font-semibold text-brand-600 uppercase mb-1">Validación y Acción</p>
-                        <ul class="text-[11px] text-slate-600 space-y-1">
-                          <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-emerald-500"></i> Formato y obligatorios validados</li>
-                          <li class="flex items-center gap-1.5"><i data-lucide="save" class="w-3 h-3 text-brand-500"></i> Registro creado y documento adjuntado</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Paso 4: Resultado final -->
-                  <div class="demo-step flex flex-col w-full mt-auto" data-step="4">
-                    <div class="step-expanded flex gap-4 w-full">
-                      <div class="w-8 h-8 rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center shrink-0"><i data-lucide="flag" class="w-4 h-4 text-emerald-600"></i></div>
-                      <div class="w-full flex flex-col justify-center gap-1.5">
-                        <p class="text-[10px] font-semibold text-emerald-700 uppercase">Resultado de negocio</p>
-                        <div class="flex flex-wrap gap-1.5">
-                          <span class="inline-flex text-[10px] bg-slate-200 text-slate-700 px-2 py-1 rounded-md font-medium">Menos digitación</span>
-                          <span class="inline-flex text-[10px] bg-slate-200 text-slate-700 px-2 py-1 rounded-md font-medium">Datos estructurados</span>
-                          <span class="inline-flex text-[10px] bg-slate-200 text-slate-700 px-2 py-1 rounded-md font-medium">Historial trazable</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- CASO 2: Gestionar Oportunidad -->
-                <div id="demo-case-opp" role="tabpanel" aria-labelledby="tab-opp" class="demo-case-container h-full flex flex-col gap-3 relative z-10">
-                  <div class="demo-step flex flex-col w-full" data-step="1">
-                    <div class="step-collapsed flex items-center gap-2 text-sm text-slate-600 font-medium">
-                      <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0"></i> <span>Recibido: Consulta web</span>
-                    </div>
-                    <div class="step-expanded flex gap-4 w-full">
-                      <div class="w-8 h-8 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center shrink-0"><i data-lucide="globe" class="w-4 h-4 text-slate-500"></i></div>
-                      <div class="bg-white border border-slate-200 p-3 rounded-xl shadow-sm w-full">
-                        <p class="text-[10px] font-semibold text-slate-400 uppercase mb-1">Entrada: Formulario Web</p>
-                        <p class="text-[11px] text-slate-700 italic border-l-2 border-slate-300 pl-2 leading-tight">"Necesito información comercial y quisiera que me contacten esta semana."</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="demo-step flex flex-col w-full" data-step="2">
-                    <div class="step-collapsed flex items-center gap-2 text-sm text-slate-600 font-medium">
-                      <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0"></i> <span>IA detectó intención, servicio y prioridad</span>
-                    </div>
-                    <div class="step-expanded flex gap-4 w-full">
-                      <div class="w-8 h-8 rounded-full bg-ia-50 border border-ia-200 shadow-sm flex items-center justify-center shrink-0"><i data-lucide="sparkles" class="w-4 h-4 text-ia-600"></i></div>
-                      <div class="bg-white border border-ia-200 p-3 rounded-xl shadow-sm w-full">
-                        <p class="text-[10px] font-semibold text-ia-600 uppercase mb-1">Interpretación con IA</p>
-                        <ul class="text-[11px] text-slate-600 space-y-0.5">
-                          <li><span class="text-slate-400">Intención:</span> <span class="font-medium text-slate-800">Solicitud comercial (Consultoría)</span></li>
-                          <li><span class="text-slate-400">Prioridad sugerida:</span> <span class="font-medium text-amber-600">Alta</span></li>
-                          <li class="text-[10px] text-slate-400 mt-1 leading-tight"><i data-lucide="info" class="inline w-3 h-3"></i> Motivo: Solicita contacto y cotización esta semana.</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="demo-step flex flex-col w-full" data-step="3">
-                    <div class="step-collapsed flex items-center gap-2 text-sm text-slate-600 font-medium">
-                      <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0"></i> <span>Reglas aplicadas y ejecutivo notificado</span>
-                    </div>
-                    <div class="step-expanded flex gap-4 w-full">
-                      <div class="w-8 h-8 rounded-full bg-brand-50 border border-brand-200 shadow-sm flex items-center justify-center shrink-0"><i data-lucide="bell-ring" class="w-4 h-4 text-brand-600"></i></div>
-                      <div class="bg-white border border-brand-200 p-3 rounded-xl shadow-sm w-full">
-                        <p class="text-[10px] font-semibold text-brand-600 uppercase mb-1">Reglas y Acción</p>
-                        <ul class="text-[11px] text-slate-600 space-y-1">
-                          <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-emerald-500"></i> Responsable asignado según servicio</li>
-                          <li class="flex items-center gap-1.5"><i data-lucide="mail" class="w-3 h-3 text-brand-500"></i> Oportunidad registrada y notificación enviada</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="demo-step flex flex-col w-full mt-auto" data-step="4">
-                    <div class="step-expanded flex gap-4 w-full">
-                      <div class="w-8 h-8 rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center shrink-0"><i data-lucide="flag" class="w-4 h-4 text-emerald-600"></i></div>
-                      <div class="w-full flex flex-col justify-center gap-1.5">
-                        <p class="text-[10px] font-semibold text-emerald-700 uppercase">Resultado de negocio</p>
-                        <div class="flex flex-wrap gap-1.5">
-                          <span class="inline-flex text-[10px] bg-slate-200 text-slate-700 px-2 py-1 rounded-md font-medium">Menos olvidos</span>
-                          <span class="inline-flex text-[10px] bg-slate-200 text-slate-700 px-2 py-1 rounded-md font-medium">Responsable asignado</span>
-                          <span class="inline-flex text-[10px] bg-slate-200 text-slate-700 px-2 py-1 rounded-md font-medium">Respuesta oportuna</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- CASO 3: Responder Consulta -->
-                <div id="demo-case-query" role="tabpanel" aria-labelledby="tab-query" class="demo-case-container h-full flex flex-col gap-3 relative z-10">
-                  <div class="demo-step flex flex-col w-full" data-step="1">
-                    <div class="step-collapsed flex items-center gap-2 text-sm text-slate-600 font-medium">
-                      <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0"></i> <span>Recibido: Pregunta de equipo</span>
-                    </div>
-                    <div class="step-expanded flex gap-4 w-full">
-                      <div class="w-8 h-8 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center shrink-0"><i data-lucide="message-square" class="w-4 h-4 text-slate-500"></i></div>
-                      <div class="bg-white border border-slate-200 p-3 rounded-xl shadow-sm w-full">
-                        <p class="text-[10px] font-semibold text-slate-400 uppercase mb-1">Entrada: Pregunta interna</p>
-                        <p class="text-[11px] text-slate-700 font-medium leading-tight">"¿Qué documentos debo solicitar para iniciar este proceso?"</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="demo-step flex flex-col w-full" data-step="2">
-                    <div class="step-collapsed flex items-center gap-2 text-sm text-slate-600 font-medium">
-                      <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0"></i> <span>IA recuperó información interna</span>
-                    </div>
-                    <div class="step-expanded flex gap-4 w-full">
-                      <div class="w-8 h-8 rounded-full bg-ia-50 border border-ia-200 shadow-sm flex items-center justify-center shrink-0"><i data-lucide="sparkles" class="w-4 h-4 text-ia-600"></i></div>
-                      <div class="bg-white border border-ia-200 p-3 rounded-xl shadow-sm w-full">
-                        <p class="text-[10px] font-semibold text-ia-600 uppercase mb-1">Interpretación con IA</p>
-                        <p class="text-[11px] text-slate-600 flex items-center gap-1.5 mb-1"><i data-lucide="search" class="w-3 h-3 text-ia-500"></i> Búsqueda en documentación interna...</p>
-                        <p class="text-[11px] text-slate-600 flex items-center gap-1.5"><i data-lucide="file-text" class="w-3 h-3 text-ia-500"></i> Preparando respuesta e identificando fuente...</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="demo-step flex flex-col w-full" data-step="3">
-                    <div class="step-collapsed flex items-center gap-2 text-sm text-slate-600 font-medium">
-                      <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0"></i> <span>Accesos verificados y fuente confirmada</span>
-                    </div>
-                    <div class="step-expanded flex gap-4 w-full">
-                      <div class="w-8 h-8 rounded-full bg-brand-50 border border-brand-200 shadow-sm flex items-center justify-center shrink-0"><i data-lucide="shield-check" class="w-4 h-4 text-brand-600"></i></div>
-                      <div class="bg-white border border-brand-200 p-3 rounded-xl shadow-sm w-full">
-                        <p class="text-[10px] font-semibold text-brand-600 uppercase mb-1">Control y Acción</p>
-                        <ul class="text-[11px] text-slate-600 space-y-1">
-                          <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-emerald-500"></i> Permisos verificados correctamente</li>
-                          <li class="flex items-center gap-1.5 text-slate-400"><i data-lucide="info" class="w-3 h-3"></i> Sin info suficiente, deriva a humano</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="demo-step flex flex-col w-full mt-auto" data-step="4">
-                    <div class="step-expanded flex gap-4 w-full">
-                      <div class="w-8 h-8 rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center shrink-0"><i data-lucide="flag" class="w-4 h-4 text-emerald-600"></i></div>
-                      <div class="w-full flex flex-col justify-center gap-1.5">
-                        <p class="text-[10px] font-semibold text-emerald-700 uppercase">Resultado de negocio</p>
-                        <div class="flex flex-wrap gap-1.5">
-                          <span class="inline-flex text-[10px] bg-slate-200 text-slate-700 px-2 py-1 rounded-md font-medium">Menos tiempo buscando</span>
-                          <span class="inline-flex text-[10px] bg-slate-200 text-slate-700 px-2 py-1 rounded-md font-medium">Respuesta con fuentes</span>
-                          <span class="inline-flex text-[10px] bg-slate-200 text-slate-700 px-2 py-1 rounded-md font-medium">Acceso controlado</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-              <!-- Footer y CTA Interactivo -->
-              <div class="p-4 border-t border-slate-100 text-center bg-white relative z-20">
-                <p class="text-xs text-slate-500 mb-2">
-                  Combinamos inteligencia artificial, automatización y reglas de negocio para convertir información en acciones útiles.
-                </p>
-                <button type="button" id="demoActionBtn" data-targetgoal="procesar_documentos" class="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-slate-50 text-slate-700 border border-slate-200 font-medium text-sm transition-all hover:bg-slate-100 hover:text-brand-700 hover:border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500">
-                  Quiero automatizar algo así <i data-lucide="arrow-down" class="w-3.5 h-3.5" aria-hidden="true"></i>
-                </button>
-              </div>
-              
-            </div>
-            <!-- Fondo decorativo -->
-            <div class="absolute -inset-4 bg-gradient-to-tr from-brand-50 to-ia-50 rounded-[3rem] -z-10 transform rotate-1 scale-105 opacity-70" aria-hidden="true"></div>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- Sección de preparación -->
-    <section class="py-12 bg-slate-900 text-white relative overflow-hidden">
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-brand-800 via-slate-900 to-slate-900 opacity-80" aria-hidden="true"></div>
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="text-center max-w-4xl mx-auto space-y-4">
-          <h2 class="text-2xl md:text-3xl font-medium tracking-tight text-white leading-snug">
-            Tu empresa no tiene que estar preparada para la IA.<br>
-            <span class="text-brand-300 font-semibold">Nosotros la preparamos contigo.</span>
-          </h2>
-          <p class="text-slate-300 text-base md:text-lg font-light leading-relaxed max-w-3xl mx-auto">
-            Si tus datos están dispersos, dependes de planillas o todavía tienes tareas muy manuales, eso no es un impedimento. Genia Labs ordena la información, conecta los sistemas y automatiza lo necesario para incorporar inteligencia artificial de forma útil, segura y progresiva.
-          </p>
-        </div>
-      </div>
-    </section>
+    <!-- =====================================================================
+         Lo que frena. Cuatro creencias que hacen esperar a una pyme, cada una
+         con su respuesta. Usa el mismo lenguaje de la matriz: la creencia es
+         kraft (lo que llega) y se tacha al entrar; la respuesta es registro
+         (lo que queda). Sin JS la creencia ya se ve tachada.
+         La frase de costo ("menos que contratar a una persona mas") es el
+         ancla sin monto; ver el comentario de NUMEROS al inicio.
+         ===================================================================== -->
+    <section id="sin-excusas" class="py-16 md:py-24 bg-papel-100 border-b border-papel-200">
+      <div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8">
 
-    <!-- Soluciones Principales -->
-    <section id="soluciones" class="py-24 bg-white relative">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="max-w-3xl mb-16 text-center mx-auto">
-          <h2 class="text-3xl font-bold text-slate-900 tracking-tight">
-            Soluciones de IA enfocadas en resultados reales.
-          </h2>
-          <p class="text-lg text-slate-600 mt-4 font-light">
-            No implementamos inteligencia artificial por moda. La utilizamos para resolver tareas que hoy consumen tiempo, generan errores o limitan el crecimiento de tu empresa.
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-4 lg:gap-14 items-end mb-10">
+          <div>
+            <p class="rotulo mb-3">Lo que te frena, resuelto</p>
+            <h2 class="display-seccion text-[2rem] sm:text-[2.7rem]">
+              No tienes que estar preparado para la IA. <span class="text-verde">Para eso estamos nosotros.</span>
+            </h2>
+          </div>
+          <p class="text-tinta-700 text-[1.0625rem] leading-relaxed">
+            Mientras lo piensas, tu <span class="subrayado">competencia</span> ya está automatizando. Estas son las
+            razones más comunes para seguir esperando, y por qué ninguna debería frenarte.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          
-          <div class="group bg-surface-50 border border-slate-200 p-8 rounded-2xl hover:bg-white hover:shadow-lg hover:border-brand-200 transition-all duration-300">
-            <div class="flex items-center justify-between mb-6">
-              <div class="w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center text-brand-600 group-hover:bg-brand-500 group-hover:text-white transition-colors">
-                <i data-lucide="scan-text" class="w-6 h-6" aria-hidden="true"></i>
-              </div>
-              <span class="text-xs font-medium px-2.5 py-1 bg-white border border-slate-200 rounded-full text-slate-500 group-hover:border-brand-200">Ahorro de tiempo</span>
-            </div>
-            <h3 class="text-xl font-semibold text-slate-900 mb-3">Procesamiento inteligente de documentos</h3>
-            <p class="text-slate-600 text-sm leading-relaxed mb-6">
-              IA que "lee" facturas, órdenes de compra, formularios, certificados o cotizaciones; extrae la información relevante y la registra donde la necesitas, reduciendo la digitación manual.
-            </p>
-            <div class="space-y-2">
-              <div class="flex items-center gap-2 text-sm text-slate-700">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-500" aria-hidden="true"></i> Reduce significativamente la carga de digitación.
-              </div>
-              <div class="flex items-center gap-2 text-sm text-slate-700">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-500" aria-hidden="true"></i> Acelera el procesamiento y disminuye errores.
-              </div>
-            </div>
-          </div>
+        <div class="revela grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
 
-          <div class="group bg-surface-50 border border-slate-200 p-8 rounded-2xl hover:bg-white hover:shadow-lg hover:border-brand-200 transition-all duration-300">
-            <div class="flex items-center justify-between mb-6">
-              <div class="w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center text-brand-600 group-hover:bg-brand-500 group-hover:text-white transition-colors">
-                <i data-lucide="network" class="w-6 h-6" aria-hidden="true"></i>
-              </div>
-              <span class="text-xs font-medium px-2.5 py-1 bg-white border border-slate-200 rounded-full text-slate-500 group-hover:border-brand-200">Crecimiento comercial</span>
+          <article class="creencia revela-item" style="--paso:0">
+            <div class="artefacto md:-rotate-[0.5deg]">
+              <p class="rotulo rotulo-kraft mb-1.5">Lo que se cree</p>
+              <p class="text-[1.0625rem] leading-snug italic"><span class="tachado" style="--paso:1">«Primero tenemos que estar preparados para la IA.»</span></p>
             </div>
-            <h3 class="text-xl font-semibold text-slate-900 mb-3">Gestión inteligente de oportunidades</h3>
-            <p class="text-slate-600 text-sm leading-relaxed mb-6">
-              Centraliza los prospectos que llegan desde la web, correo o WhatsApp; asígnalos mediante reglas de negocio y prepara la información para incorporar clasificación y priorización asistida por IA.
-            </p>
-            <div class="space-y-2">
-              <div class="flex items-center gap-2 text-sm text-slate-700">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-500" aria-hidden="true"></i> Menos oportunidades olvidadas.
-              </div>
-              <div class="flex items-center gap-2 text-sm text-slate-700">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-500" aria-hidden="true"></i> Respuestas más oportunas y mejor seguimiento.
-              </div>
+            <div class="registro">
+              <p class="rotulo rotulo-verde mb-2">Lo que es</p>
+              <h3 class="display-seccion text-[1.35rem] mb-1.5">Llegas como estás. Te preparamos nosotros.</h3>
+              <p class="text-[0.9375rem] text-tinta-700 leading-relaxed">No necesitas saber de IA, tener equipo técnico ni los datos ordenados. Ordenar es parte de nuestro trabajo.</p>
             </div>
-          </div>
+          </article>
 
-          <div class="group bg-surface-50 border border-slate-200 p-8 rounded-2xl hover:bg-white hover:shadow-lg hover:border-brand-200 transition-all duration-300">
-            <div class="flex items-center justify-between mb-6">
-              <div class="w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center text-brand-600 group-hover:bg-brand-500 group-hover:text-white transition-colors">
-                <i data-lucide="bot-message-square" class="w-6 h-6" aria-hidden="true"></i>
-              </div>
-              <span class="text-xs font-medium px-2.5 py-1 bg-white border border-slate-200 rounded-full text-slate-500 group-hover:border-brand-200">Agilidad</span>
+          <article class="creencia revela-item" style="--paso:1">
+            <div class="artefacto md:rotate-[0.4deg]">
+              <p class="rotulo rotulo-kraft mb-1.5">Lo que se cree</p>
+              <p class="text-[1.0625rem] leading-snug italic"><span class="tachado" style="--paso:2">«La IA es cara. Es para empresas grandes.»</span></p>
             </div>
-            <h3 class="text-xl font-semibold text-slate-900 mb-3">Asistente de IA para tu equipo</h3>
-            <p class="text-slate-600 text-sm leading-relaxed mb-6">
-              Un asistente privado que busca en documentos, procedimientos, productos, catálogos de precios e información interna para ayudar a tu equipo a encontrar respuestas rápidamente y consultar las fuentes utilizadas.
-            </p>
-            <div class="space-y-2">
-              <div class="flex items-center gap-2 text-sm text-slate-700">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-500" aria-hidden="true"></i> Conocimiento disponible cuando se necesita.
-              </div>
-              <div class="flex items-center gap-2 text-sm text-slate-700">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-500" aria-hidden="true"></i> Respuestas respaldadas por información autorizada.
-              </div>
+            <div class="registro">
+              <p class="rotulo rotulo-verde mb-2">Lo que es</p>
+              <h3 class="display-seccion text-[1.35rem] mb-1.5">Cuesta menos que contratar a una persona más.</h3>
+              <p class="text-[0.9375rem] text-tinta-700 leading-relaxed">Partimos por un solo proceso, el que más horas te quita, con alcance y precio cerrados por escrito.</p>
             </div>
-          </div>
+          </article>
 
-          <div class="group bg-surface-50 border border-slate-200 p-8 rounded-2xl hover:bg-white hover:shadow-lg hover:border-brand-200 transition-all duration-300">
-            <div class="flex items-center justify-between mb-6">
-              <div class="w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center text-brand-600 group-hover:bg-brand-500 group-hover:text-white transition-colors">
-                <i data-lucide="bell-ring" class="w-6 h-6" aria-hidden="true"></i>
-              </div>
-              <span class="text-xs font-medium px-2.5 py-1 bg-white border border-slate-200 rounded-full text-slate-500 group-hover:border-brand-200">Experiencia</span>
+          <article class="creencia revela-item" style="--paso:2">
+            <div class="artefacto md:rotate-[0.3deg]">
+              <p class="rotulo rotulo-kraft mb-1.5">Lo que se cree</p>
+              <p class="text-[1.0625rem] leading-snug italic"><span class="tachado" style="--paso:3">«Tendríamos que cambiar todos nuestros sistemas.»</span></p>
             </div>
-            <h3 class="text-xl font-semibold text-slate-900 mb-3">Comunicaciones inteligentes y automáticas</h3>
-            <p class="text-slate-600 text-sm leading-relaxed mb-6">
-              Notifica a clientes y responsables mediante correo, WhatsApp* o SMS* cuando llega una solicitud, falta un documento, cambia un estado o se aproxima una fecha importante.
-            </p>
-            <div class="space-y-2">
-              <div class="flex items-center gap-2 text-sm text-slate-700">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-500" aria-hidden="true"></i> Clientes mejor informados.
-              </div>
-              <div class="flex items-center gap-2 text-sm text-slate-700">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-500" aria-hidden="true"></i> Seguimiento consistente y menos tareas olvidadas.
-              </div>
+            <div class="registro">
+              <p class="rotulo rotulo-verde mb-2">Lo que es</p>
+              <h3 class="display-seccion text-[1.35rem] mb-1.5">Funciona con lo que ya usas.</h3>
+              <p class="text-[0.9375rem] text-tinta-700 leading-relaxed">Se conecta a tu correo, WhatsApp, planillas y sistema actual. Tu equipo sigue trabajando donde ya trabaja.</p>
             </div>
-            <p class="text-[10px] text-slate-400 mt-4">*Requiere integración con proveedores autorizados.</p>
-          </div>
+          </article>
+
+          <article class="creencia revela-item" style="--paso:3">
+            <div class="artefacto md:-rotate-[0.4deg]">
+              <p class="rotulo rotulo-kraft mb-1.5">Lo que se cree</p>
+              <p class="text-[1.0625rem] leading-snug italic"><span class="tachado" style="--paso:4">«Para saber si nos sirve, hay que pagar.»</span></p>
+            </div>
+            <div class="registro">
+              <p class="rotulo rotulo-verde mb-2">Lo que es</p>
+              <h3 class="display-seccion text-[1.35rem] mb-1.5">La primera reunión y la asesoría son gratis.</h3>
+              <p class="text-[0.9375rem] text-tinta-700 leading-relaxed">Te mostramos dónde pierdes horas y por dónde partir. Si no hay caso, te lo decimos igual.</p>
+            </div>
+          </article>
 
         </div>
-      </div>
-    </section>
 
-    <!-- Casos Pymes (Tabs Funcionales) -->
-    <section id="casos-pymes" class="py-20 bg-surface-50 border-y border-slate-100">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="max-w-3xl mb-12 text-center mx-auto">
-          <h2 class="text-3xl font-bold text-slate-900 tracking-tight">
-            ¿Qué podrías mejorar con IA en tu empresa?
-          </h2>
-          <p class="text-lg text-slate-600 mt-4 font-light">
-            Estas son algunas tareas comerciales, administrativas y operacionales que podemos evaluar contigo. Selecciona el área de tu interés:
-          </p>
-        </div>
-
-        <div class="flex flex-wrap justify-center gap-2 mb-10" role="tablist" aria-label="Áreas de mejora para pymes">
-          <button role="tab" aria-selected="true" aria-controls="tab-ventas" tabindex="0" class="tab-btn active px-5 py-2.5 rounded-full text-sm font-medium transition-all bg-brand-900 text-white shadow-sm" data-target="tab-ventas">Ventas y Oportunidades</button>
-          <button role="tab" aria-selected="false" aria-controls="tab-admin" tabindex="-1" class="tab-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all bg-white border border-slate-200 text-slate-600 hover:bg-slate-50" data-target="tab-admin">Administración y Documentos</button>
-          <button role="tab" aria-selected="false" aria-controls="tab-atencion" tabindex="-1" class="tab-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all bg-white border border-slate-200 text-slate-600 hover:bg-slate-50" data-target="tab-atencion">Atención de Clientes</button>
-          <button role="tab" aria-selected="false" aria-controls="tab-ops" tabindex="-1" class="tab-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all bg-white border border-slate-200 text-slate-600 hover:bg-slate-50" data-target="tab-ops">Operaciones</button>
-        </div>
-
-        <div class="max-w-5xl mx-auto">
-          
-          <div id="tab-ventas" role="tabpanel" tabindex="0" class="tab-content active grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-              <h3 class="font-semibold text-slate-900 mb-2">Seguimiento de cotizaciones</h3>
-              <ul class="text-sm text-slate-600 space-y-1.5 mb-4 list-disc pl-4">
-                <li>Registrar cotizaciones enviadas.</li>
-                <li>Recordar seguimientos pendientes.</li>
-                <li>Identificar oportunidades sin respuesta.</li>
-              </ul>
-              <div class="pt-3 border-t border-slate-100 flex items-start gap-2">
-                <i data-lucide="trending-up" class="w-4 h-4 text-emerald-500 mt-0.5" aria-hidden="true"></i>
-                <p class="text-xs font-medium text-slate-700">Menos cotizaciones olvidadas y mayor disciplina comercial.</p>
-              </div>
-            </div>
-            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-              <h3 class="font-semibold text-slate-900 mb-2">Captura y derivación de prospectos</h3>
-              <ul class="text-sm text-slate-600 space-y-1.5 mb-4 list-disc pl-4">
-                <li>Recibir contactos desde web o correo.</li>
-                <li>Validar información obligatoria.</li>
-                <li>Notificar inmediatamente al ejecutivo.</li>
-              </ul>
-              <div class="pt-3 border-t border-slate-100 flex items-start gap-2">
-                <i data-lucide="trending-up" class="w-4 h-4 text-emerald-500 mt-0.5" aria-hidden="true"></i>
-                <p class="text-xs font-medium text-slate-700">Más velocidad y trazabilidad desde el primer contacto.</p>
-              </div>
-            </div>
-            <!-- Otros casos simplificados para no recargar visualmente... -->
-          </div>
-
-          <div id="tab-admin" role="tabpanel" tabindex="0" class="tab-content grid grid-cols-1 md:grid-cols-2 gap-6 hidden">
-            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-              <h3 class="font-semibold text-slate-900 mb-2">Digitación automática de documentos</h3>
-              <ul class="text-sm text-slate-600 space-y-1.5 mb-4 list-disc pl-4">
-                <li>Leer facturas y órdenes de compra.</li>
-                <li>Extraer datos desde certificados.</li>
-                <li>Enviar los datos a una planilla o sistema.</li>
-              </ul>
-              <div class="pt-3 border-t border-slate-100 flex items-start gap-2">
-                <i data-lucide="trending-up" class="w-4 h-4 text-emerald-500 mt-0.5" aria-hidden="true"></i>
-                <p class="text-xs font-medium text-slate-700">Menos digitación y menor riesgo de errores.</p>
-              </div>
-            </div>
-            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-              <h3 class="font-semibold text-slate-900 mb-2">Clasificación de correos</h3>
-              <ul class="text-sm text-slate-600 space-y-1.5 mb-4 list-disc pl-4">
-                <li>Identificar el tipo de solicitud.</li>
-                <li>Detectar urgencia.</li>
-                <li>Derivar al área correcta y crear tarea.</li>
-              </ul>
-              <div class="pt-3 border-t border-slate-100 flex items-start gap-2">
-                <i data-lucide="trending-up" class="w-4 h-4 text-emerald-500 mt-0.5" aria-hidden="true"></i>
-                <p class="text-xs font-medium text-slate-700">Casillas más ordenadas y solicitudes atendidas oportunamente.</p>
-              </div>
-            </div>
-          </div>
-
-          <div id="tab-atencion" role="tabpanel" tabindex="0" class="tab-content grid grid-cols-1 md:grid-cols-2 gap-6 hidden">
-            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-              <h3 class="font-semibold text-slate-900 mb-2">Respuestas a preguntas frecuentes</h3>
-              <ul class="text-sm text-slate-600 space-y-1.5 mb-4 list-disc pl-4">
-                <li>Responder sobre productos y requisitos.</li>
-                <li>Derivar situaciones especiales a una persona.</li>
-              </ul>
-              <div class="pt-3 border-t border-slate-100 flex items-start gap-2">
-                <i data-lucide="trending-up" class="w-4 h-4 text-emerald-500 mt-0.5" aria-hidden="true"></i>
-                <p class="text-xs font-medium text-slate-700">Respuestas más rápidas sin perder supervisión humana.</p>
-              </div>
-            </div>
-            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-              <h3 class="font-semibold text-slate-900 mb-2">Seguimiento de solicitudes</h3>
-              <ul class="text-sm text-slate-600 space-y-1.5 mb-4 list-disc pl-4">
-                <li>Registrar cada solicitud en un solo lugar.</li>
-                <li>Clasificar por urgencia y responsable.</li>
-                <li>Informar avances al cliente automáticamente.</li>
-              </ul>
-              <div class="pt-3 border-t border-slate-100 flex items-start gap-2">
-                <i data-lucide="trending-up" class="w-4 h-4 text-emerald-500 mt-0.5" aria-hidden="true"></i>
-                <p class="text-xs font-medium text-slate-700">Ningún caso se pierde y el cliente sabe en qué va.</p>
-              </div>
-            </div>
-          </div>
-
-          <div id="tab-ops" role="tabpanel" tabindex="0" class="tab-content grid grid-cols-1 md:grid-cols-2 gap-6 hidden">
-            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-              <h3 class="font-semibold text-slate-900 mb-2">Gestión de pedidos</h3>
-              <ul class="text-sm text-slate-600 space-y-1.5 mb-4 list-disc pl-4">
-                <li>Recibir pedidos desde correo o documentos.</li>
-                <li>Extraer productos y validar datos.</li>
-                <li>Avisar al área responsable.</li>
-              </ul>
-              <div class="pt-3 border-t border-slate-100 flex items-start gap-2">
-                <i data-lucide="trending-up" class="w-4 h-4 text-emerald-500 mt-0.5" aria-hidden="true"></i>
-                <p class="text-xs font-medium text-slate-700">Pedidos procesados con mayor velocidad y control.</p>
-              </div>
-            </div>
-            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-              <h3 class="font-semibold text-slate-900 mb-2">Control de documentos y vencimientos</h3>
-              <ul class="text-sm text-slate-600 space-y-1.5 mb-4 list-disc pl-4">
-                <li>Centralizar certificados, contratos y pólizas.</li>
-                <li>Detectar documentos incompletos o vencidos.</li>
-                <li>Avisar antes de la fecha crítica.</li>
-              </ul>
-              <div class="pt-3 border-t border-slate-100 flex items-start gap-2">
-                <i data-lucide="trending-up" class="w-4 h-4 text-emerald-500 mt-0.5" aria-hidden="true"></i>
-                <p class="text-xs font-medium text-slate-700">Menos urgencias por vencimientos no detectados.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-[16rem] md:mt-48 lg:mt-32 xl:mt-24"></div>
-
-        <div class="mt-12 text-center bg-slate-50 border border-slate-200 rounded-2xl p-6 max-w-3xl mx-auto">
-          <p class="text-sm text-slate-600 mb-4">
-            Si tu proceso no aparece aquí, conversemos. Muchas oportunidades de IA comienzan con una tarea repetitiva que todavía depende de correos, documentos, planillas o seguimiento manual.
-          </p>
-          <a href="#contacto" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-900 hover:bg-brand-800 text-white font-medium text-sm transition-all shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2">
-            Cuéntanos qué quieres automatizar <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
+        <div class="mt-10 flex flex-col sm:flex-row sm:items-center gap-4">
+          <a href="#contacto" data-goal="asesoria" class="ir-al-form boton self-start">
+            Agenda tu asesoría gratis
+            <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
           </a>
+          <p class="text-[0.9375rem] text-tinta-700">Tu competencia no esperó a estar preparada. Tú tampoco tienes que hacerlo.</p>
         </div>
-
       </div>
     </section>
 
-    <!-- Inversión Accesible -->
-    <section id="inversion" class="py-20 bg-brand-900 text-white border-y border-brand-800">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-14">
-          <h2 class="text-3xl font-bold tracking-tight text-white mb-4">
-            Incorporar IA puede ser más accesible de lo que imaginas.
+    <!-- =====================================================================
+         Beneficios. Los cinco dolores del foco, mas ventas. Cada ficha es una
+         capacidad que entra en la implementacion (#planes).
+         ===================================================================== -->
+    <section id="beneficios" class="py-16 md:py-24 border-b border-papel-200">
+      <div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8">
+
+        <div class="max-w-[46rem] mb-8">
+          <p class="rotulo mb-3">Beneficios</p>
+          <h2 class="display-seccion text-[2rem] sm:text-[2.7rem] mb-4">
+            Lo que cambia cuando la IA trabaja en tu pyme.
           </h2>
-          <p class="text-brand-200 text-lg font-light leading-relaxed">
-            Nuestra estructura eficiente y nuestro modelo de implementación progresiva permiten comenzar con una necesidad concreta, un alcance controlado y una inversión adecuada para una pyme.
+          <p class="text-tinta-700 text-[1.0625rem] leading-relaxed">
+            No vendemos un programa para instalar y olvidar. Automatizamos tus procesos reales, sobre tus correos,
+            planillas y WhatsApp, y los dejamos funcionando.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <div class="bg-brand-800/50 border border-brand-700 p-8 rounded-2xl text-center backdrop-blur-sm">
-            <div class="w-12 h-12 mx-auto bg-brand-700/50 rounded-xl flex items-center justify-center mb-5 text-brand-300">
-              <i data-lucide="target" class="w-6 h-6" aria-hidden="true"></i>
-            </div>
-            <h3 class="text-lg font-semibold text-white mb-2">Comienza con un proceso</h3>
-            <p class="text-sm text-brand-200 leading-relaxed">
-              No necesitas un proyecto a escala corporativa. Elegimos un problema específico donde la automatización y la inteligencia artificial puedan generar valor con un alcance y una inversión controlados.
-            </p>
-          </div>
+        <ul class="flex flex-wrap items-center gap-2 mb-10" aria-label="Con qué trabaja">
+          <li class="rotulo mr-1">Funciona con</li>
+          <li class="etiqueta">Correo</li>
+          <li class="etiqueta">WhatsApp</li>
+          <li class="etiqueta">Planillas</li>
+          <li class="etiqueta">Facturas y PDF</li>
+          <li class="etiqueta">Formularios web</li>
+          <li class="etiqueta">Tu sistema actual</li>
+        </ul>
 
-          <div class="bg-brand-800/50 border border-brand-700 p-8 rounded-2xl text-center backdrop-blur-sm">
-            <div class="w-12 h-12 mx-auto bg-brand-700/50 rounded-xl flex items-center justify-center mb-5 text-brand-300">
-              <i data-lucide="zap" class="w-6 h-6" aria-hidden="true"></i>
-            </div>
-            <h3 class="text-lg font-semibold text-white mb-2">Obtén valor rápidamente</h3>
-            <p class="text-sm text-brand-200 leading-relaxed">
-              Construimos solo lo necesario para resolver el problema actual. El alcance controlado nos permite asegurar resultados observables desde las primeras etapas.
-            </p>
-          </div>
-
-          <div class="bg-brand-800/50 border border-brand-700 p-8 rounded-2xl text-center backdrop-blur-sm">
-            <div class="w-12 h-12 mx-auto bg-brand-700/50 rounded-xl flex items-center justify-center mb-5 text-brand-300">
-              <i data-lucide="trending-up" class="w-6 h-6" aria-hidden="true"></i>
-            </div>
-            <h3 class="text-lg font-semibold text-white mb-2">Crece sin rehacer</h3>
-            <p class="text-sm text-brand-200 leading-relaxed">
-              Diseñamos una base profesional que te permite incorporar nuevos canales, automatizaciones e inteligencia artificial progresivamente a medida que tu empresa lo demanda.
-            </p>
-          </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-papel-200 border border-papel-200 rounded overflow-hidden">
+          <article class="bg-papel p-6 sm:p-7">
+            <span class="w-10 h-10 rounded bg-verde-100 text-verde grid place-items-center mb-5" aria-hidden="true"><i data-lucide="clock" class="w-5 h-5"></i></span>
+            <h3 class="display-seccion text-[1.35rem] mb-2">Menos horas hombre</h3>
+            <p class="text-[0.9375rem] text-tinta-700 leading-relaxed">La IA digita, clasifica y hace el seguimiento. Tu equipo deja la tarea repetitiva y se dedica a lo que genera ingresos.</p>
+          </article>
+          <article class="bg-papel p-6 sm:p-7">
+            <span class="w-10 h-10 rounded bg-verde-100 text-verde grid place-items-center mb-5" aria-hidden="true"><i data-lucide="piggy-bank" class="w-5 h-5"></i></span>
+            <h3 class="display-seccion text-[1.35rem] mb-2">Menos costos</h3>
+            <p class="text-[0.9375rem] text-tinta-700 leading-relaxed">Menos errores, menos retrabajo y menos horas extra. Creces sin contratar a una persona por cada tarea nueva.</p>
+          </article>
+          <article class="bg-papel p-6 sm:p-7">
+            <span class="w-10 h-10 rounded bg-verde-100 text-verde grid place-items-center mb-5" aria-hidden="true"><i data-lucide="file-text" class="w-5 h-5"></i></span>
+            <h3 class="display-seccion text-[1.35rem] mb-2">Adiós al papeleo</h3>
+            <p class="text-[0.9375rem] text-tinta-700 leading-relaxed">Facturas, órdenes de compra, cotizaciones y certificados se leen y quedan registrados solos, sin digitar.</p>
+          </article>
+          <article class="bg-papel p-6 sm:p-7">
+            <span class="w-10 h-10 rounded bg-verde-100 text-verde grid place-items-center mb-5" aria-hidden="true"><i data-lucide="alert-triangle" class="w-5 h-5"></i></span>
+            <h3 class="display-seccion text-[1.35rem] mb-2">Menos riesgo operacional</h3>
+            <p class="text-[0.9375rem] text-tinta-700 leading-relaxed">Alertas antes de que venza un contrato, una póliza o un plazo. Lo importante deja de depender de la memoria de alguien.</p>
+          </article>
+          <article class="bg-ambar-100 p-6 sm:p-7">
+            <span class="w-10 h-10 rounded bg-papel text-ambar grid place-items-center mb-5" aria-hidden="true"><i data-lucide="shield-check" class="w-5 h-5"></i></span>
+            <h3 class="display-seccion text-[1.35rem] mb-2">Preparado para la Ley 21.719</h3>
+            <p class="text-[0.9375rem] text-tinta-700 leading-relaxed">Datos ordenados, accesos por persona, historial de cambios y un flujo para responder solicitudes en plazo.</p>
+          </article>
+          <article class="bg-papel p-6 sm:p-7">
+            <span class="w-10 h-10 rounded bg-verde-100 text-verde grid place-items-center mb-5" aria-hidden="true"><i data-lucide="message-circle" class="w-5 h-5"></i></span>
+            <h3 class="display-seccion text-[1.35rem] mb-2">Ninguna venta se enfría</h3>
+            <p class="text-[0.9375rem] text-tinta-700 leading-relaxed">Cada consulta recibe respuesta al instante y llega a la persona correcta, por WhatsApp, web o correo.</p>
+          </article>
         </div>
 
-        <div class="mt-14 text-center">
-          <p class="text-brand-300 font-medium mb-6">
-            No necesitas financiar una gran transformación tecnológica para comenzar a aprovechar la inteligencia artificial.
-          </p>
-          <a href="#contacto" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-brand-900 font-semibold hover:bg-brand-50 transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-brand-900">
-            Evaluar una solución accesible <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
+        <div class="mt-10 flex flex-col sm:flex-row sm:items-center gap-4">
+          <a href="#contacto" class="boton self-start">
+            Agenda tu asesoría gratis
+            <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
           </a>
+          <p class="text-[0.9375rem] text-tinta-500">Diagnóstico en 2 semanas · Primer proceso andando en 6</p>
         </div>
       </div>
     </section>
 
-    <!-- Urgencia -->
-    <section class="py-16 bg-surface-50 border-b border-slate-100">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-white rounded-2xl border border-slate-200 p-8 md:p-12 shadow-sm flex flex-col md:flex-row items-center gap-8 md:gap-12">
-          <div class="w-16 h-16 shrink-0 rounded-full bg-amber-50 flex items-center justify-center border border-amber-100">
-            <i data-lucide="timer" class="w-8 h-8 text-amber-600" aria-hidden="true"></i>
-          </div>
-          <div class="flex-1">
-            <h3 class="text-xl font-bold text-slate-900 mb-2">Tus competidores también están aprendiendo a usar inteligencia artificial.</h3>
-            <p class="text-slate-600 text-sm md:text-base leading-relaxed mb-4">
-              La inteligencia artificial ya está ayudando a empresas a responder más rápido, reducir tareas administrativas, aprovechar mejor sus datos y atender a más clientes. Las pymes que comiencen antes acumularán experiencia y ventajas difíciles de recuperar después.
+    <!-- =====================================================================
+         Para quien.
+         ===================================================================== -->
+    <section id="para-quien" class="py-16 md:py-24 bg-papel-100 border-b border-papel-200">
+      <div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-14 items-start">
+
+          <div>
+            <p class="rotulo mb-3">Para quién es</p>
+            <h2 class="display-seccion text-[2rem] sm:text-[2.6rem] mb-4">
+              Hecho para pymes que todavía hacen demasiado a mano.
+            </h2>
+            <p class="text-tinta-700 leading-relaxed mb-7">
+              Empresas de cualquier rubro que viven entre correos, planillas y WhatsApp, y saben que así no pueden
+              crecer. No necesitas equipo técnico ni tener los datos ordenados: eso lo hacemos nosotros.
             </p>
-            <p class="font-medium text-slate-800 text-sm md:text-base">
-              No tienes que transformarlo todo hoy. Pero sí es momento de comenzar.
+            <ul class="flex flex-wrap gap-2" aria-label="Rubros">
+              <li class="etiqueta">Servicios profesionales</li>
+              <li class="etiqueta">Distribuidoras y comercio</li>
+              <li class="etiqueta">Asesorías y corredoras</li>
+              <li class="etiqueta">Inmobiliarias</li>
+              <li class="etiqueta">Estudios contables y jurídicos</li>
+              <li class="etiqueta">Constructoras y contratistas</li>
+            </ul>
+          </div>
+
+          <div class="ficha">
+            <div class="ficha-cab">
+              <p class="rotulo">Te sirve si hoy…</p>
+            </div>
+            <ul class="ficha-cuerpo sm:!px-7 space-y-4">
+              <li class="flex gap-3.5 text-tinta">
+                <span class="w-2 h-2 bg-ambar mt-2.5 shrink-0" aria-hidden="true"></span>
+                Alguien pasa horas digitando facturas, pedidos o datos de un sistema a otro.
+              </li>
+              <li class="flex gap-3.5 text-tinta">
+                <span class="w-2 h-2 bg-ambar mt-2.5 shrink-0" aria-hidden="true"></span>
+                La información vive en planillas que solo entiende una persona.
+              </li>
+              <li class="flex gap-3.5 text-tinta">
+                <span class="w-2 h-2 bg-ambar mt-2.5 shrink-0" aria-hidden="true"></span>
+                Te enteras de un vencimiento cuando ya es urgente.
+              </li>
+              <li class="flex gap-3.5 text-tinta">
+                <span class="w-2 h-2 bg-ambar mt-2.5 shrink-0" aria-hidden="true"></span>
+                Las consultas de clientes se responden tarde o se pierden.
+              </li>
+              <li class="flex gap-3.5 text-tinta">
+                <span class="w-2 h-2 bg-ambar mt-2.5 shrink-0" aria-hidden="true"></span>
+                No podrías demostrar qué datos tienes de un cliente si te lo pide.
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         Matriz "lo que llega / lo que hace la IA / lo que queda".
+         Los valores de los registros son maqueta ilustrativa.
+         ===================================================================== -->
+    <section class="py-14 md:py-20 border-b border-papel-200 overflow-hidden">
+      <div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8">
+
+        <div class="max-w-[44rem] mb-10">
+          <p class="rotulo mb-3">Cómo se ve en la práctica</p>
+          <h2 class="display-seccion text-[1.9rem] sm:text-[2.5rem] mb-4">
+            El trabajo que tu equipo deja de hacer.
+          </h2>
+          <p class="text-tinta-700 leading-relaxed">
+            Tres tareas de todos los días. A la izquierda lo que llega; a la derecha lo que queda hecho, sin que
+            nadie lo digite.
+          </p>
+        </div>
+
+        <div class="revela grid gap-y-9 md:gap-y-7 md:grid-cols-[1fr_1.75rem_1.05fr_1.75rem_1fr] md:gap-x-0 md:items-center">
+
+          <p class="rotulo hidden md:block pb-3 revela-item" style="--paso:0">Lo que llega</p>
+          <span class="hidden md:block" aria-hidden="true"></span>
+          <p class="rotulo hidden md:block pb-3 px-6 revela-item" style="--paso:1">Lo que hace la IA</p>
+          <span class="hidden md:block" aria-hidden="true"></span>
+          <p class="rotulo rotulo-verde hidden md:block pb-3 revela-item" style="--paso:2">Lo que queda</p>
+
+          <!-- ---------- Fila 1: papeleo ---------- -->
+          <div class="artefacto md:-rotate-[0.6deg] revela-item" style="--paso:1">
+            <p class="rotulo rotulo-kraft mb-2">Correo con adjunto</p>
+            <p class="text-sm text-[#4A3E28] leading-snug">De: ventas@distribuidorasur.cl</p>
+            <p class="dato text-[0.8125rem] mt-2 flex items-center gap-1.5">
+              <i data-lucide="file-text" class="w-3.5 h-3.5 shrink-0" aria-hidden="true"></i>
+              factura_1043.pdf
             </p>
           </div>
-          <div class="shrink-0">
-            <a href="#contacto" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 font-medium text-sm transition-all shadow-sm">
-              Explorar una oportunidad con IA
+          <span class="hidden md:flex justify-center text-kraft-600 revela-item" style="--paso:2" aria-hidden="true">
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </span>
+          <ol class="md:px-6 md:border-l md:border-papel-200 space-y-1.5 revela-item" style="--paso:3">
+            <li class="text-sm text-tinta-700 flex gap-2">
+              <span class="dato text-tinta-300 shrink-0">·</span>
+              <span>Lee el PDF y extrae los datos <span class="marca-ia ml-0.5">IA</span></span>
+            </li>
+            <li class="text-sm text-tinta-700 flex gap-2"><span class="dato text-tinta-300 shrink-0">·</span><span>Valida montos y campos obligatorios</span></li>
+            <li class="text-sm text-tinta-700 flex gap-2"><span class="dato text-tinta-300 shrink-0">·</span><span>La registra y adjunta el documento</span></li>
+          </ol>
+          <span class="hidden md:flex justify-center text-kraft-600 revela-item" style="--paso:4" aria-hidden="true">
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </span>
+          <div class="registro revela-item" style="--paso:5">
+            <p class="rotulo rotulo-verde mb-3">Factura registrada</p>
+            <dl class="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-[0.8125rem]">
+              <dt class="rotulo">Proveedor</dt><dd class="dato text-tinta">Distribuidora Sur</dd>
+              <dt class="rotulo">Total</dt><dd class="dato text-tinta">$1.248.900</dd>
+              <dt class="rotulo">Digitación</dt><dd class="dato text-tinta">0 minutos</dd>
+            </dl>
+            <p class="mt-3.5 pt-3 border-t border-papel-200"><span class="estado">Registrada</span></p>
+          </div>
+
+          <!-- ---------- Fila 2: ley de datos ---------- -->
+          <div class="artefacto md:rotate-[0.5deg] revela-item" style="--paso:2">
+            <p class="rotulo rotulo-kraft mb-2">Correo de un cliente</p>
+            <p class="text-sm text-[#4A3E28] leading-snug italic">
+              «Por favor, eliminen mis datos de su base.»
+            </p>
+          </div>
+          <span class="hidden md:flex justify-center text-kraft-600 revela-item" style="--paso:3" aria-hidden="true">
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </span>
+          <ol class="md:px-6 md:border-l md:border-papel-200 space-y-1.5 revela-item" style="--paso:4">
+            <li class="text-sm text-tinta-700 flex gap-2"><span class="dato text-tinta-300 shrink-0">·</span><span>Encuentra todos los registros de esa persona</span></li>
+            <li class="text-sm text-tinta-700 flex gap-2"><span class="dato text-tinta-300 shrink-0">·</span><span>Los suprime o bloquea, según corresponda</span></li>
+            <li class="text-sm text-tinta-700 flex gap-2"><span class="dato text-tinta-300 shrink-0">·</span><span>Guarda qué se hizo, cuándo y quién</span></li>
+          </ol>
+          <span class="hidden md:flex justify-center text-kraft-600 revela-item" style="--paso:5" aria-hidden="true">
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </span>
+          <div class="registro revela-item" style="--paso:6">
+            <p class="rotulo rotulo-verde mb-3">Solicitud Ley 21.719</p>
+            <dl class="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-[0.8125rem]">
+              <dt class="rotulo">Registros</dt><dd class="dato text-tinta">3 encontrados</dd>
+              <dt class="rotulo">Plazo legal</dt><dd class="dato text-tinta">30 días</dd>
+              <dt class="rotulo">Respondida</dt><dd class="dato text-tinta">Día 2</dd>
+            </dl>
+            <p class="mt-3.5 pt-3 border-t border-papel-200"><span class="estado">Con evidencia</span></p>
+          </div>
+
+          <!-- ---------- Fila 3: riesgo operacional ---------- -->
+          <div class="artefacto md:-rotate-[0.4deg] revela-item" style="--paso:3">
+            <p class="rotulo rotulo-kraft mb-2">Póliza escaneada</p>
+            <p class="text-sm text-[#4A3E28] leading-snug">Seguro flota vehicular</p>
+            <p class="dato text-[0.8125rem] mt-2 flex items-center gap-1.5">
+              <i data-lucide="file-text" class="w-3.5 h-3.5 shrink-0" aria-hidden="true"></i>
+              poliza_flota_2026.pdf
+            </p>
+          </div>
+          <span class="hidden md:flex justify-center text-kraft-600 revela-item" style="--paso:4" aria-hidden="true">
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </span>
+          <ol class="md:px-6 md:border-l md:border-papel-200 space-y-1.5 revela-item" style="--paso:5">
+            <li class="text-sm text-tinta-700 flex gap-2">
+              <span class="dato text-tinta-300 shrink-0">·</span>
+              <span>Detecta la fecha de vencimiento <span class="marca-ia ml-0.5">IA</span></span>
+            </li>
+            <li class="text-sm text-tinta-700 flex gap-2"><span class="dato text-tinta-300 shrink-0">·</span><span>Avisa a Operaciones 30 días antes</span></li>
+            <li class="text-sm text-tinta-700 flex gap-2"><span class="dato text-tinta-300 shrink-0">·</span><span>Registra quién la renovó</span></li>
+          </ol>
+          <span class="hidden md:flex justify-center text-kraft-600 revela-item" style="--paso:6" aria-hidden="true">
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </span>
+          <div class="registro revela-item" style="--paso:7">
+            <p class="rotulo rotulo-verde mb-3">Alerta de vencimiento</p>
+            <dl class="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-[0.8125rem]">
+              <dt class="rotulo">Documento</dt><dd class="dato text-tinta">Póliza flota</dd>
+              <dt class="rotulo">Aviso</dt><dd class="dato text-tinta">30 días antes</dd>
+              <dt class="rotulo">A cargo</dt><dd class="dato text-tinta">Operaciones</dd>
+            </dl>
+            <p class="mt-3.5 pt-3 border-t border-papel-200"><span class="estado">Renovada a tiempo</span></p>
+          </div>
+
+        </div>
+
+        <p class="mt-9 pt-5 border-t border-papel-200 max-w-[46rem] text-[0.9375rem] text-tinta-500 leading-relaxed">
+          La IA lee, clasifica y sugiere; las decisiones importantes las toma una persona.
+        </p>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         Calculadora de horas hombre. Los numeros los pone el visitante: es la
+         forma de hablar de plata sin inventar resultados. Todo local.
+         Los valores de las salidas en el HTML corresponden a los valores
+         iniciales, para que la seccion se lea completa sin JavaScript.
+         ===================================================================== -->
+    <section id="calculadora" class="py-16 md:py-24 bg-papel-100 border-b border-papel-200">
+      <div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8">
+
+        <div class="max-w-[44rem] mb-10">
+          <p class="rotulo mb-3">Calculadora</p>
+          <h2 class="display-seccion text-[2rem] sm:text-[2.6rem] mb-4">
+            ¿Cuántas horas hombre se te van en trabajo manual?
+          </h2>
+          <p class="text-tinta-700 leading-relaxed">
+            Cambia los valores por los de tu pyme. El cálculo se hace en tu navegador: no se envía ni se guarda
+            nada.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-5 items-stretch">
+
+          <form id="calculadora-form" class="ficha" novalidate>
+            <div class="ficha-cab">
+              <p class="rotulo">Tus números</p>
+              <i data-lucide="calculator" class="w-4 h-4 text-kraft-800 shrink-0" aria-hidden="true"></i>
+            </div>
+            <div class="ficha-cuerpo sm:!p-7 grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-5">
+              <div>
+                <label for="c-personas" class="rotulo block mb-1.5">Personas con tareas manuales</label>
+                <input id="c-personas" type="number" inputmode="numeric" min="0" step="1" value="4" class="campo dato" />
+              </div>
+              <div>
+                <label for="c-horas" class="rotulo block mb-1.5">Horas a la semana por persona digitando, copiando o buscando</label>
+                <input id="c-horas" type="number" inputmode="numeric" min="0" step="1" value="8" class="campo dato" />
+              </div>
+              <div>
+                <label for="c-hora" class="rotulo block mb-1.5">Costo por hora de tu equipo ($)</label>
+                <input id="c-hora" type="number" inputmode="numeric" min="0" step="500" value="9000" class="campo dato" />
+              </div>
+              <div>
+                <label for="c-auto" class="rotulo block mb-1.5">% de esas tareas que se podría automatizar</label>
+                <input id="c-auto" type="number" inputmode="numeric" min="0" max="100" step="5" value="50" class="campo dato" />
+              </div>
+            </div>
+          </form>
+
+          <div class="en-tinta bg-tinta text-papel rounded p-6 sm:p-8 flex flex-col" aria-live="polite">
+            <p class="rotulo rotulo-claro mb-2">Horas que recuperas al mes</p>
+            <p id="r-horas" class="cifra text-[2.6rem] sm:text-[3rem] text-papel">69 h</p>
+            <p id="r-jornadas" class="text-[0.9375rem] text-papel-200/80 mt-1.5">≈ 0,4 personas a jornada completa</p>
+
+            <div class="mt-6 pt-6 border-t border-white/10 grid grid-cols-2 gap-4">
+              <div>
+                <p class="rotulo rotulo-claro mb-2">Ahorro al mes</p>
+                <p id="r-mes" class="cifra text-[1.7rem] text-verde-300">$624.000</p>
+              </div>
+              <div>
+                <p class="rotulo rotulo-claro mb-2">Ahorro al año</p>
+                <p id="r-anio" class="cifra text-[1.7rem] text-verde-300">$7.488.000</p>
+              </div>
+            </div>
+
+            <p class="text-[0.8125rem] text-papel-200/60 leading-relaxed mt-6">
+              Supone que lo automatizado deja de hacerse a mano. Es una estimación para conversar, no una promesa:
+              en la asesoría gratuita la revisamos con tus datos reales.
+            </p>
+
+            <p class="mt-6 pt-5 border-t border-white/10 text-papel leading-snug">
+              La pregunta no es cuánto cuesta la IA, sino cuánto te cuesta seguir sin ella.
+              <span class="text-papel-200/80">Automatizar ese trabajo cuesta menos que contratar a una persona más.</span>
+            </p>
+
+            <a href="#contacto" class="boton-claro mt-6 lg:mt-auto self-start">
+              Agenda tu asesoría gratis
+              <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
             </a>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Método -->
-    <section id="metodo" class="py-24 bg-white relative border-b border-slate-100">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="max-w-3xl mb-16 md:text-center md:mx-auto">
-          <h2 class="text-3xl font-bold text-slate-900 tracking-tight">
-            Cómo implementamos IA en tu empresa.
-          </h2>
-          <p class="text-lg text-slate-600 mt-4 font-light">
-            No te entregamos simplemente un modelo suelto. Partimos desde tu realidad actual y construimos el flujo completo para que la inteligencia artificial reciba la información correcta.
-          </p>
-        </div>
+    <!-- =====================================================================
+         Como partimos. SIN MONTOS: la seccion transmite que cuesta menos de lo
+         que se cree con hechos (primer paso gratis, precio cerrado por
+         escrito, diagnostico descontable) y con dos boletas que comparan
+         contratar a alguien con automatizar ese trabajo. Las boletas no llevan
+         cifras a proposito: el total de la segunda es la frase de la marca.
+         La numeracion de las fichas corresponde: es una secuencia.
+         ===================================================================== -->
+    <section id="planes" class="en-tinta bg-tinta text-papel py-16 md:py-24">
+      <div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8">
 
-        <div class="relative max-w-4xl mx-auto">
-          <div class="timeline-line" aria-hidden="true"></div>
-
-          <div class="space-y-12">
-            
-            <div class="relative flex flex-col md:flex-row items-start md:items-center group">
-              <div class="hidden md:block md:w-1/2 md:pr-12 text-right">
-                <h3 class="text-xl font-bold text-slate-900">1. Detectamos una oportunidad de IA</h3>
-                <p class="text-sm text-slate-600 mt-2">Analizamos dónde se pierde más tiempo, ocurren más errores o existen oportunidades claras para automatizar y escalar.</p>
-              </div>
-              <div class="absolute left-0 md:left-1/2 transform -translate-x-0 md:-translate-x-1/2 w-8 h-8 rounded-full bg-white border-4 border-slate-300 flex items-center justify-center z-10 shadow-sm group-hover:border-brand-400 transition-colors" aria-hidden="true">
-                <span class="w-2 h-2 rounded-full bg-slate-300 group-hover:bg-brand-400 transition-colors"></span>
-              </div>
-              <div class="ml-12 md:ml-0 md:w-1/2 md:pl-12 md:hidden">
-                <h3 class="text-xl font-bold text-slate-900">1. Detectamos una oportunidad de IA</h3>
-                <p class="text-sm text-slate-600 mt-1">Analizamos dónde se pierde tiempo o ocurren errores.</p>
-              </div>
-            </div>
-
-            <div class="relative flex flex-col md:flex-row items-start md:items-center group">
-              <div class="hidden md:block md:w-1/2 md:pr-12"></div>
-              <div class="absolute left-0 md:left-1/2 transform -translate-x-0 md:-translate-x-1/2 w-8 h-8 rounded-full bg-white border-4 border-slate-300 flex items-center justify-center z-10 shadow-sm group-hover:border-brand-400 transition-colors" aria-hidden="true">
-                <span class="w-2 h-2 rounded-full bg-slate-300 group-hover:bg-brand-400 transition-colors"></span>
-              </div>
-              <div class="ml-12 md:ml-0 md:w-1/2 md:pl-12">
-                <h3 class="text-xl font-bold text-slate-900">2. Preparamos los datos y el proceso</h3>
-                <p class="text-sm text-slate-600 mt-2">Estructuramos la información dispersa (correos, planillas) para que la IA y las reglas puedan consumirla de forma segura.</p>
-              </div>
-            </div>
-
-            <div class="relative flex flex-col md:flex-row items-start md:items-center group">
-              <div class="hidden md:block md:w-1/2 md:pr-12 text-right">
-                <h3 class="text-xl font-bold text-slate-900">3. Automatizamos e integramos</h3>
-                <p class="text-sm text-slate-600 mt-2">Conectamos tus canales y aplicamos reglas de negocio para mover la información sin digitación manual.</p>
-              </div>
-              <div class="absolute left-0 md:left-1/2 transform -translate-x-0 md:-translate-x-1/2 w-8 h-8 rounded-full bg-white border-4 border-slate-300 flex items-center justify-center z-10 shadow-sm group-hover:border-brand-400 transition-colors" aria-hidden="true">
-                <span class="w-2 h-2 rounded-full bg-slate-300 group-hover:bg-brand-400 transition-colors"></span>
-              </div>
-              <div class="ml-12 md:ml-0 md:w-1/2 md:pl-12 md:hidden">
-                <h3 class="text-xl font-bold text-slate-900">3. Automatizamos e integramos</h3>
-                <p class="text-sm text-slate-600 mt-1">Conectamos canales y aplicamos reglas de negocio.</p>
-              </div>
-            </div>
-
-            <div class="relative flex flex-col md:flex-row items-start md:items-center group">
-              <div class="hidden md:block md:w-1/2 md:pr-12"></div>
-              <div class="absolute left-0 md:left-1/2 transform -translate-x-0 md:-translate-x-1/2 w-10 h-10 rounded-full bg-ia-50 border-4 border-ia-500 flex items-center justify-center z-10 shadow-ia-glow" aria-hidden="true">
-                <i data-lucide="sparkles" class="w-4 h-4 text-ia-600"></i>
-              </div>
-              <div class="ml-14 md:ml-0 md:w-1/2 md:pl-12">
-                <h3 class="text-xl font-bold text-slate-900">4. Incorporamos la capacidad inteligente</h3>
-                <p class="text-sm text-slate-600 mt-2">Agregamos extracción inteligente, asistentes de consulta, resumen o priorización donde el procesamiento cognitivo genera valor real.</p>
-              </div>
-            </div>
-
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-10 lg:gap-14 items-center mb-12">
+          <div>
+            <p class="rotulo rotulo-claro mb-3">Cómo partimos</p>
+            <h2 class="display text-[2rem] sm:text-[2.8rem] text-papel mb-5">
+              Cuesta menos de lo que crees. <span class="text-verde-300">Y el primer paso es gratis.</span>
+            </h2>
+            <p class="text-papel-200/90 leading-relaxed">
+              No hay tarifa de lista porque cada pyme parte por un proceso distinto. Lo que sí es igual para todos:
+              no pagas nada por saber si te conviene, y el alcance y el precio quedan cerrados por escrito antes de
+              partir. Sin sorpresas a mitad de camino.
+            </p>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Proyecto Real -->
-    <section id="proyecto" class="py-24 bg-surface-900 text-white overflow-hidden relative border-b border-slate-800">
-      <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-50" aria-hidden="true"></div>
-      
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        <div class="mb-14 md:text-center">
-          <p class="text-xs font-semibold text-brand-400 uppercase tracking-wider mb-2">Proyecto Real · Servicios Financieros</p>
-          <h2 class="text-3xl md:text-4xl font-bold tracking-tight max-w-3xl mx-auto">
-            Cómo estamos preparando una pyme para crecer con inteligencia artificial.
-          </h2>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          <div class="lg:col-span-6 space-y-8">
-            <div>
-              <p class="text-slate-400 text-sm leading-relaxed">
-                Una empresa chilena de asesoría previsional necesitaba modernizar su operación comercial y preparar las condiciones para incorporar progresivamente automatización e inteligencia artificial. La información se encontraba distribuida entre formularios, correos y planillas.
+          <!-- Comparacion en boletas. Decorativa en lo visual, pero el texto es
+               contenido: no va aria-hidden. -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 items-start">
+            <div class="boleta sm:mt-6">
+              <p class="rotulo mb-1">Opción A</p>
+              <h3 class="display-seccion text-[1.2rem] text-tinta mb-4">Contratar a alguien más</h3>
+              <dl class="boleta-filas">
+                <div><dt>Sueldo y leyes sociales</dt><dd>cada mes</dd></div>
+                <div><dt>Selección y capacitación</dt><dd>a tu cargo</dd></div>
+                <div><dt>Disponible</dt><dd>en horario de oficina</dd></div>
+                <div><dt>Si renuncia</dt><dd>vuelta a empezar</dd></div>
+              </dl>
+              <p class="boleta-total">
+                <span class="rotulo">Total</span>
+                <span class="cifra text-[1.35rem] text-tinta-700">Un sueldo más, todos los meses</span>
               </p>
             </div>
 
-            <div class="space-y-6">
-              <div class="bg-slate-800/50 p-5 rounded-xl border border-slate-700 backdrop-blur-sm">
-                <h3 class="text-sm font-semibold text-emerald-400 flex items-center gap-2 mb-2">
-                  <i data-lucide="check-circle" class="w-4 h-4" aria-hidden="true"></i> Trabajo realizado (Base operacional)
-                </h3>
-                <ul class="text-sm text-slate-300 space-y-1.5 list-disc list-inside marker:text-slate-600">
-                  <li>Captura digital estructurada.</li>
-                  <li>Base de datos cloud centralizada.</li>
-                  <li>Gestión de estados y responsables.</li>
-                  <li>Control de acceso por roles.</li>
-                  <li>Notificaciones automáticas por correo.</li>
-                  <li>Historial y trazabilidad de acciones relevantes.</li>
-                </ul>
-              </div>
-              
-              <div class="bg-brand-900/30 p-5 rounded-xl border border-brand-800/50 backdrop-blur-sm relative overflow-hidden">
-                <div class="absolute top-0 right-0 p-3 opacity-10"><i data-lucide="sparkles" class="w-16 h-16 text-brand-400" aria-hidden="true"></i></div>
-                <h3 class="text-sm font-semibold text-brand-300 flex items-center gap-2 mb-2 relative z-10">
-                  <i data-lucide="arrow-right-circle" class="w-4 h-4" aria-hidden="true"></i> Próxima evolución con IA
-                </h3>
-                <ul class="text-sm text-slate-300 space-y-1.5 list-disc list-inside marker:text-brand-700 relative z-10">
-                  <li>Integración de WhatsApp y SMS.</li>
-                  <li>Resumen inteligente de antecedentes.</li>
-                  <li>Priorización asistida de oportunidades.</li>
-                  <li>Apoyo al asesor mediante información regulatoria autorizada.</li>
-                </ul>
-              </div>
+            <div class="boleta boleta-elegida">
+              <p class="rotulo rotulo-verde mb-1">Opción B</p>
+              <h3 class="display-seccion text-[1.2rem] text-tinta mb-4">Automatizar ese trabajo con IA</h3>
+              <dl class="boleta-filas">
+                <div><dt>Primera reunión y asesoría</dt><dd class="text-verde">gratis</dd></div>
+                <div><dt>Proyecto</dt><dd>precio cerrado</dd></div>
+                <div><dt>Operación mensual</dt><dd>menos que un sueldo</dd></div>
+                <div><dt>Disponible</dt><dd>todo el día</dd></div>
+              </dl>
+              <p class="boleta-total">
+                <span class="rotulo rotulo-verde">Total</span>
+                <span class="cifra text-[1.35rem] text-verde">Menos de lo que crees</span>
+              </p>
             </div>
-            
-            <p class="text-sm font-medium text-slate-300 italic border-l-2 border-slate-600 pl-4">
-              "El resultado actual es una base operacional profesional, preparada para incorporar nuevas automatizaciones y capacidades de inteligencia artificial al ritmo de crecimiento del negocio."
+          </div>
+        </div>
+
+        <!-- Paso 0: lo gratis va primero y a todo el ancho, para que sea lo
+             primero que se lee de la oferta. -->
+        <div class="mb-5 rounded border border-verde-300/60 bg-verde-300/[0.08] p-6 sm:p-8 grid grid-cols-1 md:grid-cols-[1fr_1.3fr_auto] gap-6 md:gap-10 md:items-center">
+          <div>
+            <p class="mb-3"><span class="estado estado-grande !bg-verde-300 !text-tinta !border-verde-300">Gratis</span></p>
+            <h3 class="display-seccion text-[1.6rem] text-papel">Primera reunión y asesoría</h3>
+            <p class="rotulo rotulo-claro mt-2">Empieza aquí · Sin compromiso</p>
+          </div>
+          <ul class="space-y-2 text-[0.9375rem] text-papel-200/90">
+            <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde-300 shrink-0 mt-1" aria-hidden="true"></i>No necesitas llegar preparado ni saber de IA</li>
+            <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde-300 shrink-0 mt-1" aria-hidden="true"></i>Te mostramos dónde se te van las horas y por dónde conviene partir</li>
+            <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde-300 shrink-0 mt-1" aria-hidden="true"></i>Te orientamos sobre lo que te pide la Ley 21.719</li>
+            <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde-300 shrink-0 mt-1" aria-hidden="true"></i>Si no hay caso, te lo decimos igual</li>
+          </ul>
+          <div>
+            <a href="#contacto" data-goal="asesoria" class="ir-al-form boton-vivo self-start whitespace-nowrap">
+              Agenda tu asesoría gratis
+              <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 items-stretch">
+
+          <article class="ficha text-tinta flex flex-col">
+            <div class="ficha-cab">
+              <p class="rotulo">Paso 1 · 1 a 2 semanas</p>
+              <span class="dato text-kraft-800 text-sm" aria-hidden="true">01</span>
+            </div>
+            <div class="ficha-cuerpo sm:!p-7 flex flex-col flex-1">
+              <h3 class="display-seccion text-[1.45rem] mb-4">Diagnóstico de IA y datos</h3>
+              <p class="cifra text-[1.6rem] text-verde">Se descuenta si seguimos</p>
+              <p class="rotulo mt-2 mb-5">Precio cerrado antes de partir</p>
+              <p class="text-[0.9375rem] text-tinta-700 leading-relaxed mb-5">
+                Cuando quieres ir a fondo: medimos dónde tu pyme pierde horas y plata, qué riesgos tiene y cómo
+                están tus datos frente a la nueva ley.
+              </p>
+              <ul class="space-y-2 mb-7 text-[0.9375rem]">
+                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Mapa de tareas manuales y horas que consumen</li>
+                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Riesgos operacionales y vencimientos sin control</li>
+                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Estado de tus datos frente a la Ley 21.719</li>
+                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Hoja de ruta con lo que conviene automatizar primero</li>
+              </ul>
+              <a href="#contacto" data-goal="diagnostico" class="ir-al-form rotulo rotulo-verde mt-auto inline-flex items-center gap-1.5 hover:underline">
+                Quiero el diagnóstico <i data-lucide="arrow-right" class="w-3.5 h-3.5" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="ficha text-tinta flex flex-col ring-2 ring-verde-300">
+            <div class="ficha-cab">
+              <p class="rotulo rotulo-verde">Paso 2 · 4 a 6 semanas</p>
+              <span class="dato text-kraft-800 text-sm" aria-hidden="true">02</span>
+            </div>
+            <div class="ficha-cuerpo sm:!p-7 flex flex-col flex-1">
+              <h3 class="display-seccion text-[1.45rem] mb-4">Tu primer proceso con IA</h3>
+              <p class="cifra text-[1.6rem] text-verde">Menos que contratar a una persona más</p>
+              <p class="rotulo mt-2 mb-5">Alcance y precio cerrados por escrito</p>
+              <p class="text-[0.9375rem] text-tinta-700 leading-relaxed mb-5">
+                Elegimos el proceso que más horas o riesgo te cuesta y lo dejamos funcionando con IA.
+              </p>
+              <ul class="space-y-2 mb-7 text-[0.9375rem]">
+                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Un proceso automatizado de punta a punta: facturas, pedidos, ventas u otro</li>
+                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>IA que lee documentos, clasifica y resume</li>
+                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Conexión con tu correo, WhatsApp y planillas</li>
+                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Alertas de vencimientos y seguimiento automático</li>
+                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Panel con lo que pasa en tu operación</li>
+                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Datos con roles, historial y flujo para la Ley 21.719</li>
+                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Capacitación a tu equipo</li>
+              </ul>
+              <a href="#contacto" data-goal="implementacion" class="ir-al-form rotulo rotulo-verde mt-auto inline-flex items-center gap-1.5 hover:underline">
+                Quiero mi primer proceso con IA <i data-lucide="arrow-right" class="w-3.5 h-3.5" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="ficha text-tinta flex flex-col">
+            <div class="ficha-cab">
+              <p class="rotulo">Paso 3 · Mensual</p>
+              <span class="dato text-kraft-800 text-sm" aria-hidden="true">03</span>
+            </div>
+            <div class="ficha-cuerpo sm:!p-7 flex flex-col flex-1">
+              <h3 class="display-seccion text-[1.45rem] mb-4">Operación administrada</h3>
+              <p class="cifra text-[1.6rem] text-verde">Una mensualidad menor que un sueldo</p>
+              <p class="rotulo mt-2 mb-5">Acordada por escrito</p>
+              <p class="text-[0.9375rem] text-tinta-700 leading-relaxed mb-5">
+                Mantenemos todo funcionando, sumamos procesos y dejamos evidencia de la operación mes a mes.
+              </p>
+              <ul class="space-y-2 mb-7 text-[0.9375rem]">
+                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Monitoreo de las automatizaciones</li>
+                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Revisión de accesos y respaldos</li>
+                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Mejoras mensuales</li>
+                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Reporte de métricas y soporte</li>
+              </ul>
+              <a href="#contacto" data-goal="operacion" class="ir-al-form rotulo rotulo-verde mt-auto inline-flex items-center gap-1.5 hover:underline">
+                Consultar por la operación <i data-lucide="arrow-right" class="w-3.5 h-3.5" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="mt-5 border border-white/10 rounded p-6 sm:p-8 grid grid-cols-1 md:grid-cols-[1fr_1.6fr] gap-6 md:gap-10">
+          <div>
+            <p class="mb-3"><span class="marca-ia !text-verde-300 !border-verde-300">IA avanzada · opcional</span></p>
+            <h3 class="display-seccion text-[1.45rem] text-papel">Cuando quieras ir más allá.</h3>
+          </div>
+          <div>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 text-[0.9375rem] text-papel-200/90 mb-4">
+              <li class="flex gap-2"><span class="dato text-verde-300 shrink-0">·</span>Asistente interno con tus procedimientos y precios</li>
+              <li class="flex gap-2"><span class="dato text-verde-300 shrink-0">·</span>Respuestas redactadas por IA, revisadas por tu equipo</li>
+              <li class="flex gap-2"><span class="dato text-verde-300 shrink-0">·</span>Análisis de conversaciones con clientes</li>
+              <li class="flex gap-2"><span class="dato text-verde-300 shrink-0">·</span>Reportes y resúmenes automáticos</li>
+            </ul>
+            <p class="text-[0.9375rem] text-papel-200/70">
+              Se cotiza aparte. Siempre con una persona revisando lo que afecta a un cliente.
             </p>
           </div>
+        </div>
 
-          <div class="lg:col-span-6" aria-hidden="true">
-            <div class="bg-surface-900 rounded-xl border border-slate-700 shadow-2xl overflow-hidden">
-              <div class="bg-surface-800 px-4 py-3 border-b border-slate-700 flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
-                <span class="text-[10px] text-slate-500 ml-2 font-mono">genialabs-platform-demo</span>
+        <p class="mt-8 text-[0.8125rem] text-papel-200/60 max-w-[46rem]">
+          La asesoría y el diagnóstico son técnicos y operacionales; no son asesoría legal. Si tu caso necesita
+          validación jurídica, te lo decimos. WhatsApp funciona con la API oficial de Meta, que cobra aparte por
+          conversación.
+        </p>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         Caso real.
+         SLOT METRICA: cuando exista una cifra MEDIDA (p. ej. tiempo de
+         asignacion antes y despues) y permiso escrito del cliente para
+         nombrarlo, va como cuarta ficha junto a "Antes" y "Ahora".
+         ===================================================================== -->
+    <section id="proyecto" class="py-16 md:py-24 bg-papel-100 border-b border-papel-200">
+      <div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8">
+
+        <div class="max-w-[46rem] mb-12">
+          <p class="rotulo mb-3">Caso real · Asesoría previsional</p>
+          <h2 class="display-seccion text-[2rem] sm:text-[2.6rem] mb-4">
+            De la planilla compartida a una operación que deja registro.
+          </h2>
+          <p class="text-tinta-700 leading-relaxed">
+            Una pyme chilena de asesoría previsional gestionaba sus prospectos en planillas compartidas, con la
+            información repartida entre formularios y correos. Llevamos la operación a una base de datos en la
+            nube, con roles, estados e historial.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+
+          <div class="space-y-5">
+            <div class="ficha">
+              <div class="ficha-cab">
+                <p class="rotulo">Antes</p>
+                <span class="estado estado-espera">Planillas</span>
               </div>
-              <div class="p-5">
-                <div class="flex justify-between items-center mb-5">
-                  <h3 class="text-sm font-medium text-slate-200">Panel Central de Oportunidades</h3>
-                  <span class="text-[10px] bg-emerald-900/30 text-emerald-400 px-2 py-1 rounded border border-emerald-800/50">Base de datos Activa</span>
-                </div>
-                
-                <div class="space-y-3">
-                  <div class="bg-slate-800 rounded-lg p-3.5 flex justify-between items-center border border-slate-700 transition-colors hover:border-slate-600">
-                    <div class="flex items-center gap-3">
-                      <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-slate-400"><i data-lucide="user" class="w-4 h-4"></i></div>
-                      <div>
-                        <p class="text-sm font-medium text-slate-200">Prospecto 001</p>
-                        <p class="text-xs text-slate-500">Origen: Formulario Web</p>
-                      </div>
-                    </div>
-                    <div class="flex flex-col items-end gap-1.5">
-                      <span class="px-2 py-0.5 bg-brand-900/50 text-brand-300 text-[10px] rounded border border-brand-800/50">En Seguimiento</span>
-                      <span class="text-[10px] text-slate-500">Asesorado por: Equipo A</span>
-                    </div>
-                  </div>
-                  
-                  <div class="bg-slate-800 rounded-lg p-3.5 flex justify-between items-center border border-slate-700 transition-colors hover:border-slate-600">
-                    <div class="flex items-center gap-3">
-                      <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-slate-400"><i data-lucide="user" class="w-4 h-4"></i></div>
-                      <div>
-                        <p class="text-sm font-medium text-slate-200">Prospecto 002</p>
-                        <p class="text-xs text-slate-500">Origen: Casilla de Correo</p>
-                      </div>
-                    </div>
-                    <div class="flex flex-col items-end gap-1.5">
-                      <span class="px-2 py-0.5 bg-amber-900/30 text-amber-300 text-[10px] rounded border border-amber-800/50">Evaluación Inicial</span>
-                      <span class="text-[10px] text-slate-500">Asignación automática</span>
-                    </div>
-                  </div>
+              <ul class="ficha-cuerpo space-y-2 text-[0.9375rem] text-tinta-700">
+                <li class="flex gap-2"><span class="dato text-kraft-800 shrink-0">·</span>Prospectos en planillas compartidas</li>
+                <li class="flex gap-2"><span class="dato text-kraft-800 shrink-0">·</span>Información repartida entre formularios, correos y planillas</li>
+              </ul>
+            </div>
 
-                  <div class="mt-4 p-3 rounded-lg border border-dashed border-slate-700 bg-slate-800/30 flex items-start gap-3">
-                    <i data-lucide="sparkles" class="w-4 h-4 text-ia-400 shrink-0 mt-0.5"></i>
-                    <div>
-                      <p class="text-[11px] font-medium text-slate-300">Capacidad IA en desarrollo</p>
-                      <p class="text-[10px] text-slate-500 mt-0.5">Módulo de priorización predictiva y resumen generativo de interacciones para el equipo asesor.</p>
-                    </div>
-                  </div>
+            <div class="ficha">
+              <div class="ficha-cab">
+                <p class="rotulo rotulo-verde">Ahora</p>
+                <span class="estado">Entregado</span>
+              </div>
+              <ul class="ficha-cuerpo grid sm:grid-cols-2 gap-x-5 gap-y-2 text-[0.9375rem] text-tinta-700">
+                <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Captura digital estructurada</li>
+                <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Base de datos centralizada</li>
+                <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Estados y responsables</li>
+                <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Control de acceso por rol</li>
+                <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Avisos automáticos por correo</li>
+                <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Historial y trazabilidad</li>
+              </ul>
+            </div>
+
+            <div class="ficha">
+              <div class="ficha-cab">
+                <p class="rotulo">Siguiente etapa</p>
+                <span class="estado estado-espera">En diseño</span>
+              </div>
+              <ul class="ficha-cuerpo grid sm:grid-cols-2 gap-x-5 gap-y-2 text-[0.9375rem] text-tinta-700">
+                <li class="flex gap-2"><span class="dato text-kraft-800 shrink-0">·</span>WhatsApp y SMS</li>
+                <li class="flex gap-2"><span class="dato text-kraft-800 shrink-0">·</span>Resumen de antecedentes con IA</li>
+                <li class="flex gap-2"><span class="dato text-kraft-800 shrink-0">·</span>Priorización asistida</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Maqueta del panel. Decorativa: describe lo que ya se lee al lado. -->
+          <div class="en-tinta bg-tinta rounded border border-tinta-700 overflow-hidden" aria-hidden="true">
+            <div class="flex items-center gap-2 px-4 py-3 border-b border-tinta-700">
+              <span class="w-2 h-2 rounded-full bg-tinta-500"></span>
+              <span class="w-2 h-2 rounded-full bg-tinta-500"></span>
+              <span class="w-2 h-2 rounded-full bg-tinta-500"></span>
+              <span class="dato text-[0.6875rem] text-tinta-300 ml-2">panel de oportunidades</span>
+            </div>
+            <div class="p-4 space-y-2.5">
+              <div class="bg-white/[0.04] border border-tinta-700 rounded p-3.5 flex items-start justify-between gap-4">
+                <div>
+                  <p class="dato text-[0.8125rem] text-papel">Prospecto 001</p>
+                  <p class="rotulo rotulo-claro mt-1">Origen · Formulario web</p>
                 </div>
-                
+                <div class="text-right shrink-0">
+                  <span class="estado">En seguimiento</span>
+                  <p class="rotulo rotulo-claro mt-1.5">Equipo A</p>
+                </div>
+              </div>
+              <div class="bg-white/[0.04] border border-tinta-700 rounded p-3.5 flex items-start justify-between gap-4">
+                <div>
+                  <p class="dato text-[0.8125rem] text-papel">Prospecto 002</p>
+                  <p class="rotulo rotulo-claro mt-1">Origen · Correo</p>
+                </div>
+                <div class="text-right shrink-0">
+                  <span class="estado estado-espera">Evaluación</span>
+                  <p class="rotulo rotulo-claro mt-1.5">Asignación automática</p>
+                </div>
+              </div>
+              <div class="border border-dashed border-tinta-700 rounded p-3.5">
+                <p class="rotulo rotulo-claro mb-1.5">Historial</p>
+                <p class="text-[0.8125rem] text-tinta-300 leading-snug">
+                  Cada cambio de estado queda con fecha y responsable.
+                </p>
               </div>
             </div>
           </div>
@@ -925,182 +1024,163 @@
       </div>
     </section>
 
-    <!-- Credenciales -->
-    <section class="py-16 bg-surface-50 border-b border-slate-100">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="mb-12 text-center">
-          <h2 class="text-2xl font-bold text-slate-900">Experiencia que sustenta nuestro trabajo</h2>
-          <p class="text-slate-600 mt-2">Combinamos automatización, reglas de negocio e inteligencia artificial para construir la solución más eficiente para cada proceso.</p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm text-center">
-            <div class="w-10 h-10 mx-auto rounded-full bg-slate-100 flex items-center justify-center text-slate-600 mb-4" aria-hidden="true">
-              <i data-lucide="file-search" class="w-5 h-5"></i>
-            </div>
-            <h3 class="text-sm font-semibold text-slate-900 mb-2">Inteligencia Documental</h3>
-            <p class="text-xs text-slate-600">Automatización de lectura, extracción y validación desde documentos regulatorios y operacionales.</p>
+    <!-- =====================================================================
+         Cierre de marca antes del formulario: el logo con los electrones
+         girando por sus orbitas. El SVG lo genera scripts/build.mjs a partir
+         de public/assets/img/logo-genialabs.svg y reemplaza el comentario
+         LOGO_ANIMADO. Se pausa fuera de pantalla, con movimiento reducido y
+         con el boton Pausar de la demo (initLogoAnimado).
+         ===================================================================== -->
+    <section class="en-tinta banda-marca text-papel border-y border-white/10 overflow-hidden" data-logo-animado>
+      <div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8 py-14 md:py-20">
+        <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-14">
+          <div class="logo-animado">
+            <!-- LOGO_ANIMADO -->
           </div>
-          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm text-center">
-            <div class="w-10 h-10 mx-auto rounded-full bg-slate-100 flex items-center justify-center text-slate-600 mb-4" aria-hidden="true">
-              <i data-lucide="book-open" class="w-5 h-5"></i>
-            </div>
-            <h3 class="text-sm font-semibold text-slate-900 mb-2">Asistentes de Conocimiento</h3>
-            <p class="text-xs text-slate-600">Solución de búsqueda y respuesta sobre documentación privada, con recuperación de fuentes (RAG).</p>
-          </div>
-          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm text-center">
-            <div class="w-10 h-10 mx-auto rounded-full bg-slate-100 flex items-center justify-center text-slate-600 mb-4" aria-hidden="true">
-              <i data-lucide="settings" class="w-5 h-5"></i>
-            </div>
-            <h3 class="text-sm font-semibold text-slate-900 mb-2">Automatización Operacional</h3>
-            <p class="text-xs text-slate-600">Integración de datos, IA y servicios cloud para reducir tareas manuales y acelerar procesos.</p>
-          </div>
-          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm text-center">
-            <div class="w-10 h-10 mx-auto rounded-full bg-slate-100 flex items-center justify-center text-slate-600 mb-4" aria-hidden="true">
-              <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
-            </div>
-            <h3 class="text-sm font-semibold text-slate-900 mb-2">Analítica y Modelos</h3>
-            <p class="text-xs text-slate-600">Desarrollo de soluciones de ciencia de datos orientadas a apoyar decisiones y priorizar casos.</p>
+          <div class="flex flex-col items-center md:items-start gap-6">
+            <span class="marca-texto marca-texto-gigante" aria-hidden="true">
+              <span class="marca-genia">GENIA</span>
+              <span class="marca-labs">LABS</span>
+            </span>
+            <p class="rotulo rotulo-claro text-center md:text-left">
+              Inteligencia artificial y automatización para pymes
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contacto -->
-    <section id="contacto" class="py-24 bg-surface-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-          
-          <div class="lg:col-span-5 space-y-6">
-            <h2 class="text-3xl font-bold text-slate-900 tracking-tight">
-              Descubrir dónde aplicar IA.
+    <!-- =====================================================================
+         Contacto
+         ===================================================================== -->
+    <section id="contacto" class="py-16 md:py-24 bg-papel-100">
+      <div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.35fr] gap-10 lg:gap-14">
+
+          <div>
+            <p class="rotulo mb-3">Contacto</p>
+            <h2 class="display-seccion text-[2rem] sm:text-[2.6rem] mb-4">
+              Tu primera reunión y asesoría, gratis.
             </h2>
-            <p class="text-base text-slate-600 font-light leading-relaxed">
-              No necesitas saber qué tecnología utilizar ni tener tus datos perfectamente ordenados. Cuéntanos qué quieres mejorar y te mostraremos un camino viable.
+            <p class="text-tinta-700 leading-relaxed mb-8">
+              Cuéntanos qué tarea les quita más horas o qué te preocupa de la nueva ley. No necesitas llegar preparado
+              ni saber de IA. En la reunión te decimos si hay caso, por dónde partir y cuánto costaría —probablemente
+              menos de lo que crees—. <strong class="font-medium text-tinta">Si no hay caso, te lo decimos igual</strong>,
+              aunque no trabajemos juntos.
             </p>
 
-            <div class="pt-6 space-y-4">
-              <div class="flex items-start gap-3">
-                <div class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center shrink-0 shadow-sm" aria-hidden="true">
-                  <i data-lucide="mail" class="w-5 h-5 text-brand-600"></i>
-                </div>
-                <div class="pt-1.5">
-                  <p class="text-sm font-medium text-slate-900">contacto@genialabs.cl</p>
-                  <p class="text-xs text-slate-500">Respondemos en menos de 24 horas hábiles.</p>
-                </div>
+            <dl class="space-y-4 border-t border-papel-200 pt-6">
+              <div>
+                <dt class="rotulo mb-1">Correo</dt>
+                <dd class="dato text-[0.9375rem]">
+                  <a href="mailto:contacto@genialabs.cl" class="hover:text-verde">contacto@genialabs.cl</a>
+                </dd>
+                <dd class="text-sm text-tinta-500">Respondemos en menos de 24 horas hábiles.</dd>
               </div>
-              <div class="flex items-start gap-3">
-                <div class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center shrink-0 shadow-sm" aria-hidden="true">
-                  <i data-lucide="map-pin" class="w-5 h-5 text-brand-600"></i>
-                </div>
-                <div class="pt-1.5">
-                  <p class="text-sm font-medium text-slate-900">Santiago, Chile</p>
-                  <p class="text-xs text-slate-500">Atención remota a todo el país.</p>
-                </div>
+              <div>
+                <dt class="rotulo mb-1">Dónde estamos</dt>
+                <dd class="dato text-[0.9375rem]">Santiago, Chile</dd>
+                <dd class="text-sm text-tinta-500">Trabajamos de forma remota con todo el país.</dd>
               </div>
-            </div>
+            </dl>
           </div>
 
-          <div class="lg:col-span-7">
-            <div class="bg-white rounded-3xl border border-slate-200 shadow-float p-6 sm:p-10 relative overflow-hidden">
-              
-              <!-- Region aria-live para notificar estado de envío -->
+          <div class="ficha relative">
+            <div class="ficha-cab">
+              <p class="rotulo">Agenda tu reunión</p>
+              <i data-lucide="file-text" class="w-4 h-4 text-kraft-800 shrink-0" aria-hidden="true"></i>
+            </div>
+            <div class="ficha-cuerpo sm:!p-8">
+
               <div id="formAnnouncement" aria-live="assertive" class="sr-only"></div>
 
-              <form id="contactForm" class="space-y-5" action="/gracias" method="POST"
+              <form id="contactForm" class="space-y-4" action="/gracias" method="POST"
                 name="contacto" data-netlify="true" netlify-honeypot="_honey">
                 <input type="hidden" name="form-name" value="contacto" />
-                
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label for="userName" class="block text-sm font-medium text-slate-700 mb-1">Nombre <span aria-hidden="true">*</span><span class="sr-only">requerido</span></label>
-                    <input type="text" id="userName" name="name" required class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-surface-50 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all" />
+                    <label for="userName" class="rotulo block mb-1.5">Nombre <span aria-hidden="true">*</span><span class="sr-only">requerido</span></label>
+                    <input type="text" id="userName" name="name" required autocomplete="name" class="campo" />
                   </div>
                   <div>
-                    <label for="userCompany" class="block text-sm font-medium text-slate-700 mb-1">Empresa <span aria-hidden="true">*</span><span class="sr-only">requerida</span></label>
-                    <input type="text" id="userCompany" name="company" required class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-surface-50 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all" />
+                    <label for="userCompany" class="rotulo block mb-1.5">Empresa <span aria-hidden="true">*</span><span class="sr-only">requerida</span></label>
+                    <input type="text" id="userCompany" name="company" required autocomplete="organization" class="campo" />
                   </div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label for="userEmail" class="block text-sm font-medium text-slate-700 mb-1">Correo de contacto <span aria-hidden="true">*</span><span class="sr-only">requerido</span></label>
-                    <input type="email" id="userEmail" name="email" required class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-surface-50 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all" />
+                    <label for="userEmail" class="rotulo block mb-1.5">Correo <span aria-hidden="true">*</span><span class="sr-only">requerido</span></label>
+                    <input type="email" id="userEmail" name="email" required autocomplete="email" class="campo" />
                   </div>
                   <div>
-                    <label for="userPhone" class="block text-sm font-medium text-slate-700 mb-1">Teléfono o WhatsApp <span class="text-slate-400 font-normal">(Opcional)</span></label>
-                    <input type="tel" id="userPhone" name="phone" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-surface-50 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all" />
+                    <label for="userPhone" class="rotulo block mb-1.5">Teléfono o WhatsApp <span class="normal-case tracking-normal">(opcional)</span></label>
+                    <input type="tel" id="userPhone" name="phone" autocomplete="tel" class="campo" />
                   </div>
                 </div>
 
                 <div>
-                  <label for="improvementGoal" class="block text-sm font-medium text-slate-700 mb-1">¿Qué te gustaría mejorar? <span aria-hidden="true">*</span><span class="sr-only">requerido</span></label>
-                  <select id="improvementGoal" name="goal" required class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-surface-50 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all appearance-none cursor-pointer">
-                    <option value="" disabled selected>Selecciona una opción...</option>
-                    <option value="procesar_documentos">Procesar documentos o datos manuales</option>
-                    <option value="automatizar_tareas">Automatizar tareas operacionales</option>
-                    <option value="ordenar_oportunidades">Ordenar y seguir oportunidades comerciales</option>
-                    <option value="crear_asistente">Crear un asistente de IA para el equipo</option>
-                    <option value="automatizar_comunicaciones">Automatizar comunicaciones y notificaciones</option>
-                    <option value="reportes_resumenes">Generar reportes o resúmenes automatizados</option>
-                    <option value="explorar_ia">Explorar dónde aplicar IA</option>
+                  <label for="improvementGoal" class="rotulo block mb-1.5">Qué necesitas <span aria-hidden="true">*</span><span class="sr-only">requerido</span></label>
+                  <select id="improvementGoal" name="goal" required class="campo">
+                    <option value="" disabled selected>Elige una opción</option>
+                    <option value="asesoria">No sé por dónde partir: quiero la asesoría gratis</option>
+                    <option value="papeleo">Reducir digitación y papeleo</option>
+                    <option value="ley_21719">Preparar mis datos para la Ley 21.719</option>
+                    <option value="riesgo">Controlar vencimientos y riesgo operacional</option>
+                    <option value="ventas">Responder y hacer seguimiento a clientes</option>
+                    <option value="diagnostico">Hacer el diagnóstico de IA y datos</option>
+                    <option value="implementacion">Implementar mi primer proceso con IA</option>
+                    <option value="operacion">Mantención y operación mensual</option>
                     <option value="otro">Otro</option>
                   </select>
                 </div>
 
                 <div>
-                  <label for="userChallenge" class="block text-sm font-medium text-slate-700 mb-1">
-                    Cuéntanos brevemente tu necesidad <span aria-hidden="true">*</span><span class="sr-only">requerido</span>
+                  <label for="userChallenge" class="rotulo block mb-1.5">
+                    Cuéntanos qué te quita más tiempo <span aria-hidden="true">*</span><span class="sr-only">requerido</span>
                   </label>
-                  <textarea id="userChallenge" name="challenge" rows="3" required placeholder="Ej: Perdemos tiempo digitando facturas, necesitamos ordenar los contactos que llegan de la web..." class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-surface-50 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all resize-none"></textarea>
+                  <textarea id="userChallenge" name="challenge" rows="3" required placeholder="Ej: pasamos horas digitando facturas y nos enteramos tarde de los vencimientos de pólizas..." class="campo resize-none"></textarea>
                 </div>
 
-                <!-- Campo Honeypot para Antispam -->
+                <!-- Trampa antispam: debe seguir oculta y sin autocompletar. -->
                 <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-                <!-- Origen del lead -->
-                <input type="hidden" name="source" value="landing_page_v6">
+                <input type="hidden" name="source" value="landing_2026_09">
 
-                <button type="submit" id="submitBtn" class="w-full py-4 rounded-xl bg-brand-900 hover:bg-brand-800 focus:ring-2 focus:ring-offset-2 focus:ring-brand-900 text-white font-medium text-base transition-all shadow-sm flex items-center justify-center gap-2 group">
-                  <span>Descubrir mi oportunidad de IA</span>
-                  <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1" id="submitIcon" aria-hidden="true"></i>
-                  <svg id="submitLoader" class="animate-spin -ml-1 mr-3 h-5 w-5 text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                <button type="submit" id="submitBtn" class="boton w-full !py-4 mt-2">
+                  <span>Agendar mi asesoría gratis</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4" id="submitIcon" aria-hidden="true"></i>
+                  <svg id="submitLoader" class="animate-spin h-5 w-5 text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
                 </button>
-                
-                <p class="text-center text-xs text-slate-400 mt-4">
-                  Revisaremos tu necesidad y conversaremos contigo sobre una primera solución viable.
+
+                <p class="rotulo text-center">Gratis y sin compromiso · Respondemos en menos de 24 h hábiles</p>
+                <p class="text-[0.8125rem] text-tinta-500 text-center leading-relaxed">
+                  Usamos estos datos para responder tu solicitud y hacer el seguimiento.
+                  <a href="/privacidad" class="underline underline-offset-2 hover:text-verde">Política de privacidad</a>.
                 </p>
               </form>
 
-              <!-- Modales de Resultado -->
               <div id="formSuccessModal" class="hidden absolute inset-0 bg-white z-10 flex flex-col items-center justify-center text-center p-8">
-                <div class="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6" aria-hidden="true">
-                  <i data-lucide="check" class="w-8 h-8"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-slate-900" tabindex="-1" id="successHeading">Mensaje enviado exitosamente</h3>
-                <p class="text-slate-600 mt-2 max-w-sm">
-                  Hemos recibido tu información. Revisaremos tu caso y nos pondremos en contacto contigo a la brevedad.
+                <span class="estado mb-5">Recibido</span>
+                <h3 class="display-seccion text-[1.6rem]" tabindex="-1" id="successHeading">Recibimos tu solicitud</h3>
+                <p class="text-tinta-700 mt-3 max-w-sm">
+                  Te escribimos dentro de las próximas 24 horas hábiles para coordinar tu reunión y asesoría gratis.
                 </p>
-                <button type="button" id="resetFormBtn" class="mt-8 px-6 py-2.5 rounded-lg border border-slate-200 text-slate-600 text-sm font-medium hover:bg-slate-50 transition-colors focus:ring-2 focus:ring-slate-500">
-                  Volver
-                </button>
+                <button type="button" id="resetFormBtn" class="boton-sec mt-7">Volver</button>
               </div>
-              
+
               <div id="formErrorModal" class="hidden absolute inset-0 bg-white z-10 flex flex-col items-center justify-center text-center p-8">
-                <div class="w-16 h-16 rounded-full bg-red-50 text-red-600 flex items-center justify-center mb-6" aria-hidden="true">
-                  <i data-lucide="alert-triangle" class="w-8 h-8"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-slate-900" tabindex="-1" id="errorHeading">Ocurrió un error</h3>
-                <p class="text-slate-600 mt-2 max-w-sm" id="errorMessageText">
-                  No pudimos procesar tu solicitud de forma automática. Por favor, escríbenos directamente a <a href="mailto:contacto@genialabs.cl" class="text-brand-600 font-medium hover:underline">contacto@genialabs.cl</a> indicando tu requerimiento.
+                <span class="estado estado-espera mb-5">No se envió</span>
+                <h3 class="display-seccion text-[1.6rem]" tabindex="-1" id="errorHeading">No pudimos enviar tu solicitud</h3>
+                <p class="text-tinta-700 mt-3 max-w-sm" id="errorMessageText">
+                  Escríbenos directamente a
+                  <a href="mailto:contacto@genialabs.cl" class="text-verde underline underline-offset-4">contacto@genialabs.cl</a>
+                  y cuéntanos lo mismo que ibas a enviar.
                 </p>
-                <button type="button" id="closeErrorBtn" class="mt-8 px-6 py-2.5 rounded-lg border border-slate-200 text-slate-600 text-sm font-medium hover:bg-slate-50 transition-colors focus:ring-2 focus:ring-slate-500">
-                  Intentar nuevamente
-                </button>
+                <button type="button" id="closeErrorBtn" class="boton-sec mt-7">Intentar de nuevo</button>
               </div>
 
             </div>
@@ -1111,48 +1191,54 @@
     </section>
   </main>
 
-  <footer class="bg-white border-t border-slate-200 pt-16 pb-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="flex flex-col md:flex-row justify-between items-start gap-8 mb-12">
+  <footer class="en-tinta bg-tinta text-papel pt-14 pb-8">
+    <div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8">
+
+      <div class="flex flex-col md:flex-row justify-between gap-10 pb-10 border-b border-tinta-700">
         <div class="max-w-xs">
-          <div class="flex items-center gap-2 mb-4">
-            <span class="text-xl font-bold tracking-tight text-slate-900">
-              Genia<span class="text-brand-600 font-medium">Labs</span>
+          <a href="/" class="marca marca-grande rounded p-1 -ml-1 mb-4" aria-label="Genia Labs, inicio">
+            <img src="/assets/img/logo-genialabs.svg" alt="" width="57" height="68" class="marca-simbolo" loading="lazy" />
+            <span class="marca-texto" aria-hidden="true">
+              <span class="marca-genia">GENIA</span>
+              <span class="marca-labs">LABS</span>
             </span>
-          </div>
-          <p class="text-sm text-slate-500 leading-relaxed">
-            Acercamos la inteligencia artificial a las pymes y construimos todo lo necesario para convertirla en resultados reales.
+          </a>
+          <p class="text-sm text-papel-200/70 leading-relaxed">
+            Inteligencia artificial para pymes chilenas: menos horas hombre, menos papeleo y tus datos preparados
+            para la Ley 21.719.
           </p>
         </div>
 
-        <div class="flex flex-wrap gap-12 md:gap-16">
+        <div class="flex gap-12 sm:gap-20">
           <div>
-            <h3 class="text-sm font-semibold text-slate-900 mb-4">Soluciones</h3>
-            <ul class="space-y-2 text-sm text-slate-600">
-              <li><a href="#soluciones" class="hover:text-brand-600 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Procesamiento Documentos</a></li>
-              <li><a href="#soluciones" class="hover:text-brand-600 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Gestión Oportunidades</a></li>
-              <li><a href="#soluciones" class="hover:text-brand-600 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Asistentes de Equipo</a></li>
+            <p class="rotulo rotulo-claro mb-4">La oferta</p>
+            <ul class="space-y-2 text-sm text-papel-200/80">
+              <li><a href="#planes" class="hover:text-papel">Asesoría gratis</a></li>
+              <li><a href="#planes" class="hover:text-papel">Diagnóstico</a></li>
+              <li><a href="#planes" class="hover:text-papel">Primer proceso con IA</a></li>
+              <li><a href="#planes" class="hover:text-papel">Operación mensual</a></li>
+              <li><a href="#calculadora" class="hover:text-papel">Calculadora</a></li>
             </ul>
           </div>
           <div>
-            <h3 class="text-sm font-semibold text-slate-900 mb-4">Empresa</h3>
-            <ul class="space-y-2 text-sm text-slate-600">
-              <li><a href="#casos-pymes" class="hover:text-brand-600 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Casos de Uso</a></li>
-              <li><a href="#inversion" class="hover:text-brand-600 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Inversión</a></li>
-              <li><a href="#contacto" class="hover:text-brand-600 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Contacto</a></li>
+            <p class="rotulo rotulo-claro mb-4">Genia Labs</p>
+            <ul class="space-y-2 text-sm text-papel-200/80">
+              <li><a href="#beneficios" class="hover:text-papel">Beneficios</a></li>
+              <li><a href="#sin-excusas" class="hover:text-papel">Lo que te frena</a></li>
+              <li><a href="#ley" class="hover:text-papel">Ley de datos</a></li>
+              <li><a href="#proyecto" class="hover:text-papel">Caso real</a></li>
+              <li><a href="#contacto" class="hover:text-papel">Contacto</a></li>
             </ul>
           </div>
         </div>
       </div>
 
-      <div class="pt-8 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-        <p>© <span id="currentYear"></span> Genia Labs. Todos los derechos reservados.</p>
-        <div class="flex gap-6">
-          <span>Santiago, Chile</span>
-          <a href="/privacidad" class="hover:text-slate-800 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-500">Política de Privacidad</a>
-          <a href="https://linkedin.com/company/genialabs" target="_blank" rel="noopener noreferrer" class="hover:text-slate-800 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-500">LinkedIn</a>
-        </div>
+      <!-- Sin LinkedIn: la pagina de empresa todavia no existe (404). -->
+      <div class="pt-7 flex flex-col sm:flex-row justify-between gap-3">
+        <p class="rotulo rotulo-claro">© <span id="currentYear"></span> Genia Labs · Santiago de Chile</p>
+        <p class="rotulo rotulo-claro">
+          <a href="/privacidad" class="hover:text-papel">Política de privacidad</a> · contacto@genialabs.cl
+        </p>
       </div>
     </div>
   </footer>
@@ -1160,292 +1246,437 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-      // Menú móvil
-      const mobileBtn = document.getElementById('mobileMenuBtn');
-      const mobileMenu = document.getElementById('mobileMenu');
-      const navLinks = document.querySelectorAll('.mobile-nav-link');
-
-      if (mobileBtn && mobileMenu) {
-        mobileBtn.addEventListener('click', () => {
-          const isExpanded = mobileBtn.getAttribute('aria-expanded') === 'true';
-          mobileBtn.setAttribute('aria-expanded', !isExpanded);
-          mobileMenu.classList.toggle('hidden');
-          mobileMenu.setAttribute('aria-hidden', isExpanded);
-        });
-        navLinks.forEach(link => link.addEventListener('click', () => {
-          mobileMenu.classList.add('hidden');
-          mobileMenu.setAttribute('aria-hidden', 'true');
-          mobileBtn.setAttribute('aria-expanded', 'false');
-        }));
-      }
-
-      initTabsPymes();
-      initInteractiveDemo();
-      initContactForm();
+      initMenuMovil();
+      initCuentaRegresiva();
+      initDemo();
+      initRotador();
+      initMatriz();
+      initLogoAnimado();
+      initCalculadora();
+      initAtajosFormulario();
+      initFormularioContacto();
     });
 
-    /* --- Accesibilidad Pymes Tabs --- */
-    function initTabsPymes() {
-      const tabBtns = document.querySelectorAll('.tab-btn');
-      const tabContents = document.querySelectorAll('.tab-content');
+    /* --- Menu movil --------------------------------------------------------- */
+    function initMenuMovil() {
+      const btn = document.getElementById('mobileMenuBtn');
+      const menu = document.getElementById('mobileMenu');
+      if (!btn || !menu) return;
 
-      tabBtns.forEach((btn, index) => {
-        btn.addEventListener('click', () => activateTab(btn, tabBtns, tabContents));
-        
-        btn.addEventListener('keydown', (e) => {
-          let nextIndex = index;
-          if (e.key === 'ArrowRight') nextIndex = (index + 1) % tabBtns.length;
-          else if (e.key === 'ArrowLeft') nextIndex = (index - 1 + tabBtns.length) % tabBtns.length;
-          else return;
-
-          e.preventDefault();
-          tabBtns[nextIndex].focus();
-          activateTab(tabBtns[nextIndex], tabBtns, tabContents);
-        });
+      btn.addEventListener('click', () => {
+        const abierto = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!abierto));
+        menu.classList.toggle('hidden');
+        menu.setAttribute('aria-hidden', String(abierto));
       });
 
-      function activateTab(btn, allBtns, allContents) {
-        allBtns.forEach(b => {
-          b.classList.remove('active', 'bg-brand-900', 'text-white');
-          b.classList.add('bg-white', 'text-slate-600');
-          b.setAttribute('aria-selected', 'false');
-          b.setAttribute('tabindex', '-1');
-        });
-        allContents.forEach(c => {
-          c.classList.remove('active');
-          c.classList.add('hidden');
-        });
+      document.querySelectorAll('.mobile-nav-link').forEach((link) =>
+        link.addEventListener('click', () => {
+          menu.classList.add('hidden');
+          menu.setAttribute('aria-hidden', 'true');
+          btn.setAttribute('aria-expanded', 'false');
+        })
+      );
+    }
 
-        btn.classList.add('active', 'bg-brand-900', 'text-white');
-        btn.classList.remove('bg-white', 'text-slate-600');
-        btn.setAttribute('aria-selected', 'true');
-        btn.setAttribute('tabindex', '0');
-        
-        const targetContent = document.getElementById(btn.dataset.target);
-        targetContent.classList.add('active');
-        targetContent.classList.remove('hidden');
+    /* --- Cuenta regresiva a la Ley 21.719 ----------------------------------
+     * Cuenta dias calendario en hora de Chile, no horas: tiene que decir lo
+     * mismo a las 8 de la manana y a las 11 de la noche. Alimenta la linea
+     * corta de la portada y el numero grande de la franja de la ley.
+     * Desde el 1 de diciembre se deja el texto del HTML ("rige desde..."). */
+    function initCuentaRegresiva() {
+      let hoy;
+      try {
+        hoy = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Santiago' }).format(new Date());
+      } catch (e) {
+        return;
+      }
+      const [a, m, d] = hoy.split('-').map(Number);
+      const dias = Math.round((Date.UTC(2026, 11, 1) - Date.UTC(a, m - 1, d)) / 86400000);
+      if (dias < 0) return;
+
+      const corto = dias > 1 ? `rige en ${dias} días` : dias === 1 ? 'rige mañana' : 'rige desde hoy';
+      document.querySelectorAll('[data-cuenta-regresiva]').forEach((n) => { n.textContent = corto; });
+
+      const numero = document.querySelector('[data-dias-numero]');
+      if (!numero) return;
+      const rotulo = document.querySelector('[data-dias-rotulo]');
+      const pie = document.querySelector('[data-dias-pie]');
+      if (dias === 0) {
+        rotulo.textContent = 'La ley';
+        numero.textContent = 'Hoy';
+        pie.textContent = 'entra en vigencia';
+      } else {
+        rotulo.textContent = dias === 1 ? 'Falta' : 'Faltan';
+        numero.textContent = String(dias);
+        pie.textContent = dias === 1 ? 'día para que rija' : 'días para que rija';
       }
     }
 
-    /* --- Microdemostración Interactiva Compactada --- */
-    function initInteractiveDemo() {
-      const demoTabs = document.querySelectorAll('.demo-tab-btn');
-      const caseContainers = document.querySelectorAll('.demo-case-container');
-      const replayBtn = document.getElementById('demoReplayBtn');
-      const ctaBtn = document.getElementById('demoActionBtn');
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      
-      let animationTimeouts = [];
-      let currentActiveCase = 'doc';
+    /* --- Demo de la portada --------------------------------------------------
+     * Tareas tipicas de una pyme (papeleo, ventas, ley de datos, riesgo
+     * operacional) que entran, la IA clasifica y quedan resueltas, sumando los
+     * minutos de trabajo manual evitados.
+     * - Parte desde el estado estatico del HTML (primera tarea ya clasificada
+     *   y tres resueltas), asi no hay salto al cargar.
+     * - Se detiene sola fuera de pantalla y con la pestana oculta, y tiene
+     *   boton de pausa: es movimiento que dura mas de 5 s (WCAG 2.2.2). El
+     *   mismo boton detiene la frase rotativa del titular.
+     * - Con movimiento reducido no arranca: queda el estado estatico.
+     * Datos ficticios y fijos; igual se escriben con textContent. */
+    function initDemo() {
+      const raiz = document.querySelector('[data-demo]');
+      if (!raiz) return;
 
-      function clearAnimations() {
-        animationTimeouts.forEach(t => clearTimeout(t));
-        animationTimeouts = [];
+      const btn = raiz.querySelector('[data-demo-pausa]');
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        btn.hidden = true;
+        return;
       }
 
-      function startAnimation(caseId) {
-        clearAnimations();
-        const container = document.getElementById(`demo-case-${caseId}`);
-        if (!container) return;
+      const TAREAS = [
+        { canal: 'Correo', msg: 'Adjunto factura N° 1043 por $1.248.900.', titulo: 'Factura 1043 registrada', tags: ['Factura', 'Datos extraídos'], destino: 'Contabilidad', min: 6 },
+        { canal: 'WhatsApp', msg: 'Hola, necesito cotizar para 12 personas.', titulo: 'Cotización asignada', tags: ['Venta', 'Prioridad alta'], alta: true, destino: 'Ejecutiva 2', min: 4 },
+        { canal: 'Correo', msg: 'Por favor, eliminen mis datos de su base.', titulo: 'Solicitud de supresión', tags: ['Ley 21.719', 'Plazo 30 días'], datos: true, destino: 'Encargado de datos', min: 45 },
+        { canal: 'Alerta', msg: 'La póliza de la flota vence en 5 días.', titulo: 'Póliza por vencer', tags: ['Riesgo operacional', 'Vence en 5 días'], riesgo: true, destino: 'Operaciones', min: 10 },
+        { canal: 'Formulario web', msg: 'Envío orden de compra OC-2291, 40 unidades.', titulo: 'Orden OC-2291 validada', tags: ['Pedido', 'Datos validados'], destino: 'Bodega', min: 8 },
+        { canal: 'Chat interno', msg: '¿Qué documentos pide el banco para el crédito?', titulo: 'Consulta respondida', tags: ['Consulta', 'Con fuente'], destino: 'Asistente IA', min: 12 },
+      ];
 
-        const steps = Array.from(container.querySelectorAll('.demo-step'));
-        
-        // Reset steps logic
-        steps.forEach(step => {
-          step.classList.remove('is-active', 'is-completed');
-        });
+      const ICONO_OK = '<svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+      const ICONO_DATOS = '<svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>';
+      const ICONO_RIESGO = '<svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>';
 
-        if (prefersReducedMotion) {
-          // Si prefiere movimiento reducido, mostrar final directamente
-          steps.forEach((step, idx) => {
-            if (idx === steps.length - 1) {
-              step.classList.add('is-active'); // Resultado final abierto
-            } else {
-              step.classList.add('is-completed'); // Pasos anteriores colapsados
-            }
-          });
+      const entrante = raiz.querySelector('[data-demo-entrante]');
+      const canal = raiz.querySelector('[data-demo-canal]');
+      const mensaje = raiz.querySelector('[data-demo-mensaje]');
+      const tags = raiz.querySelector('[data-demo-tags]');
+      const lista = raiz.querySelector('[data-demo-lista]');
+      const contador = raiz.querySelector('[data-demo-contador]');
+      const minutos = raiz.querySelector('[data-demo-minutos]');
+
+      // Estado inicial = lo que ya muestra el HTML (tareas 5, 4 y 3 resueltas).
+      let actual = 0;
+      let resueltas = 3;
+      let minutosEvitados = 12 + 8 + 10;
+
+      let timers = [];
+      let corriendo = false;
+      let pausadoPorUsuario = false;
+      let enPantalla = true;
+
+      const despues = (fn, ms) => timers.push(setTimeout(fn, ms));
+      const limpiar = () => { timers.forEach(clearTimeout); timers = []; };
+      const alerta = (t) => t.datos || t.riesgo;
+
+      function etiqueta(clase, texto) {
+        const span = document.createElement('span');
+        span.className = clase + ' aparece';
+        span.textContent = texto;
+        return span;
+      }
+      const claseTag1 = (t) => (alerta(t) ? 'estado estado-espera' : 'estado');
+      const claseTag2 = (t) => (t.alta || alerta(t) ? 'estado estado-espera' : 'estado estado-neutro');
+
+      function pintarEntrante(t, clasificado) {
+        entrante.classList.remove('sale', 'escaneando', 'aparece');
+        canal.textContent = `${t.canal} · recién llegado`;
+        mensaje.textContent = `«${t.msg}»`;
+        tags.replaceChildren();
+        if (clasificado) {
+          tags.append(etiqueta('marca-ia', 'IA'), etiqueta(claseTag1(t), t.tags[0]), etiqueta(claseTag2(t), t.tags[1]));
+        }
+      }
+
+      function insertarFila(t) {
+        const li = document.createElement('li');
+        li.className = 'flex items-center gap-3 rounded bg-white/[0.04] border border-white/10 px-3 py-2.5 aparece';
+
+        const icono = document.createElement('span');
+        icono.className = 'w-6 h-6 rounded-full grid place-items-center shrink-0 ' +
+          (alerta(t) ? 'bg-ambar-300/15 text-ambar-300' : 'bg-verde-300/15 text-verde-300');
+        icono.innerHTML = t.datos ? ICONO_DATOS : t.riesgo ? ICONO_RIESGO : ICONO_OK;
+
+        const cuerpo = document.createElement('div');
+        cuerpo.className = 'min-w-0 flex-1';
+        const titulo = document.createElement('p');
+        titulo.className = 'text-[0.8125rem] text-papel truncate';
+        titulo.textContent = t.titulo;
+        const ruta = document.createElement('p');
+        ruta.className = 'rotulo rotulo-claro truncate';
+        ruta.textContent = `${t.canal} → ${t.destino}`;
+        cuerpo.append(titulo, ruta);
+
+        const ahorro = document.createElement('span');
+        ahorro.className = 'dato text-[0.8125rem] shrink-0 ' + (alerta(t) ? 'text-ambar-300' : 'text-verde-300');
+        ahorro.textContent = `−${t.min} min`;
+
+        li.append(icono, cuerpo, ahorro);
+        lista.prepend(li);
+        while (lista.children.length > 4) lista.lastElementChild.remove();
+      }
+
+      function resolver() {
+        const t = TAREAS[actual];
+        entrante.classList.add('sale');
+        despues(() => {
+          insertarFila(t);
+          resueltas += 1;
+          minutosEvitados += t.min;
+          contador.textContent = String(resueltas);
+          minutos.textContent = `${minutosEvitados} min`;
+
+          actual = (actual + 1) % TAREAS.length;
+          const sig = TAREAS[actual];
+          pintarEntrante(sig, false);
+          void entrante.offsetWidth; // reinicia la animacion
+          entrante.classList.add('aparece', 'escaneando');
+
+          despues(() => tags.append(etiqueta('marca-ia', 'IA')), 1200);
+          despues(() => tags.append(etiqueta(claseTag1(sig), sig.tags[0])), 1450);
+          despues(() => tags.append(etiqueta(claseTag2(sig), sig.tags[1])), 1700);
+          despues(() => entrante.classList.remove('escaneando'), 1850);
+          despues(resolver, 3600);
+        }, 350);
+      }
+
+      function reanudar() {
+        if (corriendo || pausadoPorUsuario || !enPantalla || document.hidden) return;
+        corriendo = true;
+        despues(resolver, 1600);
+      }
+
+      function detener() {
+        if (!corriendo) return;
+        corriendo = false;
+        limpiar();
+        pintarEntrante(TAREAS[actual], true);
+      }
+
+      btn.addEventListener('click', () => {
+        pausadoPorUsuario = !pausadoPorUsuario;
+        btn.textContent = pausadoPorUsuario ? 'Reanudar' : 'Pausar';
+        btn.setAttribute('aria-pressed', String(pausadoPorUsuario));
+        // La frase rotativa del titular lee esta marca y se detiene.
+        document.documentElement.dataset.movimiento = pausadoPorUsuario ? 'pausado' : '';
+        if (pausadoPorUsuario) detener(); else reanudar();
+      });
+
+      document.addEventListener('visibilitychange', () => (document.hidden ? detener() : reanudar()));
+
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(([entrada]) => {
+          enPantalla = entrada.isIntersecting;
+          if (enPantalla) reanudar(); else detener();
+        }, { threshold: 0.2 }).observe(raiz);
+      } else {
+        reanudar();
+      }
+    }
+
+    /* --- Frase rotativa del titular ----------------------------------------
+     * Una sola vuelta (unos 12 s) y se queda en la ley, que es el remate.
+     * Se detiene de inmediato si el visitante pausa la demo. Los lectores de
+     * pantalla leen la frase completa desde un texto oculto. */
+    function initRotador() {
+      const el = document.querySelector('[data-rotador]');
+      if (!el) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      const FRASES = [
+        { t: 'del papeleo.' },
+        { t: 'de las horas hombre perdidas.' },
+        { t: 'de los costos que no ves.' },
+        { t: 'del riesgo operacional.' },
+        { t: 'de improvisar con la nueva ley de datos.', ley: true },
+      ];
+      let i = 0;
+
+      function mostrar(n) {
+        el.classList.remove('aparece');
+        void el.offsetWidth;
+        el.textContent = FRASES[n].t;
+        el.classList.toggle('text-ambar-300', !!FRASES[n].ley);
+        el.classList.toggle('text-verde-300', !FRASES[n].ley);
+        el.classList.add('aparece');
+      }
+
+      function siguiente() {
+        if (document.documentElement.dataset.movimiento === 'pausado') {
+          mostrar(FRASES.length - 1);
           return;
         }
-
-        // Progresión del acordeón
-        let delay = 300;
-        steps.forEach((step, index) => {
-          const timeout = setTimeout(() => {
-            if (document.visibilityState === 'visible') {
-              
-              // Marcar como "completed" todos los pasos anteriores al actual
-              for (let i = 0; i < index; i++) {
-                steps[i].classList.remove('is-active');
-                steps[i].classList.add('is-completed');
-              }
-              
-              // Marcar el paso actual como "active"
-              step.classList.add('is-active');
-            }
-          }, delay);
-          animationTimeouts.push(timeout);
-          delay += 1800; // Un poco más de tiempo (1.8s) para leer cada estado
-        });
+        i += 1;
+        mostrar(i);
+        if (i < FRASES.length - 1) setTimeout(siguiente, 2300);
       }
 
-      function switchCase(caseId, goalValue, focusTab = false) {
-        currentActiveCase = caseId;
-        
-        // UI de los tabs
-        demoTabs.forEach(btn => {
-          if (btn.dataset.democase === caseId) {
-            btn.classList.add('active', 'bg-brand-50', 'text-brand-700', 'border-brand-200');
-            btn.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
-            btn.setAttribute('aria-selected', 'true');
-            btn.setAttribute('tabindex', '0');
-            if(focusTab) btn.focus();
-          } else {
-            btn.classList.remove('active', 'bg-brand-50', 'text-brand-700', 'border-brand-200');
-            btn.classList.add('bg-white', 'text-slate-600', 'border-slate-200');
-            btn.setAttribute('aria-selected', 'false');
-            btn.setAttribute('tabindex', '-1');
-          }
-        });
-
-        // Contenedores
-        caseContainers.forEach(c => c.classList.remove('active'));
-        document.getElementById(`demo-case-${caseId}`).classList.add('active');
-
-        // CTA Secundario contextual
-        if (ctaBtn) {
-          ctaBtn.dataset.targetgoal = goalValue;
-        }
-
-        startAnimation(caseId);
-      }
-
-      // Eventos Click y Teclado para Tabs Demo
-      demoTabs.forEach((btn, index) => {
-        btn.addEventListener('click', (e) => {
-          switchCase(e.target.dataset.democase, e.target.dataset.goal);
-        });
-
-        btn.addEventListener('keydown', (e) => {
-          let nextIndex = index;
-          if (e.key === 'ArrowRight') nextIndex = (index + 1) % demoTabs.length;
-          else if (e.key === 'ArrowLeft') nextIndex = (index - 1 + demoTabs.length) % demoTabs.length;
-          else return;
-
-          e.preventDefault();
-          const targetBtn = demoTabs[nextIndex];
-          switchCase(targetBtn.dataset.democase, targetBtn.dataset.goal, true);
-        });
-      });
-
-      if (replayBtn) {
-        replayBtn.addEventListener('click', () => startAnimation(currentActiveCase));
-      }
-
-      if (ctaBtn) {
-        ctaBtn.addEventListener('click', (e) => {
-          e.preventDefault(); // Prevenir default hash jump
-          const targetGoal = e.currentTarget.dataset.targetgoal;
-          const selectElement = document.getElementById('improvementGoal');
-          const firstInput = document.getElementById('userName'); // Primer campo vacío por defecto
-
-          if (selectElement && targetGoal) {
-            selectElement.value = targetGoal;
-          }
-          
-          // Desplazar hacia el formulario y hacer foco
-          const formSection = document.getElementById('contacto');
-          if (formSection && firstInput) {
-            formSection.scrollIntoView({ behavior: 'smooth' });
-            // Esperar animación de scroll antes de hacer foco para no romper la transición
-            setTimeout(() => firstInput.focus(), 800); 
-          }
-        });
-      }
-
-      document.addEventListener('visibilitychange', () => {
-        if (document.visibilityState === 'visible') {
-          startAnimation(currentActiveCase);
-        } else {
-          clearAnimations();
-        }
-      });
-
-      startAnimation('doc');
+      setTimeout(siguiente, 2600);
     }
 
-    /* --- Formulario de Contacto Real --- */
-    function initContactForm() {
+    /* --- Entrada de la matriz y de las creencias ---------------------------
+     * Una sola secuencia por bloque, una sola vez. Sin IntersectionObserver se
+     * muestra todo de inmediato. */
+    function initMatriz() {
+      const bloques = document.querySelectorAll('.revela');
+      if (!bloques.length) return;
+
+      if (!('IntersectionObserver' in window)) {
+        bloques.forEach((b) => b.classList.add('esta-visible'));
+        return;
+      }
+
+      const observador = new IntersectionObserver((entradas) => {
+        entradas.forEach((entrada) => {
+          if (!entrada.isIntersecting) return;
+          entrada.target.classList.add('esta-visible');
+          observador.unobserve(entrada.target);
+        });
+      }, { threshold: 0.12 });
+
+      bloques.forEach((b) => observador.observe(b));
+    }
+
+    /* --- Logo animado ----------------------------------------------------------
+     * SMIL corre solo; aqui solo se pausa: con movimiento reducido (queda el
+     * logo estatico, los electrones en su lugar), fuera de pantalla y cuando
+     * el visitante pausa la demo de la portada. */
+    function initLogoAnimado() {
+      const banda = document.querySelector('[data-logo-animado]');
+      const svg = banda && banda.querySelector('svg');
+      if (!svg || typeof svg.pauseAnimations !== 'function') return;
+
+      const reducido = window.matchMedia('(prefers-reduced-motion: reduce)');
+      // Parte en true: si el observador nunca responde, el logo se mueve en vez
+      // de quedar congelado. La primera respuesta llega apenas se pinta.
+      let enPantalla = true;
+      const aplicar = () => {
+        const pausado = reducido.matches || !enPantalla ||
+          document.documentElement.dataset.movimiento === 'pausado';
+        if (pausado) svg.pauseAnimations(); else svg.unpauseAnimations();
+      };
+
+      if (reducido.matches) svg.setCurrentTime(0);
+      aplicar();
+      reducido.addEventListener?.('change', aplicar);
+      new MutationObserver(aplicar).observe(document.documentElement, { attributeFilter: ['data-movimiento'] });
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(([e]) => { enPantalla = e.isIntersecting; aplicar(); }).observe(banda);
+      }
+    }
+
+    /* --- Calculadora de horas hombre ---------------------------------------
+     * Todo local: el formulario no tiene action ni name en los campos, asi que
+     * no hay forma de que se envie nada. 52/12 semanas por mes; jornada
+     * completa = 180 horas al mes. */
+    function initCalculadora() {
+      const form = document.getElementById('calculadora-form');
+      if (!form) return;
+
+      const clp = new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP', maximumFractionDigits: 0 });
+      const valor = (id, max) => {
+        const n = parseFloat(document.getElementById(id).value);
+        const limpio = Number.isFinite(n) && n > 0 ? n : 0;
+        return max ? Math.min(limpio, max) : limpio;
+      };
+      const poner = (id, texto) => { document.getElementById(id).textContent = texto; };
+
+      function calcular() {
+        const personas = valor('c-personas');
+        const horasSemana = valor('c-horas');
+        const costoHora = valor('c-hora');
+        const automatizable = valor('c-auto', 100) / 100;
+
+        const horasMes = personas * horasSemana * (52 / 12) * automatizable;
+        const ahorroMes = horasMes * costoHora;
+
+        poner('r-horas', `${Math.round(horasMes).toLocaleString('es-CL')} h`);
+        poner('r-jornadas', `≈ ${(horasMes / 180).toLocaleString('es-CL', { maximumFractionDigits: 1 })} personas a jornada completa`);
+        poner('r-mes', clp.format(ahorroMes));
+        poner('r-anio', clp.format(ahorroMes * 12));
+      }
+
+      form.addEventListener('input', calcular);
+      form.addEventListener('submit', (e) => e.preventDefault());
+      calcular();
+    }
+
+    /* --- Atajos al formulario ----------------------------------------------
+     * Los enlaces de cada plan dejan elegida la opcion correspondiente. */
+    function initAtajosFormulario() {
+      const select = document.getElementById('improvementGoal');
+      document.querySelectorAll('.ir-al-form').forEach((link) => {
+        link.addEventListener('click', () => {
+          if (select && link.dataset.goal) select.value = link.dataset.goal;
+        });
+      });
+    }
+
+    /* --- Formulario de contacto (Netlify Forms) ----------------------------- */
+    function initFormularioContacto() {
       const form = document.getElementById('contactForm');
       const submitBtn = document.getElementById('submitBtn');
       const submitIcon = document.getElementById('submitIcon');
       const submitLoader = document.getElementById('submitLoader');
-      const modalSuccess = document.getElementById('formSuccessModal');
+      const modalExito = document.getElementById('formSuccessModal');
       const modalError = document.getElementById('formErrorModal');
-      const formAnnouncement = document.getElementById('formAnnouncement');
-      
+      const aviso = document.getElementById('formAnnouncement');
+
       if (!form) return;
 
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
-        // Validación HoneyPot
+
         if (form.elements['_honey']?.value) return;
 
-        // UI de carga
-        const btnText = submitBtn.querySelector('span');
-        const originalText = btnText.textContent;
-        btnText.textContent = "Procesando...";
+        const texto = submitBtn.querySelector('span');
+        const textoOriginal = texto.textContent;
+        texto.textContent = 'Enviando...';
         submitIcon.classList.add('hidden');
         submitLoader.classList.remove('hidden');
         submitBtn.disabled = true;
-        submitBtn.classList.add('opacity-80', 'cursor-not-allowed');
-        formAnnouncement.textContent = "Enviando formulario, por favor espere.";
+        submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
+        aviso.textContent = 'Enviando la solicitud.';
 
         const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
 
         try {
           // Netlify Forms recibe el envio como urlencoded en la raiz del sitio.
-          const response = await fetch('/', {
+          const respuesta = await fetch('/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: new URLSearchParams(formData).toString()
           });
 
-          if (!response.ok) {
-            throw new Error(`Error HTTP: ${response.status}`);
-          }
+          if (!respuesta.ok) throw new Error(`Error HTTP: ${respuesta.status}`);
 
-          // Éxito Real
-          modalSuccess.classList.remove('hidden');
-          formAnnouncement.textContent = "Formulario enviado exitosamente.";
+          modalExito.classList.remove('hidden');
+          aviso.textContent = 'Solicitud enviada.';
           document.getElementById('successHeading').focus();
           form.reset();
 
         } catch (error) {
-          console.warn("Fallo en el envio del formulario:", error);
-          // Error Real
+          console.warn('Fallo en el envio del formulario:', error);
           modalError.classList.remove('hidden');
-          formAnnouncement.textContent = "Error al enviar el formulario.";
+          aviso.textContent = 'No se pudo enviar la solicitud.';
           document.getElementById('errorHeading').focus();
+
         } finally {
-          // Restaurar UI del botón (útil si hay error y el usuario cierra el modal)
           submitLoader.classList.add('hidden');
           submitIcon.classList.remove('hidden');
-          btnText.textContent = originalText;
+          texto.textContent = textoOriginal;
           submitBtn.disabled = false;
-          submitBtn.classList.remove('opacity-80', 'cursor-not-allowed');
+          submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
         }
       });
 
       document.getElementById('resetFormBtn')?.addEventListener('click', () => {
-        modalSuccess.classList.add('hidden');
+        modalExito.classList.add('hidden');
         document.getElementById('userName').focus();
       });
       document.getElementById('closeErrorBtn')?.addEventListener('click', () => {
         modalError.classList.add('hidden');
-        document.getElementById('submitBtn').focus();
+        submitBtn.focus();
       });
     }
   </script>
