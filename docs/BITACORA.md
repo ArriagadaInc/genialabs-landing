@@ -679,6 +679,35 @@ fuera de pantalla, avanza en pantalla, se pausa con el botón y reanuda. Sin des
 
 ---
 
+## 2026-10-02 — Sello de la firma de correo
+
+**Qué se agregó:** `public/assets/img/firma/genialabs-firma.png` (566×294 px; se muestra a 148×77 px).
+
+**Para qué:** la firma de correo de Genia Labs lo carga desde
+`https://genialabs.cl/assets/img/firma/genialabs-firma.png`. Los programas de correo no cargan las
+fuentes de la marca ni muestran SVG, así que el logotipo viaja como imagen.
+
+### Decisiones
+
+- **Fondo tinta opaco (`#14202A`):** el logotipo con «LABS» turquesa solo se usa sobre fondo oscuro
+  (ver «Marca» en `styles.css`), y un sello opaco se ve igual en modo claro y oscuro. Las esquinas
+  llevan 3 px de radio, como las fichas del sitio.
+- **Renderizado con Chrome, no con sharp:** hacía falta el Archivo real con el eje de ancho al 115 %
+  (sharp no lo aplica; ver el comentario de `scripts/og-image.mjs`). Mismas proporciones que
+  `.marca`: GENIA en peso 800 y LABS en `#4FDFC5`, al 46 % del tamaño. Se exportó a 3× de densidad.
+
+### ⚠️ No renombrar ni mover este archivo
+
+Cada correo ya enviado con la firma apunta a esa URL: si cambia, el logo se rompe en todos ellos.
+Para actualizarlo, conservar el nombre y las proporciones. El caché de `/assets/img/*` es de un día.
+
+### Verificación
+
+`npm run build` copia el archivo a `dist/assets/img/firma/`. La firma se probó en el navegador a 340 y
+540 px de ancho, sin desborde.
+
+---
+
 ## Estado actual
 
 | Área | Estado |
