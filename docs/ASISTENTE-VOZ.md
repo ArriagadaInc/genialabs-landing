@@ -40,3 +40,11 @@ Se guardan avances cada 10 segundos y al terminar, cerrar u ocultar la pestaña.
 El equipo debe aplicar el plazo de conservación de la política de privacidad (24 meses después del último contacto comercial) y atender solicitudes de eliminación en Supabase; esta versión no automatiza ese borrado. No registrar datos sensibles. La tabla puede contener datos de contacto si el visitante los expresa voluntariamente.
 
 Validación pendiente de credenciales: guardar una conversación consentida real, confirmar ambos roles en la tabla, y comprobar que una conversación sin consentimiento no crea registro. Las pruebas automatizadas usan respuestas simuladas; no prueban permisos reales de la cuenta Google ni el acceso REST de Netlify al proyecto.
+
+## Base de conocimiento de la web
+
+La función incluye el texto público de la landing y de la política de privacidad. `npm run build:knowledge` extrae el contenido de `src/index.html` y `src/privacidad.html` y genera `netlify/lib/voice-knowledge.mjs`; también se ejecuta automáticamente al construir la web. Se excluyen comentarios internos, scripts y estilos. Las pruebas comprueban que el contenido generado sigue sincronizado con las fuentes.
+
+Se usa el contenido de la misma publicación, sin rastrear internet durante las conversaciones ni añadir una base vectorial. Los cambios se aplican a las sesiones nuevas después del despliegue. Si se agregan otras páginas comerciales, incluirlas explícitamente en `scripts/build-voice-knowledge.mjs`.
+
+La asistente distingue asesoría gratuita de servicios cotizados, explica costos por alcance, plazos orientativos, soporte separado y descuentos del diagnóstico. Los montos de la calculadora y las horas de ejemplo son simulaciones; no constituyen tarifas ni resultados garantizados. No tiene acceso a los valores del formulario o calculadora ni al estado del consentimiento.
