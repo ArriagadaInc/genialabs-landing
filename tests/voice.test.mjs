@@ -25,9 +25,9 @@ test('issues single-use token with locked instructions and bounded lifetime',asy
   assert.equal(body.uses,1);
   assert.equal(Date.parse(body.expireTime)-now,180000);
   assert.equal(Date.parse(body.newSessionExpireTime)-now,60000);
-  assert.equal(body.liveConnectConstraints.config.systemInstruction.parts[0].text,SYSTEM_INSTRUCTION);
-  assert.deepEqual(body.liveConnectConstraints.config.responseModalities,['AUDIO']);
-  assert.equal(body.liveConnectConstraints.model,'models/gemini-3.8-live');
+  assert.equal(body.bidiGenerateContentSetup.systemInstruction.parts[0].text,SYSTEM_INSTRUCTION);
+  assert.deepEqual(body.bidiGenerateContentSetup.generationConfig.responseModalities,['AUDIO']);
+  assert.equal(body.bidiGenerateContentSetup.model,'models/gemini-3.8-live');
   return Response.json({name:'auth_tokens/test'});
  }});
  const data=await result.json(); assert.equal(data.token,'auth_tokens/test');

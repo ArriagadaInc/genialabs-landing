@@ -59,15 +59,7 @@ export async function handleSession(request, { env = process.env, fetchImpl = fe
         newSessionExpireTime: new Date(now() + 60_000).toISOString(),
         expireTime: new Date(now() + SESSION_SECONDS * 1000).toISOString(),
         // Lock all session configuration, including the instructions, on Google's side.
-        liveConnectConstraints: {
-          model: setup.model,
-          config: {
-            responseModalities: setup.generationConfig.responseModalities,
-            systemInstruction: setup.systemInstruction,
-            outputAudioTranscription: setup.outputAudioTranscription,
-            ...(recording ? { inputAudioTranscription: setup.inputAudioTranscription } : {}),
-          },
-        },
+        bidiGenerateContentSetup: setup,
       }),
       signal: AbortSignal.timeout(10_000),
     });
