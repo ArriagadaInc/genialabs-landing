@@ -72,7 +72,12 @@ export async function handleSession(request, { env = process.env, fetchImpl = fe
       signal: AbortSignal.timeout(10_000),
     });
     if (!result.ok) {
-      console.warn('voice_token_failed', { httpStatus: result.status });
+      let detail = '';
+      try { detail = (await result.json()).error?.message || ''; } catch {}
+      for (const secret of [env.GEMINI_API_KEY, env.SUPABASE_SECRET_KEY]) {
+        if (secret) detail = detail.split(secret).join('[redacted]');
+      }
+      console.warn('voice_token_failed', { httpStatus: result.status, detail: detail.slice(0,1000) });
       return json({ error: result.status === 429 ? 'busy' : 'voice_unavailable' }, result.status === 429 ? 429 : 503);
     }
     const token = await result.json();
