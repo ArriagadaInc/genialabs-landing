@@ -59,11 +59,22 @@ export async function handleSession(request, { env = process.env, fetchImpl = fe
         newSessionExpireTime: new Date(now() + 60_000).toISOString(),
         expireTime: new Date(now() + SESSION_SECONDS * 1000).toISOString(),
         // Lock all session configuration, including the instructions, on Google's side.
-        bidiGenerateContentSetup: setup,
+        liveConnectConstraints: {
+          model: setup.model,
+          config: {
+            responseModalities: setup.generationConfig.responseModalities,
+            systemInstruction: setup.systemInstruction,
+            outputAudioTranscription: setup.outputAudioTranscription,
+            ...(recording ? { inputAudioTranscription: setup.inputAudioTranscription } : {}),
+          },
+        },
       }),
       signal: AbortSignal.timeout(10_000),
     });
-    if (!result.ok) return json({ error: result.status === 429 ? 'busy' : 'voice_unavailable' }, result.status === 429 ? 429 : 503);
+    if (!result.ok) {
+      console.warn('voice_token_failed', { httpStatus: result.status });
+      return json({ error: result.status === 429 ? 'busy' : 'voice_unavailable' }, result.status === 429 ? 429 : 503);
+    }
     const token = await result.json();
     if (typeof token.name !== 'string' || !token.name.startsWith('auth_tokens/')) return json({ error: 'voice_unavailable' }, 503);
     const log = recording ? await createLog(env, fetchImpl, now()) : null;
