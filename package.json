@@ -4,6 +4,8 @@
   "private": true,
   "description": "Landing page de Genia Labs (genialabs.cl)",
   "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "preview": "node scripts/preview.mjs",
     "clean": "node scripts/build.mjs --clean",
     "build:css": "tailwindcss -i ./src/styles.css -o ./dist/assets/css/styles.css --minify",
     "build:html": "node scripts/build.mjs",

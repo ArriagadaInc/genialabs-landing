@@ -2,8 +2,8 @@
   X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; form-action 'self'; frame-ancestors 'self'; base-uri 'self'; object-src 'none'
+  Permissions-Policy: geolocation=(), microphone=(self), camera=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; connect-src 'self' wss://generativelanguage.googleapis.com; worker-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; form-action 'self'; frame-ancestors 'self'; base-uri 'self'; object-src 'none'
 
 # El CSS lleva hash de contenido en el nombre (styles.<hash>.css, generado por
 # scripts/postbuild.mjs), asi que cachearlo un año es seguro: si cambia, cambia

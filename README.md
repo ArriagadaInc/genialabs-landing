@@ -1,7 +1,7 @@
 # Genia Labs — Landing (genialabs.cl)
 
 Sitio estático de una página. Tailwind se compila en el build; **no hay CDN ni dependencias
-de terceros en tiempo de ejecución**.
+de terceros para visualizar la landing**. El asistente de voz opcional usa Google Gemini y una función Netlify; configuración en [docs/ASISTENTE-VOZ.md](docs/ASISTENTE-VOZ.md).
 
 - **Producción:** <https://genialabs.cl>
 - **Repositorio:** <https://github.com/ArriagadaInc/genialabs-landing> (público)

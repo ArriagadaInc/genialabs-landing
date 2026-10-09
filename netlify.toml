@@ -5,7 +5,10 @@
 [build.environment]
   NODE_VERSION = "22"
 
-# El sitio es 100% estatico; el formulario lo procesa Netlify Forms
+[functions]
+  directory = "netlify/functions"
+
+# El formulario lo procesa Netlify Forms; la voz usa una función con token temporal.
 # (ver el atributo data-netlify en el formulario "contacto" de index.html).
 
 [[redirects]]
