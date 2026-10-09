@@ -42,16 +42,20 @@ export async function storeRequest(env, fetchImpl, suffix, options) {
   const config = storeConfig(env);
   if (!config) throw new Error('Store unavailable');
   return fetchImpl(`${config.url}/rest/v1/voice_conversations${suffix}`, {
-    ...options, headers: { 'Content-Type': 'application/json', apikey: config.key, Prefer: 'return=representation', ...options.headers }, signal: AbortSignal.timeout(8000),
+    ...options, headers: { 'Content-Type': 'application/json', apikey: config.key,
+      ...(config.key.startsWith('eyJ') ? { Authorization: `Bearer ${config.key}` } : {}),
+      Prefer: 'return=representation', ...options.headers }, signal: AbortSignal.timeout(8000),
   });
 }
 export async function createLog(env, fetchImpl, now = Date.now()) {
   const id = randomUUID();
   const response = await storeRequest(env, fetchImpl, '', { method: 'POST', body: JSON.stringify({ id, consent_version: CONSENT_VERSION }) });
   if (!response.ok) {
-    let code = '';
-    try { code = (await response.json()).code || ''; } catch {}
-    console.warn('voice_store_failed', { httpStatus: response.status, code: String(code).slice(0,80) });
+    let code = ''; let message = '';
+    try { const error = await response.json(); code = error.code || ''; message = error.message || ''; } catch {}
+    for (const secret of [env.SUPABASE_SECRET_KEY, env.GEMINI_API_KEY]) if (secret) message = message.split(secret).join('[redacted]');
+    const keyType = env.SUPABASE_SECRET_KEY.startsWith('sb_secret_') ? 'secret' : env.SUPABASE_SECRET_KEY.startsWith('sb_publishable_') ? 'publishable' : env.SUPABASE_SECRET_KEY.startsWith('eyJ') ? 'legacy' : 'unknown';
+    console.warn('voice_store_failed', { httpStatus: response.status, code: String(code).slice(0,80), message: message.slice(0,250), keyType });
     throw new Error('Store unavailable');
   }
   return { token: signLog(id, env, now) };
