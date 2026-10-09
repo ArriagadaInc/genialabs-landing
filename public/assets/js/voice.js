@@ -1,5 +1,6 @@
 import { encodePCM16, decodePCM16 } from './voice-audio.mjs';
 import { ConversationLog } from './voice-log.mjs';
+import { VoiceActivity } from './voice-activity.mjs';
 
 const dialog = document.getElementById('voiceDialog');
 const launch = document.getElementById('voiceLaunch');
@@ -16,7 +17,21 @@ let active = null;
 let previousFocus;
 let available = null;
 
-function state(name, text) { indicator.dataset.state = name; status.textContent = text; }
+function state(name, text) {
+  if (indicator.dataset.state !== name) indicator.dataset.state = name;
+  if (status.textContent !== text) status.textContent = text;
+}
+const waveBars = [...indicator.querySelectorAll('.voice-wave span')];
+function feedback(run) {
+  const messages = { receiving: 'Te escucho: el micrófono está recibiendo tu voz.', thinking: 'Pensando… Estoy preparando tu respuesta.', speaking: 'La asistente está hablando. Puedes interrumpirla.', listening: 'Te escucho. Puedes hablar cuando quieras.' };
+  state(run.activity.state, messages[run.activity.state]);
+  if (run.activity.state === 'receiving') {
+    waveBars.forEach((bar, index) => {
+      const profile = [0.45, 0.75, 1, 0.75, 0.45][index];
+      bar.style.transform = `scaleY(${.18 + run.activity.level * profile * 2.2})`;
+    });
+  }
+}
 function current(run) { return active === run && !run.cancelled; }
 function clearPlayback(run) {
   for (const source of run.playing) { try { source.stop(); } catch { /* already stopped */ } }
@@ -27,6 +42,7 @@ function end(text = 'Conversación terminada. Puedes volver a empezar o agendar 
   active = null;
   if (run) {
     run.cancelled = true; run.abort.abort();
+    run.activity.reset();
     clearTimeout(run.timeout); clearTimeout(run.connectionTimer);
     clearInterval(run.logTimer);
     run.log?.save(true);
@@ -40,6 +56,7 @@ function end(text = 'Conversación terminada. Puedes volver a empezar o agendar 
   start.disabled = available === false; start.hidden = false; stop.hidden = true;
   saveConsent.disabled = !storageAvailable;
   state('idle', text);
+  waveBars.forEach(bar => { bar.style.transform = ''; });
 }
 
 async function checkAvailability() {
@@ -71,10 +88,10 @@ function playAudio(run, part) {
   run.playing.add(source);
   const when = Math.max(run.audio.currentTime + 0.025, run.nextAudio);
   run.nextAudio = when + buffer.duration;
-  state('speaking', 'El asistente está hablando. Puedes interrumpirlo.');
+  run.activity.audioStarted(); feedback(run);
   source.onended = () => {
     run.playing.delete(source);
-    if (current(run) && run.playing.size === 0) state('listening', 'Te escucho. Cuéntame qué tarea te quita tiempo.');
+    if (current(run) && run.playing.size === 0) { run.activity.playbackEnded(); feedback(run); }
   };
   source.start(when);
 }
@@ -87,7 +104,7 @@ async function begin() {
   const Audio = window.AudioContext || window.webkitAudioContext;
   if (!Audio) { state('idle', 'Prueba con un navegador actualizado o usa el formulario.'); return; }
   const wantsSave = storageAvailable && saveConsent.checked;
-  const run = { cancelled: false, abort: new AbortController(), playing: new Set(), nextAudio: 0 };
+  const run = { cancelled: false, abort: new AbortController(), playing: new Set(), nextAudio: 0, activity: new VoiceActivity() };
   saveConsent.disabled = true;
   saveStatus.textContent = wantsSave ? 'Preparando el guardado autorizado del texto…' : 'Esta conversación no se guardará en Genia Labs.';
   active = run; start.hidden = true; stop.hidden = false; transcript.textContent = '';
@@ -99,13 +116,11 @@ async function begin() {
     const stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true }, video: false });
     if (!current(run)) { stream.getTracks().forEach(track => track.stop()); return; }
     run.stream = stream;
-    await run.audio.audioWorklet.addModule('/assets/js/voice-capture.js');
-    if (!current(run)) return;
     state('connecting', 'Conectando con el asistente…');
     run.connectionTimer = setTimeout(() => { if (current(run)) end('No pudimos conectar. Intenta nuevamente o agenda tu asesoría.'); }, 15000);
-    const response = await fetch('/.netlify/functions/voice-session', {
+    const [, response] = await Promise.all([run.audio.audioWorklet.addModule('/assets/js/voice-capture.js'), fetch('/.netlify/functions/voice-session', {
       method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ consent: true, saveTranscript: wantsSave, consentVersion }), signal: run.abort.signal,
-    });
+    })]);
     if (!current(run)) return;
     if (!response.ok) { end(response.status === 429 ? 'Hay varias conversaciones en este momento. Intenta en un minuto o agenda tu asesoría.' : 'La voz no está disponible ahora. Puedes agendar tu asesoría.'); return; }
     const session = await response.json();
@@ -140,9 +155,10 @@ async function begin() {
             const bytes = encodePCM16(data.samples);
             let binary = ''; for (const byte of bytes) binary += String.fromCharCode(byte);
             socket.send(JSON.stringify({ realtimeInput: { audio: { data: btoa(binary), mimeType: `audio/pcm;rate=${data.rate}` } } }));
+            run.activity.microphone(data.samples, performance.now()); feedback(run);
           };
           run.source.connect(run.worklet); run.worklet.connect(run.silent); run.silent.connect(run.audio.destination);
-          state('listening', 'Te escucho. Cuéntame qué tarea te quita tiempo.');
+          run.activity.waiting(); feedback(run);
           socket.send(JSON.stringify({ clientContent: { turns: [{ role: 'user', parts: [{ text: 'Salúdame brevemente como asistente virtual de Genia Labs y pregúntame a qué se dedica mi negocio.' }] }], turnComplete: true } }));
           run.timeout = setTimeout(() => { if (current(run)) end('Terminamos esta conversación de tres minutos. Si quieres seguir, agenda tu asesoría gratis.'); }, Math.min(Number(session.maxSeconds) || 180, 180) * 1000);
         }
@@ -150,13 +166,13 @@ async function begin() {
         if (content?.inputTranscription?.text) run.log?.append('user', content.inputTranscription.text);
         if (content?.outputTranscription?.text) run.log?.append('assistant', content.outputTranscription.text);
         if (content?.turnComplete || content?.interrupted) run.log?.newTurn();
-        if (content?.interrupted) { clearPlayback(run); state('listening', 'Te escucho…'); }
+        if (content?.interrupted) { clearPlayback(run); run.activity.interrupted(); feedback(run); }
         if (content?.outputTranscription?.text) {
           if (run.newTurn) { transcript.textContent = ''; run.newTurn = false; }
           transcript.textContent = (transcript.textContent + content.outputTranscription.text).slice(-2400);
         }
         for (const part of content?.modelTurn?.parts || []) if (part.inlineData) playAudio(run, part.inlineData);
-        if (content?.turnComplete) { run.newTurn = true; if (!run.playing.size) state('listening', 'Te escucho…'); }
+        if (content?.turnComplete) { run.newTurn = true; run.activity.turnComplete(); feedback(run); }
         if (message.goAway) end('La sesión terminó. Puedes volver a empezar o agendar tu asesoría.');
       }).catch(() => { if (current(run)) end('No pudimos continuar la conversación. Puedes volver a intentar.'); });
     };

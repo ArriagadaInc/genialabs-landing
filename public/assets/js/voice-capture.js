@@ -1,6 +1,6 @@
 // Runs on the audio thread; preserves the actual browser sample rate in each chunk.
 class VoiceCapture extends AudioWorkletProcessor {
-  constructor() { super(); this.buffer = new Float32Array(2048); this.offset = 0; }
+  constructor() { super(); this.buffer = new Float32Array(1024); this.offset = 0; }
   process(inputs) {
     const input = inputs[0]?.[0];
     if (!input) return true;

@@ -690,6 +690,13 @@ input:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
 .voice-heading svg { width:20px; height:20px; }
 .voice-orb { display:grid; place-items:center; width:76px; height:76px; margin:28px auto 22px; border-radius:50%; background:radial-gradient(circle at 30% 25%,#d9eec9,#85ba99); color:#153d31; }
 .voice-orb svg { width:28px; height:28px; }
+.voice-wave { display:none; align-items:center; justify-content:center; gap:5px; height:36px; }
+.voice-wave span { display:block; width:5px; height:24px; background:currentColor; border-radius:99px; transform:scaleY(.18); transition:transform 70ms linear; }
+.voice-spinner { display:none; width:30px; height:30px; border:3px solid #153d3125; border-top-color:#153d31; border-radius:50%; animation:voice-spin 1s linear infinite; }
+.voice-orb[data-state="receiving"] .voice-wave { display:flex; }
+.voice-orb[data-state="receiving"] > svg,.voice-orb[data-state="thinking"] > svg,.voice-orb[data-state="connecting"] > svg { display:none; }
+.voice-orb[data-state="thinking"] .voice-spinner,.voice-orb[data-state="connecting"] .voice-spinner { display:block; }
+@keyframes voice-spin { to { transform:rotate(360deg); } }
 .voice-orb[data-state="listening"],.voice-orb[data-state="speaking"],.voice-orb[data-state="connecting"] { animation:voice-pulse 1.8s ease-in-out infinite; }
 .voice-dialog h2 { text-align:center; font-size:25px; line-height:1.2; letter-spacing:-.8px; font-weight:600; }
 .voice-intro { text-align:center; font-size:14px; line-height:1.6; margin:16px 0; color:#53616a; }
@@ -707,5 +714,5 @@ input:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
 .voice-contact { display:flex; justify-content:space-between; padding-top:16px; margin-top:8px; border-top:1px solid #dedfd8; font-size:14px; font-weight:500; }
 .voice-launch:focus-visible,.voice-dialog button:focus-visible,.voice-dialog a:focus-visible,.voice-text summary:focus-visible { outline:3px solid #6aa77a; outline-offset:4px; }
 @keyframes voice-pulse { 50% { box-shadow:0 0 0 12px #85ba9920; } }
-@media(prefers-reduced-motion:reduce) { .voice-orb { animation:none !important; } }
+@media(prefers-reduced-motion:reduce) { .voice-orb,.voice-spinner { animation:none !important; } .voice-wave span { transition:none; transform:scaleY(.65) !important; } }
 @media(max-width:639px) { .voice-launch { right:14px; bottom:calc(14px + env(safe-area-inset-bottom)); padding:12px 15px; } .voice-dialog { padding:22px; } }
