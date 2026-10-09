@@ -9,6 +9,7 @@ test('assistant knowledge stays synchronized with published page sources', () =>
   const text = KNOWLEDGE_SOURCES.map(s => s.text).join('\n');
   for (const fact of ['el diagnóstico se descuenta si seguimos', 'WhatsApp usa la API oficial de Meta', '40 horas', 'contacto@genialabs.cl', 'Puedes conversar sin autorizar el guardado']) assert.ok(text.includes(fact), fact);
   assert.ok(!text.includes('precios internos'));
+  for (const fact of ['Coordinar horas y recordar citas', 'Un asistente que entiende tus datos', 'Consultar procedimientos con un asistente interno', 'no soluciones ya instaladas']) assert.ok(text.includes(fact), fact);
   assert.ok(SYSTEM_INSTRUCTION.includes(text.split('\n')[0]));
   assert.ok(SYSTEM_INSTRUCTION.includes('nunca confundas los montos de la calculadora'));
   assert.ok(SYSTEM_INSTRUCTION.includes('No asegures que todos los proyectos cuestan menos que un sueldo'));

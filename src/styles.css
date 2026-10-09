@@ -612,6 +612,14 @@ input:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
 .compact-details { border-top: 1px solid #DAD6CD; padding: 1rem 0; scroll-margin-top: 100px; }
 .compact-details summary { cursor: pointer; font-weight: 500; padding: 0.25rem 0; }
 .compact-detail-body { margin-top: 1rem; max-width: 52rem; color: #46515A; line-height: 1.65; }
+.solution-examples { max-width: 64rem; }
+.solution-count { margin-left: .75rem; color: #46515A; font-size: .75rem; font-weight: 400; white-space: nowrap; }
+.solution-list { margin: 1rem 0 .25rem; }
+.solution-list > div { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 2rem; padding: 1rem 0; border-top: 1px solid #E5E1D8; }
+.solution-list dt { font-weight: 500; line-height: 1.5; }
+.solution-list dd { margin: 0; color: #46515A; line-height: 1.65; }
+.solution-examples summary:focus-visible { outline: 2px solid #476C59; outline-offset: 5px; }
+@media (max-width: 639px) { .solution-list > div { grid-template-columns: 1fr; gap: .35rem; } .solution-count { display: block; margin: .25rem 0 0 1rem; } }
 .compact-detail-body [data-demo] { max-width: 40rem; color: #E5E1D8; }
 .compact-detail-body .py-16 { padding-top: 1rem; padding-bottom: 1rem; }
 .marca-compacta .logo-animado { width: 100px; }
