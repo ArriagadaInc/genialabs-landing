@@ -48,7 +48,12 @@ export async function storeRequest(env, fetchImpl, suffix, options) {
 export async function createLog(env, fetchImpl, now = Date.now()) {
   const id = randomUUID();
   const response = await storeRequest(env, fetchImpl, '', { method: 'POST', body: JSON.stringify({ id, consent_version: CONSENT_VERSION }) });
-  if (!response.ok) throw new Error('Store unavailable');
+  if (!response.ok) {
+    let code = '';
+    try { code = (await response.json()).code || ''; } catch {}
+    console.warn('voice_store_failed', { httpStatus: response.status, code: String(code).slice(0,80) });
+    throw new Error('Store unavailable');
+  }
   return { token: signLog(id, env, now) };
 }
 export async function readJSON(request, limit) {

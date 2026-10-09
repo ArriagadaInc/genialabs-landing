@@ -73,10 +73,13 @@ export async function handleSession(request, { env = process.env, fetchImpl = fe
       return json({ error: result.status === 429 ? 'busy' : 'voice_unavailable' }, result.status === 429 ? 429 : 503);
     }
     const token = await result.json();
-    if (typeof token.name !== 'string' || !token.name.startsWith('auth_tokens/')) return json({ error: 'voice_unavailable' }, 503);
+    if (typeof token.name !== 'string' || !token.name.startsWith('auth_tokens/')) {
+      console.warn('voice_token_invalid_response');
+      return json({ error: 'voice_unavailable' }, 503);
+    }
     const log = recording ? await createLog(env, fetchImpl, now()) : null;
     return json({ token: token.name, model: setup.model, maxSeconds: SESSION_SECONDS, log });
-  } catch { return json({ error: 'voice_unavailable' }, 503); }
+  } catch { console.warn('voice_session_setup_failed'); return json({ error: 'voice_unavailable' }, 503); }
 }
 
 export default request => handleSession(request);
