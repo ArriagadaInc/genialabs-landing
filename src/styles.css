@@ -595,3 +595,78 @@ input:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
     scroll-behavior: auto !important;
   }
 }
+
+/* Escenas ilustrativas de pymes: fotografia natural, sin cubrir el contenido. */
+.pyme-foto { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 3px; }
+.pyme-portada { margin: 0 0 1.25rem; }
+.pyme-portada figcaption { margin-top: 0.65rem; color: #E5E1D8; font-size: 0.875rem; line-height: 1.5; }
+.pyme-escenas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 0 0 1.75rem; }
+.pyme-escenas figure { margin: 0; min-width: 0; }
+.pyme-escenas figcaption { margin-top: 0.65rem; color: #14202A; font-size: 0.875rem; line-height: 1.5; }
+@media (max-width: 479px) { .pyme-escenas { grid-template-columns: 1fr; } }
+
+/* Compact landing: keep the brand animation and move optional depth into details. */
+.compact-section { padding: 3rem 0; }
+.compact-solutions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.75rem; margin-bottom: 1.75rem; }
+.compact-solutions p { color: #46515A; line-height: 1.65; }
+.compact-details { border-top: 1px solid #DAD6CD; padding: 1rem 0; scroll-margin-top: 100px; }
+.compact-details summary { cursor: pointer; font-weight: 500; padding: 0.25rem 0; }
+.compact-detail-body { margin-top: 1rem; max-width: 52rem; color: #46515A; line-height: 1.65; }
+.compact-detail-body [data-demo] { max-width: 40rem; color: #E5E1D8; }
+.compact-detail-body .py-16 { padding-top: 1rem; padding-bottom: 1rem; }
+.marca-compacta .logo-animado { width: 100px; }
+.marca-compacta .marca-texto-gigante { font-size: 2.5rem; }
+.marca-compacta .marca-genia { font-size: clamp(2rem, 6vw, 3.5rem); }
+.marca-compacta .marca-labs { font-size: clamp(1rem, 3vw, 1.6rem); }
+.marca-compacta .rotulo { max-width: 24rem; }
+#beneficios .pyme-escenas { max-width: 48rem; }
+@media (min-width: 768px) { .compact-section { padding: 4rem 0; } }
+@media (max-width: 639px) { .compact-solutions { grid-template-columns: 1fr; gap: 1.25rem; } .marca-compacta .logo-animado { width: 70px; flex-shrink: 0; } .marca-compacta .marca-texto-gigante { font-size: 2rem; } .marca-compacta .rotulo { font-size: 0.65rem; } }
+
+/* First-meeting process maps. Native dialog keeps keyboard and Escape support. */
+.meeting-result { margin: 2rem 0; padding-top: 2rem; border-top: 1px solid #DAD6CD; scroll-margin-top: 100px; }
+.bpmn-comparison { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.5rem; max-width: 58rem; }
+.bpmn-comparison figure { margin: 0; min-width: 0; }
+.bpmn-comparison figcaption { min-height: 5rem; }
+.bpmn-comparison h4 { font-weight: 500; margin: 0.5rem 0 1rem; }
+.bpmn-expand { display: block; width: 100%; text-align: left; cursor: zoom-in; color: #14202A; }
+.bpmn-expand img { display: block; width: 100%; height: auto; max-height: 460px; object-fit: contain; background: #FFFFFF; }
+.bpmn-expand span { display: block; padding: 0.75rem 0; text-decoration: underline; font-size: 0.875rem; }
+.bpmn-legend { display: flex; gap: 1.25rem; flex-wrap: wrap; margin-top: 1rem; font-size: 0.875rem; }
+.bpmn-legend span { display: inline-flex; align-items: center; gap: 0.5rem; }
+.bpmn-legend i { width: 14px; height: 14px; border: 1px solid; border-radius: 3px; }
+.legend-auto { background: #DCF2E8; border-color: #0C6B4F; }
+.legend-human { background: #FFF0D6; border-color: #B86A19; }
+.sql-observation { max-width: 58rem; margin-top: 1.25rem; padding: 1.25rem; background: #DCF2E8; border-left: 3px solid #0C6B4F; color: #14202A; }
+.sql-observation h4 { font-weight: 500; margin-bottom: 0.5rem; }
+.sql-observation p { line-height: 1.65; }
+.hours-example { max-width: 58rem; margin-top: 1.25rem; padding: 1.25rem 0; border-top: 1px solid #DAD6CD; }
+.hours-example h4 { font-weight: 500; font-size: 1.4rem; margin-bottom: 0.65rem; color: #0C6B4F; }
+.hours-example p { line-height: 1.65; color: #46515A; }
+
+/* Panoramic photography: image and copy form a single editorial surface. */
+.hero-editorial { position: relative; isolation: isolate; margin: 1.25rem; border-radius: 14px; background: #14202A; }
+.hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 42%; z-index: -3; }
+.hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,23,30,.97) 0%, rgba(10,23,30,.91) 30%, rgba(10,23,30,.6) 52%, rgba(10,23,30,.08) 77%), linear-gradient(0deg,rgba(10,23,30,.45),transparent 60%); z-index: -2; }
+.hero-editorial::before, .hero-editorial::after { display: none; }
+.hero-editorial-inner { min-height: 640px; display: flex; align-items: center; padding-top: 4rem; padding-bottom: 4rem; }
+.hero-editorial-copy { width: min(100%, 620px); }
+.hero-editorial h1 { font-size: clamp(2.7rem,4.4vw,4rem); }
+.hero-editorial .distintivo { background: rgba(20,32,42,.35); border-color: rgba(255,255,255,.25); }
+#beneficios .pyme-escenas { max-width: none; gap: 1.5rem; }
+.pyme-escenas figure { position: relative; overflow: hidden; border-radius: 12px; background: #14202A; }
+.pyme-escenas .pyme-foto { aspect-ratio: 16 / 9; border-radius: 0; }
+.pyme-escenas figcaption { position: absolute; inset: auto 0 0; margin: 0; padding: 2.5rem 1.25rem 1.25rem; color: #FFFFFF; font-size: 1.1rem; background: linear-gradient(transparent,rgba(10,23,30,.85)); }
+@media(max-width:767px) {
+  .hero-editorial { margin: .75rem; border-radius: 10px; }
+  .hero-photo { object-position: 65% center; }
+  .hero-shade { background: linear-gradient(0deg,rgba(10,23,30,.98) 0%,rgba(10,23,30,.91) 53%,rgba(10,23,30,.45) 77%,rgba(10,23,30,.12)); }
+  .hero-editorial-inner { min-height: 780px; align-items: flex-end; padding-top: 14rem; padding-bottom: 2rem; }
+  .hero-editorial h1 { font-size: clamp(2.4rem,7vw,3.2rem); }
+  .hero-editorial .distintivo { font-size: .65rem; }
+}
+.diagram-dialog { background: #FFFFFF; color: #14202A; border: 0; border-radius: 4px; padding: 1rem; width: min(95vw,700px); max-height: 92vh; overflow: auto; }
+.diagram-dialog::backdrop { background: rgb(20 32 42 / 75%); }
+.diagram-dialog-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+.diagram-dialog img { width: 100%; height: auto; display: block; }
+@media(max-width:639px) { .bpmn-comparison { grid-template-columns: 1fr; gap: 1.5rem; } .bpmn-comparison figcaption { min-height: 0; } .bpmn-expand img { max-height: 340px; } }

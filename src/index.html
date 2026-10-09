@@ -100,7 +100,7 @@
 
         <nav class="hidden lg:flex items-center gap-7" aria-label="Navegación principal">
           <a href="#beneficios" class="rotulo rotulo-claro hover:text-papel transition-colors">Beneficios</a>
-          <a href="#ley" class="rotulo rotulo-claro hover:text-papel transition-colors">Ley de datos</a>
+          <a href="#sin-excusas" class="rotulo rotulo-claro hover:text-papel transition-colors">Preguntas frecuentes</a>
           <a href="#calculadora" class="rotulo rotulo-claro hover:text-papel transition-colors">Calculadora</a>
           <a href="#planes" class="rotulo rotulo-claro hover:text-papel transition-colors">Cómo partimos</a>
           <a href="#proyecto" class="rotulo rotulo-claro hover:text-papel transition-colors">Caso real</a>
@@ -123,7 +123,7 @@
     <div id="mobileMenu" class="hidden lg:hidden border-t border-white/10 bg-tinta px-5 py-5 absolute w-full shadow-lg" aria-hidden="true">
       <div class="flex flex-col divide-y divide-white/10">
         <a href="#beneficios" class="mobile-nav-link rotulo rotulo-claro hover:text-papel py-3">Beneficios</a>
-        <a href="#ley" class="mobile-nav-link rotulo rotulo-claro hover:text-papel py-3">Ley de datos</a>
+        <a href="#sin-excusas" class="mobile-nav-link rotulo rotulo-claro hover:text-papel py-3">Preguntas frecuentes</a>
         <a href="#calculadora" class="mobile-nav-link rotulo rotulo-claro hover:text-papel py-3">Calculadora</a>
         <a href="#planes" class="mobile-nav-link rotulo rotulo-claro hover:text-papel py-3">Cómo partimos</a>
         <a href="#proyecto" class="mobile-nav-link rotulo rotulo-claro hover:text-papel py-3">Caso real</a>
@@ -134,17 +134,12 @@
 
   <main id="contenido">
 
-    <!-- =====================================================================
-         Portada.
-         Titular fijo (la frase de la marca) + una frase rotativa que recorre
-         los cinco dolores: papeleo, horas hombre, costos, riesgo operacional y
-         la ley. A la derecha, la demo: tareas reales de una pyme resueltas por
-         la IA, sumando minutos de trabajo manual evitados.
-         Sin JS o con movimiento reducido queda el estado estatico del HTML.
-         ===================================================================== -->
-    <section class="en-tinta hero-vivo text-papel border-b border-tinta-700 overflow-hidden">
-      <div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8 pt-12 pb-16 md:pt-16 md:pb-20 lg:pt-20 lg:pb-24">
-        <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-14 items-center">
+
+    <section class="en-tinta hero-vivo hero-editorial text-papel overflow-hidden">
+<img src="/assets/img/pyme-contabilidad-1200.webp" srcset="/assets/img/pyme-contabilidad-640.webp 640w, /assets/img/pyme-contabilidad-1200.webp 1200w" sizes="100vw" fetchpriority="high" width="1200" height="800" alt="Dos profesionales revisan documentos en una oficina contable luminosa y organizada." loading="eager" decoding="async" class="hero-photo" />
+<div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-editorial-inner max-w-pagina mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="hero-editorial-copy">
 
           <div>
             <p class="distintivo mb-5">
@@ -164,9 +159,7 @@
             </p>
 
             <p class="text-papel-200/85 text-[1.0625rem] sm:text-[1.125rem] leading-relaxed max-w-[35rem]">
-              Automatizamos lo que hoy se hace a mano —facturas, pedidos, cotizaciones, correos y planillas— con
-              inteligencia artificial que trabaja todo el día.
-              <strong class="font-medium text-papel">Tu equipo recupera horas, bajas costos y tus datos quedan preparados para la nueva ley.</strong>
+              Menos documentos por digitar y más tiempo para tus clientes. <strong class="font-medium text-papel">Automatizamos las tareas que frenan a tu equipo.</strong>
             </p>
 
             <div class="flex flex-col sm:flex-row gap-3 mt-8">
@@ -178,7 +171,7 @@
             </div>
 
             <p class="mt-5 text-[0.9375rem] text-papel-200/80">
-              <strong class="font-medium text-papel">Primera reunión y asesoría gratis</strong> · No necesitas saber de IA ni llegar preparado
+              <strong class="font-medium text-papel">Asesoría + mapa de un proceso, gratis</strong> · No necesitas saber de IA ni llegar preparado
             </p>
             <!-- El texto del HTML es el que ven buscadores y quien no tiene JS;
                  el script lo cambia por la cuenta regresiva en dias. -->
@@ -188,474 +181,42 @@
             </p>
           </div>
 
-          <!-- ---------------- Demo: tu pyme con IA ---------------- -->
-          <div data-demo class="relative">
-            <div class="rounded border border-white/10 bg-[#0F1A22]/85 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] overflow-hidden">
-
-              <div class="flex items-center justify-between gap-3 px-4 py-3 border-b border-white/10">
-                <p class="rotulo text-papel">Tu pyme con IA</p>
-                <div class="flex items-center gap-4">
-                  <span class="rotulo text-verde-300 inline-flex items-center gap-2"><span class="punto-vivo" aria-hidden="true"></span>Demo en vivo</span>
-                  <button type="button" data-demo-pausa class="rotulo rotulo-claro hover:text-papel" aria-pressed="false">Pausar</button>
-                </div>
-              </div>
-
-              <p class="sr-only">
-                Demostración animada: facturas, pedidos, consultas de clientes, alertas de vencimiento y solicitudes
-                de la Ley 21.719 llegan por correo, WhatsApp y formularios; la inteligencia artificial las clasifica,
-                las resuelve o las deriva a la persona correcta, y suma los minutos de trabajo manual evitados.
-              </p>
-
-              <div aria-hidden="true">
-                <div class="grid grid-cols-2 border-b border-white/10">
-                  <div class="px-4 py-3">
-                    <p class="rotulo rotulo-claro mb-1">Tareas resueltas</p>
-                    <p class="cifra text-[1.9rem] text-papel" data-demo-contador>3</p>
-                  </div>
-                  <div class="px-4 py-3 border-l border-white/10">
-                    <p class="rotulo rotulo-claro mb-1">Trabajo manual evitado</p>
-                    <p class="cifra text-[1.9rem] text-verde-300" data-demo-minutos>30 min</p>
-                  </div>
-                </div>
-
-                <div class="p-4">
-                  <p class="rotulo rotulo-claro mb-2">Entrando</p>
-                  <div class="artefacto entrante min-h-[124px]" data-demo-entrante>
-                    <p class="rotulo rotulo-kraft mb-1.5" data-demo-canal>Correo · recién llegado</p>
-                    <p class="text-sm text-[#4A3E28] leading-snug italic" data-demo-mensaje>«Adjunto factura N° 1043 por $1.248.900.»</p>
-                    <div class="mt-2.5 flex flex-wrap items-center gap-1.5 min-h-[22px]" data-demo-tags>
-                      <span class="marca-ia">IA</span>
-                      <span class="estado">Factura</span>
-                      <span class="estado estado-neutro">Datos extraídos</span>
-                    </div>
-                  </div>
-
-                  <p class="rotulo rotulo-claro mt-5 mb-2">Resuelto</p>
-                  <ul class="space-y-2 h-[258px] overflow-hidden" data-demo-lista>
-                    <li class="flex items-center gap-3 rounded bg-white/[0.04] border border-white/10 px-3 py-2.5">
-                      <span class="w-6 h-6 rounded-full bg-verde-300/15 text-verde-300 grid place-items-center shrink-0"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-                      <div class="min-w-0 flex-1">
-                        <p class="text-[0.8125rem] text-papel truncate">Consulta respondida</p>
-                        <p class="rotulo rotulo-claro truncate">Chat interno → Asistente IA</p>
-                      </div>
-                      <span class="dato text-[0.8125rem] text-verde-300 shrink-0">−12 min</span>
-                    </li>
-                    <li class="flex items-center gap-3 rounded bg-white/[0.04] border border-white/10 px-3 py-2.5">
-                      <span class="w-6 h-6 rounded-full bg-verde-300/15 text-verde-300 grid place-items-center shrink-0"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-                      <div class="min-w-0 flex-1">
-                        <p class="text-[0.8125rem] text-papel truncate">Orden OC-2291 validada</p>
-                        <p class="rotulo rotulo-claro truncate">Formulario web → Bodega</p>
-                      </div>
-                      <span class="dato text-[0.8125rem] text-verde-300 shrink-0">−8 min</span>
-                    </li>
-                    <li class="flex items-center gap-3 rounded bg-white/[0.04] border border-white/10 px-3 py-2.5">
-                      <span class="w-6 h-6 rounded-full bg-ambar-300/15 text-ambar-300 grid place-items-center shrink-0"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></span>
-                      <div class="min-w-0 flex-1">
-                        <p class="text-[0.8125rem] text-papel truncate">Póliza por vencer</p>
-                        <p class="rotulo rotulo-claro truncate">Alerta → Operaciones</p>
-                      </div>
-                      <span class="dato text-[0.8125rem] text-ambar-300 shrink-0">−10 min</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
 
-    <!-- =====================================================================
-         Ley 21.719, bien destacada: franja ambar con la cuenta regresiva en
-         grande. La urgencia es la FECHA; la multa va en el texto, no de titular.
-         Sin JS se lee "Rige desde el 1 dic de 2026".
-         ===================================================================== -->
-    <section id="ley" class="bg-ambar-100 border-b border-[#E7C9A6]">
-      <div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8 py-14 md:py-20">
-        <div class="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-8 lg:gap-16 items-center">
-
-          <div class="lg:pr-14 lg:border-r lg:border-[#E7C9A6]">
-            <p class="rotulo text-[#98490C] mb-1" data-dias-rotulo>Rige desde el</p>
-            <p class="cifra text-ambar text-[6.5rem] sm:text-[8rem] lg:text-[10rem] leading-[0.85]" data-dias-numero>1 dic</p>
-            <p class="rotulo text-[#98490C] mt-3" data-dias-pie>de 2026</p>
-          </div>
-
-          <div>
-            <p class="rotulo text-[#98490C] mb-3">Ley 21.719 · Protección de datos personales</p>
-            <h2 class="display text-[2rem] sm:text-[2.7rem] lg:text-[3rem] mb-5">
-              Si un cliente te pide borrar sus datos, ¿tu pyme puede encontrar todas las copias?
-            </h2>
-            <p class="text-tinta-700 text-[1.0625rem] leading-relaxed max-w-[44rem]">
-              Desde el 1 de diciembre, cualquier persona puede pedirle a tu empresa ver, corregir o eliminar sus
-              datos, y tienes <strong class="font-medium text-tinta">30 días para responder</strong>. Aplica a todas las
-              pymes que guardan nombres, RUT, correos o teléfonos de clientes, y las multas llegan hasta
-              <strong class="font-medium text-tinta">20.000 UTM</strong>. Con los datos repartidos en planillas y
-              correos, responder a tiempo es casi imposible.
-            </p>
-            <div class="mt-7 flex flex-col sm:flex-row sm:items-center gap-4">
-              <a href="#contacto" data-goal="ley_21719" class="ir-al-form boton self-start">
-                Agenda tu asesoría gratis
-                <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
-              </a>
-              <p class="text-[0.9375rem] text-tinta-700">Ordenamos tus datos y dejamos el proceso andando.</p>
+    <section id="beneficios" class="compact-section border-b border-papel-200"><div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8"><h2 class="display-seccion text-[2rem] sm:text-[2.6rem] mb-6">Menos tareas repetitivas. Más tiempo para tu pyme.</h2>
+<p id="para-quien" class="text-tinta-700 mb-7 max-w-[44rem]">Para comercios, distribuidoras y empresas de servicios que trabajan entre correos, planillas y WhatsApp. Partimos por lo que más tiempo te quita.</p>
+<div class="compact-solutions">
+<article><h3 class="display-seccion text-[1.3rem] mb-2">Papeleo y digitación</h3><p>Lee facturas, pedidos y documentos y registra sus datos sin copiarlos a mano.</p></article>
+<article><h3 class="display-seccion text-[1.3rem] mb-2">Seguimiento a clientes</h3><p>Clasifica consultas y las deriva a la persona correcta, para que ninguna oportunidad se pierda.</p></article>
+<article><h3 class="display-seccion text-[1.3rem] mb-2">Control y trazabilidad</h3><p>Alertas de vencimientos, responsables e historial para encontrar lo que necesitas a tiempo.</p></article>
+</div>
+<div class="pyme-escenas">
+              <figure>
+                <img src="/assets/img/pyme-distribuidora-1200.webp" srcset="/assets/img/pyme-distribuidora-640.webp 640w, /assets/img/pyme-distribuidora-1200.webp 1200w" sizes="(min-width: 1024px) 560px, (min-width: 640px) 50vw, 100vw" width="1200" height="800" alt="Un equipo prepara pedidos en una pequeña distribuidora." loading="lazy" decoding="async" class="pyme-foto" />
+                <figcaption>Distribuidoras y comercio</figcaption>
+              </figure>
+              <figure>
+                <img src="/assets/img/pyme-servicios-1200.webp" srcset="/assets/img/pyme-servicios-640.webp 640w, /assets/img/pyme-servicios-1200.webp 1200w" sizes="(min-width: 1024px) 560px, (min-width: 640px) 50vw, 100vw" width="1200" height="800" alt="Dos personas trabajan juntas en una oficina de servicios profesionales." loading="lazy" decoding="async" class="pyme-foto" />
+                <figcaption>Servicios y asesorías</figcaption>
+              </figure>
             </div>
-          </div>
 
-        </div>
-      </div>
-    </section>
-
-    <!-- =====================================================================
-         Lo que frena. Cuatro creencias que hacen esperar a una pyme, cada una
-         con su respuesta. Usa el mismo lenguaje de la matriz: la creencia es
-         kraft (lo que llega) y se tacha al entrar; la respuesta es registro
-         (lo que queda). Sin JS la creencia ya se ve tachada.
-         La frase de costo ("menos que contratar a una persona mas") es el
-         ancla sin monto; ver el comentario de NUMEROS al inicio.
-         ===================================================================== -->
-    <section id="sin-excusas" class="py-16 md:py-24 bg-papel-100 border-b border-papel-200">
-      <div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8">
-
-        <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-4 lg:gap-14 items-end mb-10">
-          <div>
-            <p class="rotulo mb-3">Lo que te frena, resuelto</p>
-            <h2 class="display-seccion text-[2rem] sm:text-[2.7rem]">
-              No tienes que estar preparado para la IA. <span class="text-verde">Para eso estamos nosotros.</span>
-            </h2>
-          </div>
-          <p class="text-tinta-700 text-[1.0625rem] leading-relaxed">
-            Mientras lo piensas, tu <span class="subrayado">competencia</span> ya está automatizando. Estas son las
-            razones más comunes para seguir esperando, y por qué ninguna debería frenarte.
-          </p>
-        </div>
-
-        <div class="revela grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
-
-          <article class="creencia revela-item" style="--paso:0">
-            <div class="artefacto md:-rotate-[0.5deg]">
-              <p class="rotulo rotulo-kraft mb-1.5">Lo que se cree</p>
-              <p class="text-[1.0625rem] leading-snug italic"><span class="tachado" style="--paso:1">«Primero tenemos que estar preparados para la IA.»</span></p>
-            </div>
-            <div class="registro">
-              <p class="rotulo rotulo-verde mb-2">Lo que es</p>
-              <h3 class="display-seccion text-[1.35rem] mb-1.5">Llegas como estás. Te preparamos nosotros.</h3>
-              <p class="text-[0.9375rem] text-tinta-700 leading-relaxed">No necesitas saber de IA, tener equipo técnico ni los datos ordenados. Ordenar es parte de nuestro trabajo.</p>
-            </div>
-          </article>
-
-          <article class="creencia revela-item" style="--paso:1">
-            <div class="artefacto md:rotate-[0.4deg]">
-              <p class="rotulo rotulo-kraft mb-1.5">Lo que se cree</p>
-              <p class="text-[1.0625rem] leading-snug italic"><span class="tachado" style="--paso:2">«La IA es cara. Es para empresas grandes.»</span></p>
-            </div>
-            <div class="registro">
-              <p class="rotulo rotulo-verde mb-2">Lo que es</p>
-              <h3 class="display-seccion text-[1.35rem] mb-1.5">Cuesta menos que contratar a una persona más.</h3>
-              <p class="text-[0.9375rem] text-tinta-700 leading-relaxed">Partimos por un solo proceso, el que más horas te quita, con alcance y precio cerrados por escrito.</p>
-            </div>
-          </article>
-
-          <article class="creencia revela-item" style="--paso:2">
-            <div class="artefacto md:rotate-[0.3deg]">
-              <p class="rotulo rotulo-kraft mb-1.5">Lo que se cree</p>
-              <p class="text-[1.0625rem] leading-snug italic"><span class="tachado" style="--paso:3">«Tendríamos que cambiar todos nuestros sistemas.»</span></p>
-            </div>
-            <div class="registro">
-              <p class="rotulo rotulo-verde mb-2">Lo que es</p>
-              <h3 class="display-seccion text-[1.35rem] mb-1.5">Funciona con lo que ya usas.</h3>
-              <p class="text-[0.9375rem] text-tinta-700 leading-relaxed">Se conecta a tu correo, WhatsApp, planillas y sistema actual. Tu equipo sigue trabajando donde ya trabaja.</p>
-            </div>
-          </article>
-
-          <article class="creencia revela-item" style="--paso:3">
-            <div class="artefacto md:-rotate-[0.4deg]">
-              <p class="rotulo rotulo-kraft mb-1.5">Lo que se cree</p>
-              <p class="text-[1.0625rem] leading-snug italic"><span class="tachado" style="--paso:4">«Para saber si nos sirve, hay que pagar.»</span></p>
-            </div>
-            <div class="registro">
-              <p class="rotulo rotulo-verde mb-2">Lo que es</p>
-              <h3 class="display-seccion text-[1.35rem] mb-1.5">La primera reunión y la asesoría son gratis.</h3>
-              <p class="text-[0.9375rem] text-tinta-700 leading-relaxed">Te mostramos dónde pierdes horas y por dónde partir. Si no hay caso, te lo decimos igual.</p>
-            </div>
-          </article>
-
-        </div>
-
-        <div class="mt-10 flex flex-col sm:flex-row sm:items-center gap-4">
-          <a href="#contacto" data-goal="asesoria" class="ir-al-form boton self-start">
-            Agenda tu asesoría gratis
-            <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
-          </a>
-          <p class="text-[0.9375rem] text-tinta-700">Tu competencia no esperó a estar preparada. Tú tampoco tienes que hacerlo.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- =====================================================================
-         Beneficios. Los cinco dolores del foco, mas ventas. Cada ficha es una
-         capacidad que entra en la implementacion (#planes).
-         ===================================================================== -->
-    <section id="beneficios" class="py-16 md:py-24 border-b border-papel-200">
-      <div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8">
-
-        <div class="max-w-[46rem] mb-8">
-          <p class="rotulo mb-3">Beneficios</p>
-          <h2 class="display-seccion text-[2rem] sm:text-[2.7rem] mb-4">
-            Lo que cambia cuando la IA trabaja en tu pyme.
-          </h2>
-          <p class="text-tinta-700 text-[1.0625rem] leading-relaxed">
-            No vendemos un programa para instalar y olvidar. Automatizamos tus procesos reales, sobre tus correos,
-            planillas y WhatsApp, y los dejamos funcionando.
-          </p>
-        </div>
-
-        <ul class="flex flex-wrap items-center gap-2 mb-10" aria-label="Con qué trabaja">
-          <li class="rotulo mr-1">Funciona con</li>
-          <li class="etiqueta">Correo</li>
-          <li class="etiqueta">WhatsApp</li>
-          <li class="etiqueta">Planillas</li>
-          <li class="etiqueta">Facturas y PDF</li>
-          <li class="etiqueta">Formularios web</li>
-          <li class="etiqueta">Tu sistema actual</li>
-        </ul>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-papel-200 border border-papel-200 rounded overflow-hidden">
-          <article class="bg-papel p-6 sm:p-7">
-            <span class="w-10 h-10 rounded bg-verde-100 text-verde grid place-items-center mb-5" aria-hidden="true"><i data-lucide="clock" class="w-5 h-5"></i></span>
-            <h3 class="display-seccion text-[1.35rem] mb-2">Menos horas hombre</h3>
-            <p class="text-[0.9375rem] text-tinta-700 leading-relaxed">La IA digita, clasifica y hace el seguimiento. Tu equipo deja la tarea repetitiva y se dedica a lo que genera ingresos.</p>
-          </article>
-          <article class="bg-papel p-6 sm:p-7">
-            <span class="w-10 h-10 rounded bg-verde-100 text-verde grid place-items-center mb-5" aria-hidden="true"><i data-lucide="piggy-bank" class="w-5 h-5"></i></span>
-            <h3 class="display-seccion text-[1.35rem] mb-2">Menos costos</h3>
-            <p class="text-[0.9375rem] text-tinta-700 leading-relaxed">Menos errores, menos retrabajo y menos horas extra. Creces sin contratar a una persona por cada tarea nueva.</p>
-          </article>
-          <article class="bg-papel p-6 sm:p-7">
-            <span class="w-10 h-10 rounded bg-verde-100 text-verde grid place-items-center mb-5" aria-hidden="true"><i data-lucide="file-text" class="w-5 h-5"></i></span>
-            <h3 class="display-seccion text-[1.35rem] mb-2">Adiós al papeleo</h3>
-            <p class="text-[0.9375rem] text-tinta-700 leading-relaxed">Facturas, órdenes de compra, cotizaciones y certificados se leen y quedan registrados solos, sin digitar.</p>
-          </article>
-          <article class="bg-papel p-6 sm:p-7">
-            <span class="w-10 h-10 rounded bg-verde-100 text-verde grid place-items-center mb-5" aria-hidden="true"><i data-lucide="alert-triangle" class="w-5 h-5"></i></span>
-            <h3 class="display-seccion text-[1.35rem] mb-2">Menos riesgo operacional</h3>
-            <p class="text-[0.9375rem] text-tinta-700 leading-relaxed">Alertas antes de que venza un contrato, una póliza o un plazo. Lo importante deja de depender de la memoria de alguien.</p>
-          </article>
-          <article class="bg-ambar-100 p-6 sm:p-7">
-            <span class="w-10 h-10 rounded bg-papel text-ambar grid place-items-center mb-5" aria-hidden="true"><i data-lucide="shield-check" class="w-5 h-5"></i></span>
-            <h3 class="display-seccion text-[1.35rem] mb-2">Preparado para la Ley 21.719</h3>
-            <p class="text-[0.9375rem] text-tinta-700 leading-relaxed">Datos ordenados, accesos por persona, historial de cambios y un flujo para responder solicitudes en plazo.</p>
-          </article>
-          <article class="bg-papel p-6 sm:p-7">
-            <span class="w-10 h-10 rounded bg-verde-100 text-verde grid place-items-center mb-5" aria-hidden="true"><i data-lucide="message-circle" class="w-5 h-5"></i></span>
-            <h3 class="display-seccion text-[1.35rem] mb-2">Ninguna venta se enfría</h3>
-            <p class="text-[0.9375rem] text-tinta-700 leading-relaxed">Cada consulta recibe respuesta al instante y llega a la persona correcta, por WhatsApp, web o correo.</p>
-          </article>
-        </div>
-
-        <div class="mt-10 flex flex-col sm:flex-row sm:items-center gap-4">
-          <a href="#contacto" class="boton self-start">
-            Agenda tu asesoría gratis
-            <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
-          </a>
-          <p class="text-[0.9375rem] text-tinta-500">Diagnóstico en 2 semanas · Primer proceso andando en 6</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- =====================================================================
-         Para quien.
-         ===================================================================== -->
-    <section id="para-quien" class="py-16 md:py-24 bg-papel-100 border-b border-papel-200">
-      <div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-14 items-start">
-
-          <div>
-            <p class="rotulo mb-3">Para quién es</p>
-            <h2 class="display-seccion text-[2rem] sm:text-[2.6rem] mb-4">
-              Hecho para pymes que todavía hacen demasiado a mano.
-            </h2>
-            <p class="text-tinta-700 leading-relaxed mb-7">
-              Empresas de cualquier rubro que viven entre correos, planillas y WhatsApp, y saben que así no pueden
-              crecer. No necesitas equipo técnico ni tener los datos ordenados: eso lo hacemos nosotros.
-            </p>
-            <ul class="flex flex-wrap gap-2" aria-label="Rubros">
-              <li class="etiqueta">Servicios profesionales</li>
-              <li class="etiqueta">Distribuidoras y comercio</li>
-              <li class="etiqueta">Asesorías y corredoras</li>
-              <li class="etiqueta">Inmobiliarias</li>
-              <li class="etiqueta">Estudios contables y jurídicos</li>
-              <li class="etiqueta">Constructoras y contratistas</li>
-            </ul>
-          </div>
-
-          <div class="ficha">
-            <div class="ficha-cab">
-              <p class="rotulo">Te sirve si hoy…</p>
-            </div>
-            <ul class="ficha-cuerpo sm:!px-7 space-y-4">
-              <li class="flex gap-3.5 text-tinta">
-                <span class="w-2 h-2 bg-ambar mt-2.5 shrink-0" aria-hidden="true"></span>
-                Alguien pasa horas digitando facturas, pedidos o datos de un sistema a otro.
-              </li>
-              <li class="flex gap-3.5 text-tinta">
-                <span class="w-2 h-2 bg-ambar mt-2.5 shrink-0" aria-hidden="true"></span>
-                La información vive en planillas que solo entiende una persona.
-              </li>
-              <li class="flex gap-3.5 text-tinta">
-                <span class="w-2 h-2 bg-ambar mt-2.5 shrink-0" aria-hidden="true"></span>
-                Te enteras de un vencimiento cuando ya es urgente.
-              </li>
-              <li class="flex gap-3.5 text-tinta">
-                <span class="w-2 h-2 bg-ambar mt-2.5 shrink-0" aria-hidden="true"></span>
-                Las consultas de clientes se responden tarde o se pierden.
-              </li>
-              <li class="flex gap-3.5 text-tinta">
-                <span class="w-2 h-2 bg-ambar mt-2.5 shrink-0" aria-hidden="true"></span>
-                No podrías demostrar qué datos tienes de un cliente si te lo pide.
-              </li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- =====================================================================
-         Matriz "lo que llega / lo que hace la IA / lo que queda".
-         Los valores de los registros son maqueta ilustrativa.
-         ===================================================================== -->
-    <section class="py-14 md:py-20 border-b border-papel-200 overflow-hidden">
-      <div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8">
-
-        <div class="max-w-[44rem] mb-10">
-          <p class="rotulo mb-3">Cómo se ve en la práctica</p>
-          <h2 class="display-seccion text-[1.9rem] sm:text-[2.5rem] mb-4">
-            El trabajo que tu equipo deja de hacer.
-          </h2>
-          <p class="text-tinta-700 leading-relaxed">
-            Tres tareas de todos los días. A la izquierda lo que llega; a la derecha lo que queda hecho, sin que
-            nadie lo digite.
-          </p>
-        </div>
-
-        <div class="revela grid gap-y-9 md:gap-y-7 md:grid-cols-[1fr_1.75rem_1.05fr_1.75rem_1fr] md:gap-x-0 md:items-center">
-
-          <p class="rotulo hidden md:block pb-3 revela-item" style="--paso:0">Lo que llega</p>
-          <span class="hidden md:block" aria-hidden="true"></span>
-          <p class="rotulo hidden md:block pb-3 px-6 revela-item" style="--paso:1">Lo que hace la IA</p>
-          <span class="hidden md:block" aria-hidden="true"></span>
-          <p class="rotulo rotulo-verde hidden md:block pb-3 revela-item" style="--paso:2">Lo que queda</p>
-
-          <!-- ---------- Fila 1: papeleo ---------- -->
-          <div class="artefacto md:-rotate-[0.6deg] revela-item" style="--paso:1">
-            <p class="rotulo rotulo-kraft mb-2">Correo con adjunto</p>
-            <p class="text-sm text-[#4A3E28] leading-snug">De: ventas@distribuidorasur.cl</p>
-            <p class="dato text-[0.8125rem] mt-2 flex items-center gap-1.5">
-              <i data-lucide="file-text" class="w-3.5 h-3.5 shrink-0" aria-hidden="true"></i>
-              factura_1043.pdf
-            </p>
-          </div>
-          <span class="hidden md:flex justify-center text-kraft-600 revela-item" style="--paso:2" aria-hidden="true">
-            <i data-lucide="arrow-right" class="w-5 h-5"></i>
-          </span>
-          <ol class="md:px-6 md:border-l md:border-papel-200 space-y-1.5 revela-item" style="--paso:3">
-            <li class="text-sm text-tinta-700 flex gap-2">
-              <span class="dato text-tinta-300 shrink-0">·</span>
-              <span>Lee el PDF y extrae los datos <span class="marca-ia ml-0.5">IA</span></span>
-            </li>
-            <li class="text-sm text-tinta-700 flex gap-2"><span class="dato text-tinta-300 shrink-0">·</span><span>Valida montos y campos obligatorios</span></li>
-            <li class="text-sm text-tinta-700 flex gap-2"><span class="dato text-tinta-300 shrink-0">·</span><span>La registra y adjunta el documento</span></li>
-          </ol>
-          <span class="hidden md:flex justify-center text-kraft-600 revela-item" style="--paso:4" aria-hidden="true">
-            <i data-lucide="arrow-right" class="w-5 h-5"></i>
-          </span>
-          <div class="registro revela-item" style="--paso:5">
-            <p class="rotulo rotulo-verde mb-3">Factura registrada</p>
-            <dl class="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-[0.8125rem]">
-              <dt class="rotulo">Proveedor</dt><dd class="dato text-tinta">Distribuidora Sur</dd>
-              <dt class="rotulo">Total</dt><dd class="dato text-tinta">$1.248.900</dd>
-              <dt class="rotulo">Digitación</dt><dd class="dato text-tinta">0 minutos</dd>
-            </dl>
-            <p class="mt-3.5 pt-3 border-t border-papel-200"><span class="estado">Registrada</span></p>
-          </div>
-
-          <!-- ---------- Fila 2: ley de datos ---------- -->
-          <div class="artefacto md:rotate-[0.5deg] revela-item" style="--paso:2">
-            <p class="rotulo rotulo-kraft mb-2">Correo de un cliente</p>
-            <p class="text-sm text-[#4A3E28] leading-snug italic">
-              «Por favor, eliminen mis datos de su base.»
-            </p>
-          </div>
-          <span class="hidden md:flex justify-center text-kraft-600 revela-item" style="--paso:3" aria-hidden="true">
-            <i data-lucide="arrow-right" class="w-5 h-5"></i>
-          </span>
-          <ol class="md:px-6 md:border-l md:border-papel-200 space-y-1.5 revela-item" style="--paso:4">
-            <li class="text-sm text-tinta-700 flex gap-2"><span class="dato text-tinta-300 shrink-0">·</span><span>Encuentra todos los registros de esa persona</span></li>
-            <li class="text-sm text-tinta-700 flex gap-2"><span class="dato text-tinta-300 shrink-0">·</span><span>Los suprime o bloquea, según corresponda</span></li>
-            <li class="text-sm text-tinta-700 flex gap-2"><span class="dato text-tinta-300 shrink-0">·</span><span>Guarda qué se hizo, cuándo y quién</span></li>
-          </ol>
-          <span class="hidden md:flex justify-center text-kraft-600 revela-item" style="--paso:5" aria-hidden="true">
-            <i data-lucide="arrow-right" class="w-5 h-5"></i>
-          </span>
-          <div class="registro revela-item" style="--paso:6">
-            <p class="rotulo rotulo-verde mb-3">Solicitud Ley 21.719</p>
-            <dl class="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-[0.8125rem]">
-              <dt class="rotulo">Registros</dt><dd class="dato text-tinta">3 encontrados</dd>
-              <dt class="rotulo">Plazo legal</dt><dd class="dato text-tinta">30 días</dd>
-              <dt class="rotulo">Respondida</dt><dd class="dato text-tinta">Día 2</dd>
-            </dl>
-            <p class="mt-3.5 pt-3 border-t border-papel-200"><span class="estado">Con evidencia</span></p>
-          </div>
-
-          <!-- ---------- Fila 3: riesgo operacional ---------- -->
-          <div class="artefacto md:-rotate-[0.4deg] revela-item" style="--paso:3">
-            <p class="rotulo rotulo-kraft mb-2">Póliza escaneada</p>
-            <p class="text-sm text-[#4A3E28] leading-snug">Seguro flota vehicular</p>
-            <p class="dato text-[0.8125rem] mt-2 flex items-center gap-1.5">
-              <i data-lucide="file-text" class="w-3.5 h-3.5 shrink-0" aria-hidden="true"></i>
-              poliza_flota_2026.pdf
-            </p>
-          </div>
-          <span class="hidden md:flex justify-center text-kraft-600 revela-item" style="--paso:4" aria-hidden="true">
-            <i data-lucide="arrow-right" class="w-5 h-5"></i>
-          </span>
-          <ol class="md:px-6 md:border-l md:border-papel-200 space-y-1.5 revela-item" style="--paso:5">
-            <li class="text-sm text-tinta-700 flex gap-2">
-              <span class="dato text-tinta-300 shrink-0">·</span>
-              <span>Detecta la fecha de vencimiento <span class="marca-ia ml-0.5">IA</span></span>
-            </li>
-            <li class="text-sm text-tinta-700 flex gap-2"><span class="dato text-tinta-300 shrink-0">·</span><span>Avisa a Operaciones 30 días antes</span></li>
-            <li class="text-sm text-tinta-700 flex gap-2"><span class="dato text-tinta-300 shrink-0">·</span><span>Registra quién la renovó</span></li>
-          </ol>
-          <span class="hidden md:flex justify-center text-kraft-600 revela-item" style="--paso:6" aria-hidden="true">
-            <i data-lucide="arrow-right" class="w-5 h-5"></i>
-          </span>
-          <div class="registro revela-item" style="--paso:7">
-            <p class="rotulo rotulo-verde mb-3">Alerta de vencimiento</p>
-            <dl class="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-[0.8125rem]">
-              <dt class="rotulo">Documento</dt><dd class="dato text-tinta">Póliza flota</dd>
-              <dt class="rotulo">Aviso</dt><dd class="dato text-tinta">30 días antes</dd>
-              <dt class="rotulo">A cargo</dt><dd class="dato text-tinta">Operaciones</dd>
-            </dl>
-            <p class="mt-3.5 pt-3 border-t border-papel-200"><span class="estado">Renovada a tiempo</span></p>
-          </div>
-
-        </div>
-
-        <p class="mt-9 pt-5 border-t border-papel-200 max-w-[46rem] text-[0.9375rem] text-tinta-500 leading-relaxed">
-          La IA lee, clasifica y sugiere; las decisiones importantes las toma una persona.
-        </p>
-      </div>
-    </section>
-
-    <!-- =====================================================================
-         Calculadora de horas hombre. Los numeros los pone el visitante: es la
-         forma de hablar de plata sin inventar resultados. Todo local.
-         Los valores de las salidas en el HTML corresponden a los valores
-         iniciales, para que la seccion se lea completa sin JavaScript.
-         ===================================================================== -->
-    <section id="calculadora" class="py-16 md:py-24 bg-papel-100 border-b border-papel-200">
+<div id="primera-reunion" class="meeting-result">
+  <p class="rotulo rotulo-verde mb-3">Tu primera reunión · Sin costo</p>
+  <h3 class="display-seccion text-[1.7rem] sm:text-[2rem] mb-3">Tu proceso, claro. Y un camino para mejorarlo.</h3>
+  <p class="text-tinta-700 max-w-[46rem] mb-6">Elegimos un proceso de tu negocio y revisamos juntos sus pasos y responsables. Después te entregamos su mapa, gratis y sin compromiso, y señalamos dónde podrías automatizarlo.</p>
+  <div class="bpmn-comparison">
+    <figure><figcaption><span class="rotulo">Hoy · Mapa del proceso</span><h4>De los documentos a Excel, a mano.</h4></figcaption><button type="button" class="bpmn-expand" data-diagram="/assets/img/bpmn-proceso-actual.svg" data-diagram-title="Hoy: mapa del proceso" aria-label="Ampliar diagrama del proceso actual"><img src="/assets/img/bpmn-proceso-actual.svg" width="460" height="730" loading="lazy" alt="Proceso manual: recibir, leer, clasificar documentos, copiar datos en Excel y revisar."/><span>Ampliar diagrama ↗</span></button></figure>
+    <figure><figcaption><span class="rotulo rotulo-verde">Propuesta inicial · Oportunidades</span><h4>Tus documentos, ordenados y guardados en la nube.</h4></figcaption><button type="button" class="bpmn-expand" data-diagram="/assets/img/bpmn-propuesta-automatizacion.svg" data-diagram-title="Propuesta inicial de automatización" aria-label="Ampliar propuesta de automatización"><img src="/assets/img/bpmn-propuesta-automatizacion.svg" width="460" height="730" loading="lazy" alt="El sistema lee y ordena tus documentos, revisa los datos y los guarda en una base de datos profesional en la nube. Si hay dudas, una persona los revisa."/><span>Ampliar diagrama ↗</span></button></figure>
+  </div>
+  <p class="bpmn-legend"><span><i class="legend-auto" aria-hidden="true"></i>Robot = tarea automatizada</span><span><i class="legend-human" aria-hidden="true"></i>Revisión humana ante dudas</span></p>
+  <aside class="hours-example"><p class="rotulo rotulo-verde mb-2">Ejemplo de ahorro · Simulación</p><h4>40 horas de trabajo recuperadas al mes</h4><p>Si tu equipo procesa <strong>600 documentos al mes</strong> y pasa de <strong>5 a 1 minuto de trabajo por documento</strong>, recupera <strong>40 horas-persona (HH)</strong>: de 50 a 10 horas mensuales.</p><p class="text-sm mt-2">El minuto restante incluye la recepción y la revisión humana, como promedio. Es un supuesto ilustrativo: en la reunión revisamos tus volúmenes y tiempos para estimar tu caso.</p></aside>
+  <aside class="sql-observation"><h4>Tus datos en buenas manos, sin gastar de más.</h4><p>En vez de depender de una planilla, tus datos quedan ordenados en una base de datos profesional en la nube. Cada persona accede solo a lo que necesita, con datos protegidos y copias de respaldo. Empezamos con lo justo para tu negocio: puede costar menos de lo que imaginas. Revisamos contigo el costo antes de dar el siguiente paso.</p></aside>
+  <p class="text-sm text-tinta-700 mt-3">Ejemplo ilustrativo con facturas, guías de despacho y notas de crédito. El mapa actual de un proceso es gratuito; la propuesta es preliminar y se valida antes de cotizar la implementación.</p>
+</div>
+<details id="calculadora" class="compact-details"><summary>Calcula cuánto tiempo podrías recuperar</summary><div class="compact-detail-body">    <div>
       <div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8">
 
         <div class="max-w-[44rem] mb-10">
@@ -730,310 +291,32 @@
 
         </div>
       </div>
-    </section>
+    </div></div></details>
+<p class="mt-5 text-sm text-tinta-700">La IA lee, clasifica y sugiere; las decisiones importantes las toma una persona.</p></div></section>
 
-    <!-- =====================================================================
-         Como partimos. SIN MONTOS: la seccion transmite que cuesta menos de lo
-         que se cree con hechos (primer paso gratis, precio cerrado por
-         escrito, diagnostico descontable) y con dos boletas que comparan
-         contratar a alguien con automatizar ese trabajo. Las boletas no llevan
-         cifras a proposito: el total de la segunda es la frase de la marca.
-         La numeracion de las fichas corresponde: es una secuencia.
-         ===================================================================== -->
-    <section id="planes" class="en-tinta bg-tinta text-papel py-16 md:py-24">
-      <div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8">
+    <section id="proyecto" class="compact-section border-b border-papel-200"><div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8"><h2 class="display-seccion text-[2rem] sm:text-[2.6rem] mb-6">De la planilla compartida a una operación que deja registro.</h2>
+<p class="rotulo mb-3">Caso real · Asesoría previsional</p>
+<p class="text-tinta-700 max-w-[46rem] mb-6">Una pyme chilena gestionaba sus prospectos entre planillas, formularios y correos. Centralizamos la operación en una base de datos en la nube.</p>
+<div class="compact-solutions"><article><h3 class="display-seccion text-[1.3rem] mb-2">Antes</h3><p>Información dispersa en planillas compartidas y correos.</p></article><article><h3 class="display-seccion text-[1.3rem] mb-2">Entregado</h3><p>Captura digital, estados y responsables, accesos por rol, avisos por correo e historial.</p></article><article><h3 class="display-seccion text-[1.3rem] mb-2">En diseño</h3><p>WhatsApp y SMS, resúmenes con IA y priorización asistida.</p></article></div>
+<a href="#contacto" class="boton mt-6">Agenda tu asesoría gratis</a></div></section>
 
-        <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-10 lg:gap-14 items-center mb-12">
-          <div>
-            <p class="rotulo rotulo-claro mb-3">Cómo partimos</p>
-            <h2 class="display text-[2rem] sm:text-[2.8rem] text-papel mb-5">
-              Cuesta menos de lo que crees. <span class="text-verde-300">Y el primer paso es gratis.</span>
-            </h2>
-            <p class="text-papel-200/90 leading-relaxed">
-              No hay tarifa de lista porque cada pyme parte por un proceso distinto. Lo que sí es igual para todos:
-              no pagas nada por saber si te conviene, y el alcance y el precio quedan cerrados por escrito antes de
-              partir. Sin sorpresas a mitad de camino.
-            </p>
-          </div>
+    <section id="planes" class="compact-section border-b border-papel-200"><div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8"><h2 class="display-seccion text-[2rem] sm:text-[2.6rem] mb-6">Un primer proceso. Un alcance claro.</h2>
+<div class="compact-solutions">
+<article><p class="rotulo rotulo-verde mb-3">01 · Gratis</p><h3 class="display-seccion text-[1.3rem] mb-2">Asesoría inicial</h3><p>Revisamos un proceso y te entregamos su mapa gratis, con oportunidades iniciales de automatización.</p></article>
+<article><p class="rotulo rotulo-verde mb-3">02 · 1 a 2 semanas</p><h3 class="display-seccion text-[1.3rem] mb-2">Diagnóstico</h3><p>Medimos tareas, riesgos y datos. Recibes una hoja de ruta; el diagnóstico se descuenta si seguimos.</p></article>
+<article><p class="rotulo rotulo-verde mb-3">03 · 4 a 6 semanas</p><h3 class="display-seccion text-[1.3rem] mb-2">Implementación</h3><p>Automatizamos un proceso y capacitamos a tu equipo, con alcance y precio cerrados por escrito.</p></article>
+</div>
+<details class="compact-details"><summary>Qué incluye la implementación y el soporte</summary><div class="compact-detail-body"><p>Conexiones con tus herramientas, lectura y clasificación de documentos, alertas, un panel de operación y capacitación. La operación mensual se acuerda por separado e incluye monitoreo, revisión de accesos y respaldos, mejoras y soporte.</p><p class="mt-3">Asistentes internos, análisis de conversaciones y reportes con IA se cotizan aparte. WhatsApp usa la API oficial de Meta, con cargos adicionales.</p></div></details></div></section>
 
-          <!-- Comparacion en boletas. Decorativa en lo visual, pero el texto es
-               contenido: no va aria-hidden. -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 items-start">
-            <div class="boleta sm:mt-6">
-              <p class="rotulo mb-1">Opción A</p>
-              <h3 class="display-seccion text-[1.2rem] text-tinta mb-4">Contratar a alguien más</h3>
-              <dl class="boleta-filas">
-                <div><dt>Sueldo y leyes sociales</dt><dd>cada mes</dd></div>
-                <div><dt>Selección y capacitación</dt><dd>a tu cargo</dd></div>
-                <div><dt>Disponible</dt><dd>en horario de oficina</dd></div>
-                <div><dt>Si renuncia</dt><dd>vuelta a empezar</dd></div>
-              </dl>
-              <p class="boleta-total">
-                <span class="rotulo">Total</span>
-                <span class="cifra text-[1.35rem] text-tinta-700">Un sueldo más, todos los meses</span>
-              </p>
-            </div>
+    <section id="sin-excusas" class="compact-section border-b border-papel-200"><div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8"><h2 class="display-seccion text-[2rem] sm:text-[2.6rem] mb-6">Antes de empezar, resolvamos tus dudas.</h2>
+<details class="compact-details"><summary>¿Necesito saber de IA o tener mis datos ordenados?</summary><div class="compact-detail-body">No. Llegas como estás; ordenar tus datos y preparar el proceso es parte del trabajo.</div></details>
+<details class="compact-details"><summary>¿Tengo que cambiar mis sistemas?</summary><div class="compact-detail-body">Trabajamos con tu correo, planillas y herramientas actuales. Evaluamos las conexiones necesarias durante el diagnóstico.</div></details>
+<details class="compact-details"><summary>¿Cuánto cuesta y qué es gratis?</summary><div class="compact-detail-body">La primera reunión, la asesoría y el mapa actual de un proceso son gratis. La propuesta de automatización es preliminar. El diagnóstico, la implementación y la operación se cotizan según tu proceso, con precio y alcance acordados por escrito antes de partir.</div></details>
+<details id="ley" class="compact-details"><summary>¿Cómo me ayuda con la Ley 21.719?</summary><div class="compact-detail-body">Ordenamos los datos, accesos, historial y el flujo para gestionar solicitudes. La ley rige desde el 1 de diciembre de 2026. La asesoría es técnica y operacional; si necesitas validación jurídica, te lo indicamos.</div></details></div></section>
 
-            <div class="boleta boleta-elegida">
-              <p class="rotulo rotulo-verde mb-1">Opción B</p>
-              <h3 class="display-seccion text-[1.2rem] text-tinta mb-4">Automatizar ese trabajo con IA</h3>
-              <dl class="boleta-filas">
-                <div><dt>Primera reunión y asesoría</dt><dd class="text-verde">gratis</dd></div>
-                <div><dt>Proyecto</dt><dd>precio cerrado</dd></div>
-                <div><dt>Operación mensual</dt><dd>menos que un sueldo</dd></div>
-                <div><dt>Disponible</dt><dd>todo el día</dd></div>
-              </dl>
-              <p class="boleta-total">
-                <span class="rotulo rotulo-verde">Total</span>
-                <span class="cifra text-[1.35rem] text-verde">Menos de lo que crees</span>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Paso 0: lo gratis va primero y a todo el ancho, para que sea lo
-             primero que se lee de la oferta. -->
-        <div class="mb-5 rounded border border-verde-300/60 bg-verde-300/[0.08] p-6 sm:p-8 grid grid-cols-1 md:grid-cols-[1fr_1.3fr_auto] gap-6 md:gap-10 md:items-center">
-          <div>
-            <p class="mb-3"><span class="estado estado-grande !bg-verde-300 !text-tinta !border-verde-300">Gratis</span></p>
-            <h3 class="display-seccion text-[1.6rem] text-papel">Primera reunión y asesoría</h3>
-            <p class="rotulo rotulo-claro mt-2">Empieza aquí · Sin compromiso</p>
-          </div>
-          <ul class="space-y-2 text-[0.9375rem] text-papel-200/90">
-            <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde-300 shrink-0 mt-1" aria-hidden="true"></i>No necesitas llegar preparado ni saber de IA</li>
-            <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde-300 shrink-0 mt-1" aria-hidden="true"></i>Te mostramos dónde se te van las horas y por dónde conviene partir</li>
-            <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde-300 shrink-0 mt-1" aria-hidden="true"></i>Te orientamos sobre lo que te pide la Ley 21.719</li>
-            <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde-300 shrink-0 mt-1" aria-hidden="true"></i>Si no hay caso, te lo decimos igual</li>
-          </ul>
-          <div>
-            <a href="#contacto" data-goal="asesoria" class="ir-al-form boton-vivo self-start whitespace-nowrap">
-              Agenda tu asesoría gratis
-              <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 items-stretch">
-
-          <article class="ficha text-tinta flex flex-col">
-            <div class="ficha-cab">
-              <p class="rotulo">Paso 1 · 1 a 2 semanas</p>
-              <span class="dato text-kraft-800 text-sm" aria-hidden="true">01</span>
-            </div>
-            <div class="ficha-cuerpo sm:!p-7 flex flex-col flex-1">
-              <h3 class="display-seccion text-[1.45rem] mb-4">Diagnóstico de IA y datos</h3>
-              <p class="cifra text-[1.6rem] text-verde">Se descuenta si seguimos</p>
-              <p class="rotulo mt-2 mb-5">Precio cerrado antes de partir</p>
-              <p class="text-[0.9375rem] text-tinta-700 leading-relaxed mb-5">
-                Cuando quieres ir a fondo: medimos dónde tu pyme pierde horas y plata, qué riesgos tiene y cómo
-                están tus datos frente a la nueva ley.
-              </p>
-              <ul class="space-y-2 mb-7 text-[0.9375rem]">
-                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Mapa de tareas manuales y horas que consumen</li>
-                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Riesgos operacionales y vencimientos sin control</li>
-                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Estado de tus datos frente a la Ley 21.719</li>
-                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Hoja de ruta con lo que conviene automatizar primero</li>
-              </ul>
-              <a href="#contacto" data-goal="diagnostico" class="ir-al-form rotulo rotulo-verde mt-auto inline-flex items-center gap-1.5 hover:underline">
-                Quiero el diagnóstico <i data-lucide="arrow-right" class="w-3.5 h-3.5" aria-hidden="true"></i>
-              </a>
-            </div>
-          </article>
-
-          <article class="ficha text-tinta flex flex-col ring-2 ring-verde-300">
-            <div class="ficha-cab">
-              <p class="rotulo rotulo-verde">Paso 2 · 4 a 6 semanas</p>
-              <span class="dato text-kraft-800 text-sm" aria-hidden="true">02</span>
-            </div>
-            <div class="ficha-cuerpo sm:!p-7 flex flex-col flex-1">
-              <h3 class="display-seccion text-[1.45rem] mb-4">Tu primer proceso con IA</h3>
-              <p class="cifra text-[1.6rem] text-verde">Menos que contratar a una persona más</p>
-              <p class="rotulo mt-2 mb-5">Alcance y precio cerrados por escrito</p>
-              <p class="text-[0.9375rem] text-tinta-700 leading-relaxed mb-5">
-                Elegimos el proceso que más horas o riesgo te cuesta y lo dejamos funcionando con IA.
-              </p>
-              <ul class="space-y-2 mb-7 text-[0.9375rem]">
-                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Un proceso automatizado de punta a punta: facturas, pedidos, ventas u otro</li>
-                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>IA que lee documentos, clasifica y resume</li>
-                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Conexión con tu correo, WhatsApp y planillas</li>
-                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Alertas de vencimientos y seguimiento automático</li>
-                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Panel con lo que pasa en tu operación</li>
-                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Datos con roles, historial y flujo para la Ley 21.719</li>
-                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Capacitación a tu equipo</li>
-              </ul>
-              <a href="#contacto" data-goal="implementacion" class="ir-al-form rotulo rotulo-verde mt-auto inline-flex items-center gap-1.5 hover:underline">
-                Quiero mi primer proceso con IA <i data-lucide="arrow-right" class="w-3.5 h-3.5" aria-hidden="true"></i>
-              </a>
-            </div>
-          </article>
-
-          <article class="ficha text-tinta flex flex-col">
-            <div class="ficha-cab">
-              <p class="rotulo">Paso 3 · Mensual</p>
-              <span class="dato text-kraft-800 text-sm" aria-hidden="true">03</span>
-            </div>
-            <div class="ficha-cuerpo sm:!p-7 flex flex-col flex-1">
-              <h3 class="display-seccion text-[1.45rem] mb-4">Operación administrada</h3>
-              <p class="cifra text-[1.6rem] text-verde">Una mensualidad menor que un sueldo</p>
-              <p class="rotulo mt-2 mb-5">Acordada por escrito</p>
-              <p class="text-[0.9375rem] text-tinta-700 leading-relaxed mb-5">
-                Mantenemos todo funcionando, sumamos procesos y dejamos evidencia de la operación mes a mes.
-              </p>
-              <ul class="space-y-2 mb-7 text-[0.9375rem]">
-                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Monitoreo de las automatizaciones</li>
-                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Revisión de accesos y respaldos</li>
-                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Mejoras mensuales</li>
-                <li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Reporte de métricas y soporte</li>
-              </ul>
-              <a href="#contacto" data-goal="operacion" class="ir-al-form rotulo rotulo-verde mt-auto inline-flex items-center gap-1.5 hover:underline">
-                Consultar por la operación <i data-lucide="arrow-right" class="w-3.5 h-3.5" aria-hidden="true"></i>
-              </a>
-            </div>
-          </article>
-
-        </div>
-
-        <div class="mt-5 border border-white/10 rounded p-6 sm:p-8 grid grid-cols-1 md:grid-cols-[1fr_1.6fr] gap-6 md:gap-10">
-          <div>
-            <p class="mb-3"><span class="marca-ia !text-verde-300 !border-verde-300">IA avanzada · opcional</span></p>
-            <h3 class="display-seccion text-[1.45rem] text-papel">Cuando quieras ir más allá.</h3>
-          </div>
-          <div>
-            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 text-[0.9375rem] text-papel-200/90 mb-4">
-              <li class="flex gap-2"><span class="dato text-verde-300 shrink-0">·</span>Asistente interno con tus procedimientos y precios</li>
-              <li class="flex gap-2"><span class="dato text-verde-300 shrink-0">·</span>Respuestas redactadas por IA, revisadas por tu equipo</li>
-              <li class="flex gap-2"><span class="dato text-verde-300 shrink-0">·</span>Análisis de conversaciones con clientes</li>
-              <li class="flex gap-2"><span class="dato text-verde-300 shrink-0">·</span>Reportes y resúmenes automáticos</li>
-            </ul>
-            <p class="text-[0.9375rem] text-papel-200/70">
-              Se cotiza aparte. Siempre con una persona revisando lo que afecta a un cliente.
-            </p>
-          </div>
-        </div>
-
-        <p class="mt-8 text-[0.8125rem] text-papel-200/60 max-w-[46rem]">
-          La asesoría y el diagnóstico son técnicos y operacionales; no son asesoría legal. Si tu caso necesita
-          validación jurídica, te lo decimos. WhatsApp funciona con la API oficial de Meta, que cobra aparte por
-          conversación.
-        </p>
-      </div>
-    </section>
-
-    <!-- =====================================================================
-         Caso real.
-         SLOT METRICA: cuando exista una cifra MEDIDA (p. ej. tiempo de
-         asignacion antes y despues) y permiso escrito del cliente para
-         nombrarlo, va como cuarta ficha junto a "Antes" y "Ahora".
-         ===================================================================== -->
-    <section id="proyecto" class="py-16 md:py-24 bg-papel-100 border-b border-papel-200">
-      <div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8">
-
-        <div class="max-w-[46rem] mb-12">
-          <p class="rotulo mb-3">Caso real · Asesoría previsional</p>
-          <h2 class="display-seccion text-[2rem] sm:text-[2.6rem] mb-4">
-            De la planilla compartida a una operación que deja registro.
-          </h2>
-          <p class="text-tinta-700 leading-relaxed">
-            Una pyme chilena de asesoría previsional gestionaba sus prospectos en planillas compartidas, con la
-            información repartida entre formularios y correos. Llevamos la operación a una base de datos en la
-            nube, con roles, estados e historial.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
-
-          <div class="space-y-5">
-            <div class="ficha">
-              <div class="ficha-cab">
-                <p class="rotulo">Antes</p>
-                <span class="estado estado-espera">Planillas</span>
-              </div>
-              <ul class="ficha-cuerpo space-y-2 text-[0.9375rem] text-tinta-700">
-                <li class="flex gap-2"><span class="dato text-kraft-800 shrink-0">·</span>Prospectos en planillas compartidas</li>
-                <li class="flex gap-2"><span class="dato text-kraft-800 shrink-0">·</span>Información repartida entre formularios, correos y planillas</li>
-              </ul>
-            </div>
-
-            <div class="ficha">
-              <div class="ficha-cab">
-                <p class="rotulo rotulo-verde">Ahora</p>
-                <span class="estado">Entregado</span>
-              </div>
-              <ul class="ficha-cuerpo grid sm:grid-cols-2 gap-x-5 gap-y-2 text-[0.9375rem] text-tinta-700">
-                <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Captura digital estructurada</li>
-                <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Base de datos centralizada</li>
-                <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Estados y responsables</li>
-                <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Control de acceso por rol</li>
-                <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Avisos automáticos por correo</li>
-                <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-verde shrink-0 mt-1" aria-hidden="true"></i>Historial y trazabilidad</li>
-              </ul>
-            </div>
-
-            <div class="ficha">
-              <div class="ficha-cab">
-                <p class="rotulo">Siguiente etapa</p>
-                <span class="estado estado-espera">En diseño</span>
-              </div>
-              <ul class="ficha-cuerpo grid sm:grid-cols-2 gap-x-5 gap-y-2 text-[0.9375rem] text-tinta-700">
-                <li class="flex gap-2"><span class="dato text-kraft-800 shrink-0">·</span>WhatsApp y SMS</li>
-                <li class="flex gap-2"><span class="dato text-kraft-800 shrink-0">·</span>Resumen de antecedentes con IA</li>
-                <li class="flex gap-2"><span class="dato text-kraft-800 shrink-0">·</span>Priorización asistida</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Maqueta del panel. Decorativa: describe lo que ya se lee al lado. -->
-          <div class="en-tinta bg-tinta rounded border border-tinta-700 overflow-hidden" aria-hidden="true">
-            <div class="flex items-center gap-2 px-4 py-3 border-b border-tinta-700">
-              <span class="w-2 h-2 rounded-full bg-tinta-500"></span>
-              <span class="w-2 h-2 rounded-full bg-tinta-500"></span>
-              <span class="w-2 h-2 rounded-full bg-tinta-500"></span>
-              <span class="dato text-[0.6875rem] text-tinta-300 ml-2">panel de oportunidades</span>
-            </div>
-            <div class="p-4 space-y-2.5">
-              <div class="bg-white/[0.04] border border-tinta-700 rounded p-3.5 flex items-start justify-between gap-4">
-                <div>
-                  <p class="dato text-[0.8125rem] text-papel">Prospecto 001</p>
-                  <p class="rotulo rotulo-claro mt-1">Origen · Formulario web</p>
-                </div>
-                <div class="text-right shrink-0">
-                  <span class="estado">En seguimiento</span>
-                  <p class="rotulo rotulo-claro mt-1.5">Equipo A</p>
-                </div>
-              </div>
-              <div class="bg-white/[0.04] border border-tinta-700 rounded p-3.5 flex items-start justify-between gap-4">
-                <div>
-                  <p class="dato text-[0.8125rem] text-papel">Prospecto 002</p>
-                  <p class="rotulo rotulo-claro mt-1">Origen · Correo</p>
-                </div>
-                <div class="text-right shrink-0">
-                  <span class="estado estado-espera">Evaluación</span>
-                  <p class="rotulo rotulo-claro mt-1.5">Asignación automática</p>
-                </div>
-              </div>
-              <div class="border border-dashed border-tinta-700 rounded p-3.5">
-                <p class="rotulo rotulo-claro mb-1.5">Historial</p>
-                <p class="text-[0.8125rem] text-tinta-300 leading-snug">
-                  Cada cambio de estado queda con fecha y responsable.
-                </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- =====================================================================
-         Cierre de marca antes del formulario: el logo con los electrones
-         girando por sus orbitas. El SVG lo genera scripts/build.mjs a partir
-         de public/assets/img/logo-genialabs.svg y reemplaza el comentario
-         LOGO_ANIMADO. Se pausa fuera de pantalla, con movimiento reducido y
-         con el boton Pausar de la demo (initLogoAnimado).
-         ===================================================================== -->
-    <section class="en-tinta banda-marca text-papel border-y border-white/10 overflow-hidden" data-logo-animado>
-      <div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8 py-14 md:py-20">
-        <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-14">
+    <section class="en-tinta banda-marca marca-compacta text-papel border-y border-white/10 overflow-hidden" data-logo-animado>
+      <div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8 py-8 md:py-10">
+        <div class="flex flex-row items-center justify-center gap-5 md:gap-8">
           <div class="logo-animado">
             <!-- LOGO_ANIMADO -->
           </div>
@@ -1050,20 +333,17 @@
       </div>
     </section>
 
-    <!-- =====================================================================
-         Contacto
-         ===================================================================== -->
-    <section id="contacto" class="py-16 md:py-24 bg-papel-100">
+    <section id="contacto" class="compact-section bg-papel-100">
       <div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.35fr] gap-10 lg:gap-14">
 
           <div>
             <p class="rotulo mb-3">Contacto</p>
             <h2 class="display-seccion text-[2rem] sm:text-[2.6rem] mb-4">
-              Tu primera reunión y asesoría, gratis.
+              Tu asesoría y el mapa de un proceso, gratis.
             </h2>
             <p class="text-tinta-700 leading-relaxed mb-8">
-              Cuéntanos qué tarea les quita más horas o qué te preocupa de la nueva ley. No necesitas llegar preparado
+              Cuéntanos qué proceso les quita más tiempo. Lo revisamos juntos y después te entregamos su mapa, gratis. No necesitas llegar preparado
               ni saber de IA. En la reunión te decimos si hay caso, por dónde partir y cuánto costaría —probablemente
               menos de lo que crees—. <strong class="font-medium text-tinta">Si no hay caso, te lo decimos igual</strong>,
               aunque no trabajemos juntos.
@@ -1189,7 +469,38 @@
         </div>
       </div>
     </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </main>
+<dialog id="diagramDialog" class="diagram-dialog" aria-labelledby="diagramTitle"><div class="diagram-dialog-bar"><h2 id="diagramTitle">Mapa del proceso</h2><form method="dialog"><button class="boton" type="submit" aria-label="Cerrar diagrama">Cerrar ×</button></form></div><img id="diagramImage" alt="Diagrama ampliado del proceso" width="460" height="730"/></dialog>
 
   <footer class="en-tinta bg-tinta text-papel pt-14 pb-8">
     <div class="max-w-pagina mx-auto px-5 sm:px-6 lg:px-8">
@@ -1225,7 +536,7 @@
             <ul class="space-y-2 text-sm text-papel-200/80">
               <li><a href="#beneficios" class="hover:text-papel">Beneficios</a></li>
               <li><a href="#sin-excusas" class="hover:text-papel">Lo que te frena</a></li>
-              <li><a href="#ley" class="hover:text-papel">Ley de datos</a></li>
+              <li><a href="#sin-excusas" class="hover:text-papel">Preguntas frecuentes</a></li>
               <li><a href="#proyecto" class="hover:text-papel">Caso real</a></li>
               <li><a href="#contacto" class="hover:text-papel">Contacto</a></li>
             </ul>
@@ -1247,10 +558,33 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+    const diagramDialog = document.getElementById('diagramDialog');
+    document.querySelectorAll('[data-diagram]').forEach(button => button.addEventListener('click', () => {
+      document.getElementById('diagramImage').src = button.dataset.diagram;
+      document.getElementById('diagramTitle').textContent = button.dataset.diagramTitle;
+      diagramDialog.showModal();
+    }));
+    diagramDialog.addEventListener('click', event => { if (event.target === diagramDialog) diagramDialog.close(); });
+    // Open optional content before navigating to an anchor inside it.
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', () => {
+        const target = document.getElementById(link.getAttribute('href').slice(1));
+        if (!target) return;
+        let node = target;
+        while (node) { if (node.tagName === 'DETAILS') node.open = true; node = node.parentElement; }
+      });
+    });
+    const openFragment = () => {
+      const target = document.getElementById(location.hash.slice(1));
+      if (target?.tagName === 'DETAILS') target.open = true;
+    };
+    openFragment();
+    window.addEventListener('hashchange', openFragment);
+
       document.getElementById('currentYear').textContent = new Date().getFullYear();
       initMenuMovil();
       initCuentaRegresiva();
-      initDemo();
+
       initRotador();
       initMatriz();
       initLogoAnimado();
@@ -1326,160 +660,6 @@
      *   mismo boton detiene la frase rotativa del titular.
      * - Con movimiento reducido no arranca: queda el estado estatico.
      * Datos ficticios y fijos; igual se escriben con textContent. */
-    function initDemo() {
-      const raiz = document.querySelector('[data-demo]');
-      if (!raiz) return;
-
-      const btn = raiz.querySelector('[data-demo-pausa]');
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        btn.hidden = true;
-        return;
-      }
-
-      const TAREAS = [
-        { canal: 'Correo', msg: 'Adjunto factura N° 1043 por $1.248.900.', titulo: 'Factura 1043 registrada', tags: ['Factura', 'Datos extraídos'], destino: 'Contabilidad', min: 6 },
-        { canal: 'WhatsApp', msg: 'Hola, necesito cotizar para 12 personas.', titulo: 'Cotización asignada', tags: ['Venta', 'Prioridad alta'], alta: true, destino: 'Ejecutiva 2', min: 4 },
-        { canal: 'Correo', msg: 'Por favor, eliminen mis datos de su base.', titulo: 'Solicitud de supresión', tags: ['Ley 21.719', 'Plazo 30 días'], datos: true, destino: 'Encargado de datos', min: 45 },
-        { canal: 'Alerta', msg: 'La póliza de la flota vence en 5 días.', titulo: 'Póliza por vencer', tags: ['Riesgo operacional', 'Vence en 5 días'], riesgo: true, destino: 'Operaciones', min: 10 },
-        { canal: 'Formulario web', msg: 'Envío orden de compra OC-2291, 40 unidades.', titulo: 'Orden OC-2291 validada', tags: ['Pedido', 'Datos validados'], destino: 'Bodega', min: 8 },
-        { canal: 'Chat interno', msg: '¿Qué documentos pide el banco para el crédito?', titulo: 'Consulta respondida', tags: ['Consulta', 'Con fuente'], destino: 'Asistente IA', min: 12 },
-      ];
-
-      const ICONO_OK = '<svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
-      const ICONO_DATOS = '<svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>';
-      const ICONO_RIESGO = '<svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>';
-
-      const entrante = raiz.querySelector('[data-demo-entrante]');
-      const canal = raiz.querySelector('[data-demo-canal]');
-      const mensaje = raiz.querySelector('[data-demo-mensaje]');
-      const tags = raiz.querySelector('[data-demo-tags]');
-      const lista = raiz.querySelector('[data-demo-lista]');
-      const contador = raiz.querySelector('[data-demo-contador]');
-      const minutos = raiz.querySelector('[data-demo-minutos]');
-
-      // Estado inicial = lo que ya muestra el HTML (tareas 5, 4 y 3 resueltas).
-      let actual = 0;
-      let resueltas = 3;
-      let minutosEvitados = 12 + 8 + 10;
-
-      let timers = [];
-      let corriendo = false;
-      let pausadoPorUsuario = false;
-      let enPantalla = true;
-
-      const despues = (fn, ms) => timers.push(setTimeout(fn, ms));
-      const limpiar = () => { timers.forEach(clearTimeout); timers = []; };
-      const alerta = (t) => t.datos || t.riesgo;
-
-      function etiqueta(clase, texto) {
-        const span = document.createElement('span');
-        span.className = clase + ' aparece';
-        span.textContent = texto;
-        return span;
-      }
-      const claseTag1 = (t) => (alerta(t) ? 'estado estado-espera' : 'estado');
-      const claseTag2 = (t) => (t.alta || alerta(t) ? 'estado estado-espera' : 'estado estado-neutro');
-
-      function pintarEntrante(t, clasificado) {
-        entrante.classList.remove('sale', 'escaneando', 'aparece');
-        canal.textContent = `${t.canal} · recién llegado`;
-        mensaje.textContent = `«${t.msg}»`;
-        tags.replaceChildren();
-        if (clasificado) {
-          tags.append(etiqueta('marca-ia', 'IA'), etiqueta(claseTag1(t), t.tags[0]), etiqueta(claseTag2(t), t.tags[1]));
-        }
-      }
-
-      function insertarFila(t) {
-        const li = document.createElement('li');
-        li.className = 'flex items-center gap-3 rounded bg-white/[0.04] border border-white/10 px-3 py-2.5 aparece';
-
-        const icono = document.createElement('span');
-        icono.className = 'w-6 h-6 rounded-full grid place-items-center shrink-0 ' +
-          (alerta(t) ? 'bg-ambar-300/15 text-ambar-300' : 'bg-verde-300/15 text-verde-300');
-        icono.innerHTML = t.datos ? ICONO_DATOS : t.riesgo ? ICONO_RIESGO : ICONO_OK;
-
-        const cuerpo = document.createElement('div');
-        cuerpo.className = 'min-w-0 flex-1';
-        const titulo = document.createElement('p');
-        titulo.className = 'text-[0.8125rem] text-papel truncate';
-        titulo.textContent = t.titulo;
-        const ruta = document.createElement('p');
-        ruta.className = 'rotulo rotulo-claro truncate';
-        ruta.textContent = `${t.canal} → ${t.destino}`;
-        cuerpo.append(titulo, ruta);
-
-        const ahorro = document.createElement('span');
-        ahorro.className = 'dato text-[0.8125rem] shrink-0 ' + (alerta(t) ? 'text-ambar-300' : 'text-verde-300');
-        ahorro.textContent = `−${t.min} min`;
-
-        li.append(icono, cuerpo, ahorro);
-        lista.prepend(li);
-        while (lista.children.length > 4) lista.lastElementChild.remove();
-      }
-
-      function resolver() {
-        const t = TAREAS[actual];
-        entrante.classList.add('sale');
-        despues(() => {
-          insertarFila(t);
-          resueltas += 1;
-          minutosEvitados += t.min;
-          contador.textContent = String(resueltas);
-          minutos.textContent = `${minutosEvitados} min`;
-
-          actual = (actual + 1) % TAREAS.length;
-          const sig = TAREAS[actual];
-          pintarEntrante(sig, false);
-          void entrante.offsetWidth; // reinicia la animacion
-          entrante.classList.add('aparece', 'escaneando');
-
-          despues(() => tags.append(etiqueta('marca-ia', 'IA')), 1200);
-          despues(() => tags.append(etiqueta(claseTag1(sig), sig.tags[0])), 1450);
-          despues(() => tags.append(etiqueta(claseTag2(sig), sig.tags[1])), 1700);
-          despues(() => entrante.classList.remove('escaneando'), 1850);
-          despues(resolver, 3600);
-        }, 350);
-      }
-
-      function reanudar() {
-        if (corriendo || pausadoPorUsuario || !enPantalla || document.hidden) return;
-        corriendo = true;
-        despues(resolver, 1600);
-      }
-
-      function detener() {
-        if (!corriendo) return;
-        corriendo = false;
-        limpiar();
-        pintarEntrante(TAREAS[actual], true);
-      }
-
-      btn.addEventListener('click', () => {
-        pausadoPorUsuario = !pausadoPorUsuario;
-        btn.textContent = pausadoPorUsuario ? 'Reanudar' : 'Pausar';
-        btn.setAttribute('aria-pressed', String(pausadoPorUsuario));
-        // La frase rotativa del titular lee esta marca y se detiene.
-        document.documentElement.dataset.movimiento = pausadoPorUsuario ? 'pausado' : '';
-        if (pausadoPorUsuario) detener(); else reanudar();
-      });
-
-      document.addEventListener('visibilitychange', () => (document.hidden ? detener() : reanudar()));
-
-      if ('IntersectionObserver' in window) {
-        new IntersectionObserver(([entrada]) => {
-          enPantalla = entrada.isIntersecting;
-          if (enPantalla) reanudar(); else detener();
-        }, { threshold: 0.2 }).observe(raiz);
-      } else {
-        reanudar();
-      }
-    }
-
-    /* --- Frase rotativa del titular ----------------------------------------
-     * Una sola vuelta (unos 12 s) y se queda en la ley, que es el remate.
-     * Se detiene de inmediato si el visitante pausa la demo. Los lectores de
-     * pantalla leen la frase completa desde un texto oculto. */
     function initRotador() {
       const el = document.querySelector('[data-rotador]');
       if (!el) return;
