@@ -28,7 +28,7 @@ Proyecto creado: `genialabs-conversaciones`, organización Genia Labs, referenci
 
 En Netlify, agrega con alcance **Functions**:
 
-- `SUPABASE_URL`: `https://edpmbaanwldrwhbiowyv.supabase.co`
+- `SUPABASE_URL`: URL del proyecto, disponible en Supabase → Project Settings → Data API.
 - `SUPABASE_SECRET_KEY`: clave secreta del proyecto (Settings → API Keys → Secret keys, `sb_secret_...`). Marcar como secreta. No usar la clave publishable, no copiar la contraseña de la base, no poner en HTML ni compartir en el chat.
 
 Volver a desplegar después de configurar. Sin ambas variables, la voz funciona sin almacenamiento y la autorización de guardado aparece deshabilitada. Para consultar: Table Editor → public → voice_conversations. La columna `transcript` contiene pares role/text; `summary` es un **extracto literal de los comentarios del visitante**, no un resumen inferido por IA. Un futuro panel puede presentar esos datos y generar resúmenes comerciales.

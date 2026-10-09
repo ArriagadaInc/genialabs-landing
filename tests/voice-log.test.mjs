@@ -4,7 +4,7 @@ import { handleLog } from '../netlify/functions/voice-log.mjs';
 import { handleSession, createSetup } from '../netlify/functions/voice-session.mjs';
 import { signLog, verifyLog, CONSENT_VERSION } from '../netlify/lib/voice-store.mjs';
 import { ConversationLog } from '../public/assets/js/voice-log.mjs';
-const env = { VOICE_ENABLED:'true', GEMINI_API_KEY:'test-key', SUPABASE_URL:'https://edpmbaanwldrwhbiowyv.supabase.co', SUPABASE_SECRET_KEY:'test-server-secret' };
+const env = { VOICE_ENABLED:'true', GEMINI_API_KEY:'test-key', SUPABASE_URL:'https://exampleproject.supabase.co', SUPABASE_SECRET_KEY:'test-server-secret' };
 const id = '11111111-1111-4111-8111-111111111111';
 const time = 1791547200000;
 const request = (body, origin='https://genialabs.cl') => new Request('https://genialabs.cl/api',{method:'POST',headers:{origin,'content-type':'application/json'},body:JSON.stringify(body)});
