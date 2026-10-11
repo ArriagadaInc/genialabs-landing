@@ -39,7 +39,7 @@ Se guardan avances cada 5 segundos y al terminar, cerrar u ocultar la pestaña. 
 
 El equipo debe aplicar el plazo de conservación de la política de privacidad (24 meses después del último contacto comercial) y atender solicitudes de eliminación en Supabase; esta versión no automatiza ese borrado. No registrar datos sensibles. La tabla puede contener datos de contacto si el visitante los expresa voluntariamente.
 
-Validación pendiente de credenciales: guardar una conversación consentida real, confirmar ambos roles en la tabla, y comprobar que una solicitud sin autorización de transcripción no inicia una sesión. Las pruebas automatizadas usan respuestas simuladas; no prueban permisos reales de la cuenta Google ni el acceso REST de Netlify al proyecto.
+Validación en producción (11 de octubre de 2026): disponibilidad con storageAvailable=true y autorización v2; una petición sin autorización de transcripción fue rechazada con 400. Se creó una sesión y se guardó una transcripción de ambos participantes, marcada PRUEBA TÉCNICA y sin datos personales: el endpoint confirmó saved=true. No se activó el micrófono ni se simuló una solicitud comercial. Se verificaron visualmente el botón «Aceptar e iniciar», el aviso y la eliminación de la casilla. Un cierre brusco o una caída de red aún puede perder fragmentos; no se promete captura infalible.
 
 ## Base de conocimiento de la web
 
