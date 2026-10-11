@@ -879,6 +879,7 @@
           });
 
           if (!respuesta.ok) throw new Error(`Error HTTP: ${respuesta.status}`);
+          window.geniaTrack?.('generate_lead');
 
           modalExito.classList.remove('hidden');
           aviso.textContent = 'Solicitud enviada.';

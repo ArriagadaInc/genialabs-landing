@@ -3,6 +3,8 @@ import path from 'node:path';
 import * as lucide from 'lucide';
 
 const DIST = 'dist';
+const analyticsId = process.env.GA4_MEASUREMENT_ID || '';
+if (analyticsId && !/^G-[A-Z0-9]+$/.test(analyticsId)) throw new Error('GA4_MEASUREMENT_ID inválido');
 
 if (process.argv.includes('--clean')) {
   fs.rmSync(DIST, { recursive: true, force: true });
@@ -149,7 +151,8 @@ const LOGO_ANIMADO = logoAnimado();
 for (const page of fs.readdirSync('src').filter((f) => f.endsWith('.html'))) {
   const before = inlined;
   const html = inlineIcons(fs.readFileSync(path.join('src', page), 'utf8'))
-    .replaceAll('<!-- LOGO_ANIMADO -->', LOGO_ANIMADO);
+    .replaceAll('<!-- LOGO_ANIMADO -->', LOGO_ANIMADO)
+    .replace('</head>', analyticsId ? '<meta name="ga4-id" content="' + analyticsId + '" /><script defer src="/assets/js/analytics.js"></script></head>' : '</head>');
 
   if (missing.size) throw new Error('Iconos lucide inexistentes: ' + [...missing].join(', '));
   if (/data-lucide=/.test(html)) throw new Error(`Quedaron iconos sin inlinear en ${page}`);

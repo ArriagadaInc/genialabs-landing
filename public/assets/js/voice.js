@@ -145,6 +145,7 @@ async function begin() {
         const message = JSON.parse(raw);
         if (message.error) { end('La conversación se interrumpió. Puedes volver a intentar.'); return; }
         if (message.setupComplete && !run.ready) {
+          window.geniaTrack?.('voice_session_start');
           run.ready = true; clearTimeout(run.connectionTimer);
           run.source = run.audio.createMediaStreamSource(stream);
           run.worklet = new AudioWorkletNode(run.audio, 'genia-voice-capture');
@@ -163,7 +164,10 @@ async function begin() {
           run.timeout = setTimeout(() => { if (current(run)) end('Terminamos esta conversación de tres minutos. Si quieres seguir, agenda tu asesoría gratis.'); }, Math.min(Number(session.maxSeconds) || 180, 180) * 1000);
         }
         const content = message.serverContent;
-        if (content?.inputTranscription?.text) run.log?.append('user', content.inputTranscription.text);
+        if (content?.inputTranscription?.text) {
+          if (!run.analyticsUsed) { run.analyticsUsed = true; window.geniaTrack?.('voice_assistant_use'); }
+          run.log?.append('user', content.inputTranscription.text);
+        }
         if (content?.outputTranscription?.text) run.log?.append('assistant', content.outputTranscription.text);
         if (content?.turnComplete || content?.interrupted) run.log?.newTurn();
         if (content?.interrupted) { clearPlayback(run); run.activity.interrupted(); feedback(run); }

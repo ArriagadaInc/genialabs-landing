@@ -4,6 +4,7 @@
 
 [build.environment]
   NODE_VERSION = "22"
+  GA4_MEASUREMENT_ID = "G-7DL0SCQKPQ"
 
 [functions]
   directory = "netlify/functions"
