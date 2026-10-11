@@ -9,7 +9,6 @@ const stop = document.getElementById('voiceStop');
 const status = document.getElementById('voiceStatus');
 const transcript = document.getElementById('voiceTranscript');
 const indicator = document.getElementById('voiceIndicator');
-const saveConsent = document.getElementById('voiceSaveConsent');
 const saveStatus = document.getElementById('voiceSaveStatus');
 let storageAvailable = false;
 let consentVersion = null;
@@ -54,7 +53,6 @@ function end(text = 'Conversación terminada. Puedes volver a empezar o agendar 
     run.audio?.close().catch(() => {});
   }
   start.disabled = available === false; start.hidden = false; stop.hidden = true;
-  saveConsent.disabled = !storageAvailable;
   state('idle', text);
   waveBars.forEach(bar => { bar.style.transform = ''; });
 }
@@ -64,15 +62,13 @@ async function checkAvailability() {
   try {
     const response = await fetch('/.netlify/functions/voice-session', { cache: 'no-store', signal: AbortSignal.timeout(6000) });
     const data = response.ok ? await response.json() : null;
-    available = data?.enabled === true;
+    available = data?.enabled === true && data?.storageAvailable === true;
     storageAvailable = data?.storageAvailable === true;
     consentVersion = data?.consentVersion;
   } catch { available = false; }
   if (!dialog.open) return;
   start.disabled = !available;
-  saveConsent.disabled = !storageAvailable;
-  if (!storageAvailable) saveConsent.checked = false;
-  saveStatus.textContent = storageAvailable ? 'Puedes conversar sin autorizar el guardado del texto.' : 'El registro de conversaciones aún no está habilitado. Puedes conversar sin guardado.';
+  saveStatus.textContent = storageAvailable ? '' : 'El asistente no está disponible ahora. Puedes usar el formulario.';
   state('idle', available ? 'Listo para conversar. Tú decides cuándo activar el micrófono.' : 'La voz aún no está disponible. Puedes coordinar tu asesoría desde el botón de abajo.');
 }
 
@@ -97,16 +93,15 @@ function playAudio(run, part) {
 }
 
 async function begin() {
-  if (active || !available) return;
+  if (active || !available || !storageAvailable) return;
   if (!window.isSecureContext || !navigator.mediaDevices?.getUserMedia || !window.AudioWorkletNode) {
     state('idle', 'Tu navegador no permite la conversación por voz. Puedes usar el formulario de contacto.'); return;
   }
   const Audio = window.AudioContext || window.webkitAudioContext;
   if (!Audio) { state('idle', 'Prueba con un navegador actualizado o usa el formulario.'); return; }
-  const wantsSave = storageAvailable && saveConsent.checked;
+  const wantsSave = storageAvailable;
   const run = { cancelled: false, abort: new AbortController(), playing: new Set(), nextAudio: 0, activity: new VoiceActivity() };
-  saveConsent.disabled = true;
-  saveStatus.textContent = wantsSave ? 'Preparando el guardado autorizado del texto…' : 'Esta conversación no se guardará en Genia Labs.';
+  saveStatus.textContent = '';
   active = run; start.hidden = true; stop.hidden = false; transcript.textContent = '';
   state('connecting', 'Preparando el micrófono…');
   try {
@@ -128,8 +123,8 @@ async function begin() {
     if (wantsSave && !session.log?.token) throw new Error('Missing storage session');
     if (wantsSave) {
       run.log = new ConversationLog(session.log.token, { report: text => { if (active === run || !active) saveStatus.textContent = text; } });
-      run.logTimer = setInterval(() => run.log.save(), 10000);
-      saveStatus.textContent = 'Guardaremos el texto con tu autorización. La transcripción automática puede contener errores.';
+      run.logTimer = setInterval(() => run.log.save(), 5000);
+      saveStatus.textContent = '';
     }
     if (typeof session.token !== 'string' || !session.token.startsWith('auth_tokens/') || !/^models\/[a-z0-9.-]+$/.test(session.model)) throw new Error('Invalid session');
     const socket = new WebSocket(`wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContentConstrained?access_token=${encodeURIComponent(session.token)}`);

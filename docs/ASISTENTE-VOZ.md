@@ -1,6 +1,6 @@
 # Asistente de voz (primera versión)
 
-Botón flotante, conversación voluntaria en español y acceso al formulario. No agenda por sí solo. No guarda audio en Genia Labs. Solo con autorización opcional, guarda transcripción y extracto en Supabase. El navegador transmite audio directamente a Google Gemini; los términos del proveedor aplican a ese procesamiento.
+Botón flotante, conversación voluntaria en español y acceso al formulario. No agenda por sí solo. No guarda audio en Genia Labs. Al pulsar «Aceptar e iniciar», el visitante autoriza guardar y revisar transcripción y extracto en Supabase para preparar la asesoría. Todas las conversaciones iniciadas requieren esta autorización; abrir el panel no activa el micrófono ni crea registros. El navegador transmite audio directamente a Google Gemini; los términos del proveedor aplican a ese procesamiento.
 
 ## Activar en Netlify
 
@@ -31,15 +31,15 @@ En Netlify, agrega con alcance **Functions**:
 - `SUPABASE_URL`: URL del proyecto, disponible en Supabase → Project Settings → Data API.
 - `SUPABASE_SECRET_KEY`: clave secreta del proyecto (Settings → API Keys → Secret keys, `sb_secret_...`). Marcar como secreta. No usar la clave publishable, no copiar la contraseña de la base, no poner en HTML ni compartir en el chat.
 
-Volver a desplegar después de configurar. Sin ambas variables, la voz funciona sin almacenamiento y la autorización de guardado aparece deshabilitada. Para consultar: Table Editor → public → voice_conversations. La columna `transcript` contiene pares role/text; `summary` es un **extracto literal de los comentarios del visitante**, no un resumen inferido por IA. Un futuro panel puede presentar esos datos y generar resúmenes comerciales.
+Volver a desplegar después de configurar. Sin ambas variables, la voz queda deshabilitada y se ofrece el formulario. El servidor rechaza sesiones sin saveTranscript=true y la versión vigente de autorización; una falla al crear el registro impide iniciar la conversación. Para consultar: Table Editor → public → voice_conversations. La columna `transcript` contiene pares role/text; `summary` es un **extracto literal de los comentarios del visitante**, no un resumen inferido por IA. Un futuro panel puede presentar esos datos y generar resúmenes comerciales.
 
 La tabla tiene RLS y no concede privilegios a anon/authenticated. Solo el servidor recibe la clave secreta. El visitante recibe una autorización firmada para actualizar una única conversación durante 10 minutos; no existe endpoint público para leer registros. Las transcripciones son aportadas por el navegador y no son evidencia verificada de identidad o de lo que se escuchó.
 
-Se guardan avances cada 10 segundos y al terminar, cerrar u ocultar la pestaña. Se conserva el primer texto hasta 30 KB/100 segmentos y se indica al visitante si se alcanza el límite. Las revisiones evitan que una petición antigua sobrescriba una más nueva; un registro finalizado no acepta más cambios. Fallos de red o cierre brusco pueden perder los últimos segundos. No se guarda texto en localStorage. El sitio informa si no pudo confirmar el guardado.
+Se guardan avances cada 5 segundos y al terminar, cerrar u ocultar la pestaña. Se conserva el primer texto hasta 30 KB/100 segmentos y se indica al visitante si se alcanza el límite. Las revisiones evitan que una petición antigua sobrescriba una más nueva; un registro finalizado no acepta más cambios. Fallos de red o cierre brusco pueden perder los últimos segundos. No se guarda texto en localStorage. El sitio informa si no pudo confirmar el guardado.
 
 El equipo debe aplicar el plazo de conservación de la política de privacidad (24 meses después del último contacto comercial) y atender solicitudes de eliminación en Supabase; esta versión no automatiza ese borrado. No registrar datos sensibles. La tabla puede contener datos de contacto si el visitante los expresa voluntariamente.
 
-Validación pendiente de credenciales: guardar una conversación consentida real, confirmar ambos roles en la tabla, y comprobar que una conversación sin consentimiento no crea registro. Las pruebas automatizadas usan respuestas simuladas; no prueban permisos reales de la cuenta Google ni el acceso REST de Netlify al proyecto.
+Validación pendiente de credenciales: guardar una conversación consentida real, confirmar ambos roles en la tabla, y comprobar que una solicitud sin autorización de transcripción no inicia una sesión. Las pruebas automatizadas usan respuestas simuladas; no prueban permisos reales de la cuenta Google ni el acceso REST de Netlify al proyecto.
 
 ## Base de conocimiento de la web
 
@@ -47,4 +47,6 @@ La función incluye el texto público de la landing y de la política de privaci
 
 Se usa el contenido de la misma publicación, sin rastrear internet durante las conversaciones ni añadir una base vectorial. Los cambios se aplican a las sesiones nuevas después del despliegue. Si se agregan otras páginas comerciales, incluirlas explícitamente en `scripts/build-voice-knowledge.mjs`.
 
-La asistente distingue asesoría gratuita de servicios cotizados, explica costos por alcance, plazos orientativos, soporte separado y descuentos del diagnóstico. Los montos de la calculadora y las horas de ejemplo son simulaciones; no constituyen tarifas ni resultados garantizados. No tiene acceso a los valores del formulario o calculadora ni al estado del consentimiento.
+La asistente distingue asesoría gratuita de servicios cotizados, explica costos por alcance, plazos orientativos, soporte separado y descuentos del diagnóstico. Los montos de la calculadora y las horas de ejemplo son simulaciones; no constituyen tarifas ni resultados garantizados. No tiene acceso a los valores del formulario o calculadora ni puede verificar que un fragmento concreto se haya guardado.
+
+Autorización vigente: `2026-10-11-text-v2`. El botón y la advertencia visibles reemplazan la casilla opcional; el backend exige la nueva versión para evitar reutilizar la autorización anterior.

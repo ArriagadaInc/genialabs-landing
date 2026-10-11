@@ -8,7 +8,7 @@ function boot(choice, hostname = 'genialabs.cl') {
   const appended = [];
   const document = { title: 'Genia Labs', referrer: 'https://example.com/path?email=private', cookie: '',
     querySelector: () => ({content: 'G-TEST123'}),
-    createElement: () => ({style: {}, setAttribute() {}, querySelectorAll: () => buttons}),
+    createElement: () => ({style: {}, setAttribute() {}, querySelector: () => ({style: {}}), querySelectorAll: () => buttons}),
     head: {append: value => appended.push(value)}, body: {append() {}},
     addEventListener() {}, getElementById: () => null };
   const window = {};

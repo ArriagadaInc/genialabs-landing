@@ -33,15 +33,16 @@
   };
   const panel = document.createElement('section');
   panel.setAttribute('aria-label', 'Preferencias de analítica');
-  panel.innerHTML = '<p>¿Nos ayudas a mejorar? Con tu permiso usamos Google Analytics para medir visitas y uso de la web. <a href="/privacidad">Privacidad</a></p><button type="button" data-choice="accepted">Aceptar analítica</button> <button type="button" data-choice="rejected">Rechazar</button>';
-  panel.style.cssText = 'position:fixed;bottom:48px;left:12px;right:12px;max-width:540px;padding:20px;background:#fff;color:#14202a;border:1px solid #14202a;box-shadow:0 4px 24px #0002;z-index:10000;font:16px/1.5 sans-serif';
+  panel.innerHTML = '<p>Usamos Google Analytics para medir visitas, solo si aceptas. <a href="/privacidad">Privacidad</a></p><button type="button" data-choice="accepted">Aceptar</button> <button type="button" data-choice="rejected">Rechazar</button>';
+  panel.style.cssText = 'position:fixed;bottom:78px;left:12px;right:12px;max-width:420px;padding:10px 14px;background:#fff;color:#14202a;border:1px solid #d9ded9;border-radius:8px;z-index:10000;font:12px/1.5 sans-serif';
+  panel.querySelector('p').style.margin = '0 0 6px';
   panel.querySelectorAll('button').forEach(button => {
-    button.style.cssText = 'padding:10px;margin-top:12px;border:1px solid #14202a;background:#fff;color:#14202a;cursor:pointer';
+    button.style.cssText = 'padding:5px 10px;border:1px solid #53616a;border-radius:4px;background:#fff;color:#14202a;cursor:pointer';
     button.onclick = () => {
       const previous = consent;
       consent = button.dataset.choice;
       try { localStorage.setItem(key, consent); } catch {}
-      panel.hidden = true;
+      panel.hidden = true; settings.hidden = false;
       if (consent === 'accepted') load();
       else if (previous === 'accepted') {
         window['ga-disable-' + id] = true;
@@ -57,8 +58,9 @@
   const settings = document.createElement('button');
   settings.type = 'button'; settings.textContent = 'Preferencias de analítica';
   settings.style.cssText = 'position:fixed;bottom:8px;left:12px;z-index:9999;background:#fff;color:#14202a;border:1px solid #14202a;padding:6px;font:12px sans-serif;cursor:pointer';
-  settings.onclick = () => { panel.hidden = false; };
+  settings.onclick = () => { panel.hidden = false; settings.hidden = true; };
   panel.hidden = consent === 'accepted' || consent === 'rejected';
+  settings.hidden = !panel.hidden;
   document.body.append(panel, settings);
   if (consent === 'accepted') load();
   document.addEventListener('click', event => {

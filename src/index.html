@@ -912,17 +912,17 @@
     }
   </script>
   <button id="voiceLaunch" class="voice-launch" type="button" aria-haspopup="dialog" aria-controls="voiceDialog" aria-expanded="false"><i data-lucide="mic" aria-hidden="true"></i> Conversemos <span>IA</span></button>
-  <dialog id="voiceDialog" class="voice-dialog" aria-labelledby="voiceTitle" aria-describedby="voicePrivacy">
+  <dialog id="voiceDialog" class="voice-dialog" aria-labelledby="voiceTitle" aria-describedby="voiceConsentNotice voicePrivacy">
     <div class="voice-heading"><span>GENIA LABS · ASISTENTE DE IA</span><button id="voiceClose" type="button" aria-label="Cerrar asistente" autofocus><i data-lucide="x" aria-hidden="true"></i></button></div>
     <div id="voiceIndicator" class="voice-orb" data-state="idle" aria-hidden="true"><i data-lucide="mic"></i><span class="voice-wave"><span></span><span></span><span></span><span></span><span></span></span><span class="voice-spinner"></span></div>
     <h2 id="voiceTitle">Menos tareas repetitivas.<br>Más tiempo para tu negocio.</h2>
     <p class="voice-intro">Cuéntame qué le quita tiempo a tu equipo y exploremos cómo ayudarte.</p>
     <p id="voiceStatus" class="voice-status" role="status" aria-live="polite">Preparando el asistente…</p>
-    <button id="voiceStart" class="voice-primary" type="button" disabled>Iniciar conversación</button>
+    <button id="voiceStart" class="voice-primary" type="button" aria-describedby="voiceConsentNotice" disabled>Aceptar e iniciar</button>
     <button id="voiceStop" class="voice-primary" type="button" hidden>Terminar conversación</button>
-    <p id="voicePrivacy" class="voice-privacy">Al iniciar, activas el micrófono y compartes tu voz con Google Gemini para recibir una respuesta. No guardamos audio. Evita datos sensibles. Hasta 3 minutos por conversación. <a href="/privacidad.html">Privacidad</a></p>
-    <label class="voice-consent"><input id="voiceSaveConsent" type="checkbox" disabled> Autorizo guardar el texto de esta conversación para que Genia Labs revise mi necesidad y prepare la asesoría. Es opcional.</label>
-    <p id="voiceSaveStatus" class="voice-privacy" role="status" aria-live="polite">Comprobando el registro de conversaciones…</p>
+    <p id="voicePrivacy" class="voice-privacy">Tu voz se procesa con Google Gemini. No guardamos audio. Evita datos sensibles. Máximo 3 minutos.</p>
+    <p id="voiceConsentNotice" class="voice-consent">Al pulsar «Aceptar e iniciar», autorizas a Genia Labs a guardar y revisar la transcripción de esta conversación para preparar tu asesoría. <a href="/privacidad">Privacidad</a></p>
+    <p id="voiceSaveStatus" class="voice-privacy" role="status" aria-live="polite"></p>
     <details class="voice-text"><summary>Leer respuesta del asistente</summary><p id="voiceTranscript">La respuesta aparecerá aquí durante la conversación.</p></details>
     <a id="voiceContact" class="voice-contact" href="#contacto">Agendar asesoría gratis <span aria-hidden="true">↗</span></a>
   </dialog>

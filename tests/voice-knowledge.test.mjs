@@ -7,7 +7,7 @@ import { SYSTEM_INSTRUCTION } from '../netlify/functions/voice-session.mjs';
 test('assistant knowledge stays synchronized with published page sources', () => {
   assert.deepEqual(KNOWLEDGE_SOURCES, buildKnowledge());
   const text = KNOWLEDGE_SOURCES.map(s => s.text).join('\n');
-  for (const fact of ['el diagnóstico se descuenta si seguimos', 'WhatsApp usa la API oficial de Meta', '40 horas', 'contacto@genialabs.cl', 'Puedes conversar sin autorizar el guardado']) assert.ok(text.includes(fact), fact);
+  for (const fact of ['el diagnóstico se descuenta si seguimos', 'WhatsApp usa la API oficial de Meta', '40 horas', 'contacto@genialabs.cl', 'autorizas a Genia Labs a guardar y revisar la transcripción']) assert.ok(text.includes(fact), fact);
   assert.ok(!text.includes('precios internos'));
   for (const fact of ['Coordinar horas y recordar citas', 'Un asistente que entiende tus datos', 'Consultar procedimientos con un asistente interno', 'no soluciones ya instaladas']) assert.ok(text.includes(fact), fact);
   assert.ok(SYSTEM_INSTRUCTION.includes(text.split('\n')[0]));

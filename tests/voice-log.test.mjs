@@ -16,11 +16,15 @@ test('signed logging capability expires, cannot be modified and is isolated by k
  assert.equal(verifyLog(token+'x',env,time),null);
  assert.equal(verifyLog(token,{...env,GEMINI_API_KEY:'other'},time),null);
 });
-test('logging is opt-in and records both roles only when consent version matches',async()=>{
+test('every session requires transcript authorization and records both roles',async()=>{
  assert.ok(!createSetup('gemini-3.8-live').inputAudioTranscription);
  assert.deepEqual(createSetup('gemini-3.8-live',true).inputAudioTranscription,{});
  const bad = await handleSession(request({consent:true,saveTranscript:true,consentVersion:'old'}),{env,fetchImpl:()=>assert.fail('called')});
  assert.equal(bad.status,400);
+ const missingConsent = await handleSession(request({consent:true,saveTranscript:false,consentVersion:CONSENT_VERSION}),{env,fetchImpl:()=>assert.fail('called')});
+ assert.equal(missingConsent.status,400);
+ const unavailable = await handleSession(request({consent:true,saveTranscript:true,consentVersion:CONSENT_VERSION}),{env:{...env,SUPABASE_SECRET_KEY:''},fetchImpl:()=>assert.fail('called')});
+ assert.equal(unavailable.status,400);
  const calls=[];
  const result=await handleSession(request({consent:true,saveTranscript:true,consentVersion:CONSENT_VERSION}),{env,now:()=>time,fetchImpl:async(url,options)=>{
   calls.push({url,options});

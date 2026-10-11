@@ -1,6 +1,6 @@
 import { createHmac, randomUUID, timingSafeEqual } from 'node:crypto';
 
-export const CONSENT_VERSION = '2026-10-09-text-v1';
+export const CONSENT_VERSION = '2026-10-11-text-v2';
 export const json = (data, status = 200) => Response.json(data, { status, headers: { 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' } });
 export function allowedOrigin(request, env) {
   const origins = new Set(['https://genialabs.cl', 'https://www.genialabs.cl']);
