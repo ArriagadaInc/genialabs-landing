@@ -11,3 +11,5 @@ Validación en producción: rechazar y comprobar que no se carga gtag; aceptar y
 UTM admitidos: valores de hasta 100 caracteres, letras ASCII, números, guion y guion bajo. Ejemplo: ?utm_source=linkedin&utm_medium=social&utm_campaign=asesoria_gratis. No incluir datos personales. Las URLs enviadas excluyen query y fragmento; las campañas se pasan explícitamente. No se envían valores de formulario, audio ni transcripciones.
 
 Publicado en producción mediante commit cdb5107. Propiedad GA4: 558419539; cuenta: 411520392. Se verificó en el navegador que rechazar evita cargar gtag y aceptar carga el ID real, sin errores de consola. No se enviaron solicitudes comerciales ficticias ni se activó el micrófono durante la prueba.
+
+También se verificó el retiro del consentimiento: tras rechazar, la recarga elimina la etiqueta de Google. La recepción de visitas en GA4 aún no estaba confirmada al finalizar la configuración inicial.
