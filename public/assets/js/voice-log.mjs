@@ -29,7 +29,7 @@ export class ConversationLog {
     this.dirty = false;
     const payload = { token: this.token, revision: ++this.revision, final, durationSeconds: Math.min(240, Math.max(0, Math.round((this.clock() - this.started) / 1000))), turns: this.turns.filter(turn => turn.text.trim()).map(turn => ({ ...turn })) };
     try {
-      const response = await this.send('/.netlify/functions/voice-log', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload), keepalive: true });
+      const response = await this.send('/.netlify/functions/voice-log', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload), keepalive: true, signal: AbortSignal.timeout(8000) });
       const data = response.ok ? await response.json() : null;
       if (payload.revision !== this.revision) return;
       if (!data?.saved) throw new Error('Unconfirmed');

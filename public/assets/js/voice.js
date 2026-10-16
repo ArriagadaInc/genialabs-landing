@@ -104,6 +104,7 @@ async function begin() {
   saveStatus.textContent = '';
   active = run; start.hidden = true; stop.hidden = false; transcript.textContent = '';
   state('connecting', 'Preparando el micrófono…');
+  run.connectionTimer = setTimeout(() => { if (current(run)) end('No pudimos iniciar el micrófono a tiempo. Puedes volver a intentar o usar el formulario.'); }, 30000);
   try {
     // Resume in the click gesture, before asynchronous permission/token requests (Safari).
     run.audio = new Audio(); await run.audio.resume();
@@ -112,6 +113,7 @@ async function begin() {
     if (!current(run)) { stream.getTracks().forEach(track => track.stop()); return; }
     run.stream = stream;
     state('connecting', 'Conectando con el asistente…');
+    clearTimeout(run.connectionTimer);
     run.connectionTimer = setTimeout(() => { if (current(run)) end('No pudimos conectar. Intenta nuevamente o agenda tu asesoría.'); }, 15000);
     const [, response] = await Promise.all([run.audio.audioWorklet.addModule('/assets/js/voice-capture.js'), fetch('/.netlify/functions/voice-session', {
       method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ consent: true, saveTranscript: wantsSave, consentVersion }), signal: run.abort.signal,
@@ -186,6 +188,7 @@ async function begin() {
 
 launch.addEventListener('click', () => {
   previousFocus = document.activeElement; dialog.showModal(); launch.setAttribute('aria-expanded', 'true');
+  window.geniaTrack?.('voice_assistant_open');
   checkAvailability();
 });
 document.getElementById('voiceClose').addEventListener('click', () => dialog.close());

@@ -5,7 +5,19 @@
   let consent;
   try { consent = localStorage.getItem(key); } catch {}
   let loaded = false;
-  const allowed = new Set(['generate_lead', 'voice_session_start', 'voice_assistant_use', 'contact_cta_click', 'contact_form_start', 'calculator_use', 'email_click']);
+  const scrollMilestones = new Set();
+  function measureScroll() {
+    if (consent !== 'accepted' || !loaded || window.scrollY <= 0) return;
+    const height = document.documentElement.scrollHeight;
+    if (height <= window.innerHeight) return;
+    const depth = Math.min(100, (window.scrollY + window.innerHeight) / height * 100);
+    for (const percent of [25, 50, 75, 90]) {
+      if (depth < percent || scrollMilestones.has(percent)) continue;
+      scrollMilestones.add(percent);
+      window.gtag('event', 'scroll_depth', {percent_scrolled: percent, page_location: location.origin + location.pathname, page_referrer: safeReferrer()});
+    }
+  }
+  const allowed = new Set(['generate_lead', 'voice_assistant_open', 'voice_session_start', 'voice_assistant_use', 'contact_cta_click', 'contact_form_start', 'calculator_use', 'email_click']);
   function load() {
     if (loaded) return;
     loaded = true;
@@ -24,6 +36,7 @@
     const script = document.createElement('script');
     script.async = true; script.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
     document.head.append(script);
+    measureScroll();
   }
   function safeReferrer() { try { const url = new URL(document.referrer); return url.origin + url.pathname; } catch { return ''; } }
   window.geniaTrack = name => {
@@ -63,6 +76,7 @@
   settings.hidden = !panel.hidden;
   document.body.append(panel, settings);
   if (consent === 'accepted') load();
+  window.addEventListener('scroll', measureScroll, {passive: true});
   document.addEventListener('click', event => {
     const link = event.target.closest('a');
     if (link?.getAttribute('href')?.startsWith('mailto:')) window.geniaTrack('email_click');
