@@ -15,6 +15,7 @@ let consentVersion = null;
 let active = null;
 let previousFocus;
 let available = null;
+const unavailableMessage = 'El asistente por voz está descansando por ahora. Intenta más tarde o podemos ayudarte acá: pulsa «Agendar asesoría gratis».';
 
 function state(name, text) {
   if (indicator.dataset.state !== name) indicator.dataset.state = name;
@@ -68,8 +69,8 @@ async function checkAvailability() {
   } catch { available = false; }
   if (!dialog.open) return;
   start.disabled = !available;
-  saveStatus.textContent = storageAvailable ? '' : 'El asistente no está disponible ahora. Puedes usar el formulario.';
-  state('idle', available ? 'Listo para conversar. Tú decides cuándo activar el micrófono.' : 'La voz aún no está disponible. Puedes coordinar tu asesoría desde el botón de abajo.');
+  saveStatus.textContent = '';
+  state('idle', available ? 'Listo para conversar. Tú decides cuándo activar el micrófono.' : unavailableMessage);
 }
 
 function playAudio(run, part) {
@@ -114,12 +115,12 @@ async function begin() {
     run.stream = stream;
     state('connecting', 'Conectando con el asistente…');
     clearTimeout(run.connectionTimer);
-    run.connectionTimer = setTimeout(() => { if (current(run)) end('No pudimos conectar. Intenta nuevamente o agenda tu asesoría.'); }, 15000);
+    run.connectionTimer = setTimeout(() => { if (current(run)) end(unavailableMessage); }, 15000);
     const [, response] = await Promise.all([run.audio.audioWorklet.addModule('/assets/js/voice-capture.js'), fetch('/.netlify/functions/voice-session', {
       method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ consent: true, saveTranscript: wantsSave, consentVersion }), signal: run.abort.signal,
     })]);
     if (!current(run)) return;
-    if (!response.ok) { end(response.status === 429 ? 'Hay varias conversaciones en este momento. Intenta en un minuto o agenda tu asesoría.' : 'La voz no está disponible ahora. Puedes agendar tu asesoría.'); return; }
+    if (!response.ok) { end(unavailableMessage); return; }
     const session = await response.json();
     if (!current(run)) return;
     if (wantsSave && !session.log?.token) throw new Error('Missing storage session');
@@ -140,7 +141,7 @@ async function begin() {
         const raw = typeof event.data === 'string' ? event.data : await event.data.text();
         if (!current(run)) return;
         const message = JSON.parse(raw);
-        if (message.error) { end('La conversación se interrumpió. Puedes volver a intentar.'); return; }
+        if (message.error) { end(unavailableMessage); return; }
         if (message.setupComplete && !run.ready) {
           window.geniaTrack?.('voice_session_start');
           run.ready = true; clearTimeout(run.connectionTimer);
@@ -175,14 +176,14 @@ async function begin() {
         for (const part of content?.modelTurn?.parts || []) if (part.inlineData) playAudio(run, part.inlineData);
         if (content?.turnComplete) { run.newTurn = true; run.activity.turnComplete(); feedback(run); }
         if (message.goAway) end('La sesión terminó. Puedes volver a empezar o agendar tu asesoría.');
-      }).catch(() => { if (current(run)) end('No pudimos continuar la conversación. Puedes volver a intentar.'); });
+      }).catch(() => { if (current(run)) end(unavailableMessage); });
     };
-    socket.onerror = () => { if (current(run)) end('No pudimos conectar con el asistente. Intenta nuevamente o agenda tu asesoría.'); };
+    socket.onerror = () => { if (current(run)) end(unavailableMessage); };
     socket.onclose = () => { if (current(run)) end(); };
     stream.getAudioTracks().forEach(track => track.addEventListener('ended', () => { if (current(run)) end('El micrófono se desconectó. Puedes volver a empezar.'); }));
   } catch (error) {
     if (!current(run)) return;
-    end(error.name === 'NotAllowedError' ? 'No se habilitó el micrófono. Puedes permitirlo en tu navegador o usar el formulario.' : 'No pudimos iniciar la voz. Puedes volver a intentar o usar el formulario.');
+    end(error.name === 'NotAllowedError' ? 'No se habilitó el micrófono. Puedes permitirlo en tu navegador o usar el formulario.' : unavailableMessage);
   }
 }
 
